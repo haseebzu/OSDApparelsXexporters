@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
-import { blogPosts } from "@/data/site";
+import { getPublishedBlogPosts } from "@/lib/blog-posts";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -9,7 +10,35 @@ export const metadata = createMetadata({
   path: "/blog",
 });
 
-export default function BlogPage() {
+export const dynamic = "force-dynamic";
+
+const postImages = {
+  "private-label-clothing-manufacturing-pakistan": "/images/factory-overview.png",
+  "coord-sets-trend-guide-2026": "/images/hero-menswear.png",
+  "kidswear-manufacturing-guide-pakistan": "/images/hero-kidswear.png",
+};
+
+const fallbackImages = [
+  "/images/hero-factory.png",
+  "/images/CottonLinen.png",
+  "/images/streetwear.jpeg",
+  "/images/Outfits.png",
+  "/images/Jackets.png",
+  "/images/Kids.png",
+];
+
+function getPostImage(post, index) {
+  if (post.cover_image) return post.cover_image;
+  return postImages[post.slug] || fallbackImages[index % fallbackImages.length];
+}
+
+export default async function BlogPage() {
+  const blogPosts = await getPublishedBlogPosts();
+  const posts = blogPosts.map((post, index) => ({
+    ...post,
+    visual: getPostImage(post, index),
+  }));
+
   return (
     <>
       <PageHero
@@ -20,8 +49,17 @@ export default function BlogPage() {
       />
       <section className="section">
         <div className="container blog-grid">
-          {blogPosts.map((post) => (
-            <Reveal className="blog-card" key={post.slug}>
+          {posts.map((post, index) => (
+            <Reveal className="blog-card" delay={index * 0.05} key={post.slug}>
+              <div className="blog-card__media">
+                <Image
+                  src={post.visual}
+                  alt={post.title}
+                  fill
+                  sizes="(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 33vw"
+                  className="blog-card__image"
+                />
+              </div>
               <p className="section-eyebrow">{post.category}</p>
               <h3>{post.title}</h3>
               <p>{post.excerpt}</p>

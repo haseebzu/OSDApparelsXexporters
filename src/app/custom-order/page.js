@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { PageHero } from "@/components/shared/PageHero";
-import { ProcessTimeline } from "@/components/shared/ProcessTimeline";
 import { Reveal } from "@/components/shared/Reveal";
+import { printingTechniques } from "@/data/site";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 const customizationCards = [
   {
     title: "Custom Design / Style",
-    image: "/images/hero-menswear.png",
+    image: "/images/custom d.png",
     points: [
       "Fully customized garment design based on your concept, sketch, or reference sample",
       "In-house development support for silhouettes, fits, and fashion details",
@@ -24,7 +24,7 @@ const customizationCards = [
   },
   {
     title: "Custom Sizing",
-    image: "/images/hero-kidswear.png",
+    image: "/images/customm Sizingg.png",
     points: [
       "Flexible size charts based on your target market (US, EU, UK, AU, Asia, Arab countries)",
       "Made-to-measure size grading available",
@@ -35,7 +35,7 @@ const customizationCards = [
   },
   {
     title: "Shipping Around The World",
-    image: "/images/hero-factory.png",
+    image: "/images/WORLDWIDEShupping.jpg",
     points: [
       "Worldwide shipping by air and sea freight",
       "Support with major courier and logistics partners",
@@ -47,7 +47,7 @@ const customizationCards = [
   },
   {
     title: "Custom Label / Tag",
-    image: "/images/hoodie-brown.jpeg",
+    image: "/images/Label and tags.jpg",
     points: [
       "Private label main tags with your brand name and logo",
       "Custom woven and printed labels",
@@ -58,7 +58,7 @@ const customizationCards = [
   },
   {
     title: "Custom Print",
-    image: "/images/streetwear.jpeg",
+    image: "/images/Custom Printing.png",
     points: [
       "Multiple printing techniques available: screen print, puff print, DTF, DTG, sublimation",
       "Pantone color matching support",
@@ -69,7 +69,7 @@ const customizationCards = [
   },
   {
     title: "Custom Embroidery",
-    image: "/images/hoodie-gray.jpeg",
+    image: "/images/embrodirey custom.png",
     points: [
       "Flat, 3D, puff, and applique embroidery options",
       "High stitch-definition logo embroidery",
@@ -80,7 +80,7 @@ const customizationCards = [
   },
   {
     title: "Custom Cut & Sew",
-    image: "/images/factory-overview.png",
+    image: "/images/cut and sew.jpg",
     points: [
       "Complete cut & sew manufacturing from raw fabric to finished garment",
       "Panel-based construction and complex styles supported",
@@ -92,11 +92,36 @@ const customizationCards = [
 ];
 
 const oemStages = [
-  { number: "1.", title: "Concept Review", description: "We align on target market, styling direction, price target, and development scope.", icon: "FileText" },
-  { number: "2.", title: "Sampling", description: "Patterns, fit comments, labels, trims, and reference standards are confirmed before bulk.", icon: "SwatchBook" },
-  { number: "3.", title: "Bulk Execution", description: "Approved styles move into production with milestone visibility and quality checkpoints.", icon: "Factory" },
-  { number: "4.", title: "Final QA", description: "Finishing, packing, labeling, and shipment readiness are reviewed before dispatch.", icon: "ShieldCheck" },
-  { number: "5.", title: "Export Delivery", description: "Documentation and logistics support are coordinated for smooth international handover.", icon: "PlaneTakeoff" },
+  {
+    number: "Step One",
+    title: "Concept Review",
+    description: "We align on target market, styling direction, price target, and development scope before the first sample move.",
+    image: "/images/Cooncept Review.jpg",
+  },
+  {
+    number: "Step Two",
+    title: "Sampling",
+    description: "Patterns, fit comments, labels, trims, and reference standards are confirmed before the bulk plan is locked.",
+    image: "/images/SamplingOEM.jpg",
+  },
+  {
+    number: "Step Three",
+    title: "Bulk Execution",
+    description: "Approved styles move into production with milestone visibility, quality checkpoints, and timeline control.",
+    image: "/images/production.png",
+  },
+  {
+    number: "Step Four",
+    title: "Final QA",
+    description: "Finishing, packing, labeling, and shipment readiness are reviewed carefully before final dispatch approval.",
+    image: "/images/Quality check.png",
+  },
+  {
+    number: "Step Five",
+    title: "Export Delivery",
+    description: "Documentation and logistics support are coordinated for a smooth international handover to your buying team.",
+    image: "/images/deliveryOEM.jpg",
+  },
 ];
 
 const oemProof = [
@@ -168,13 +193,55 @@ export default function CustomOrderPage() {
             </p>
           </Reveal>
 
-          <ProcessTimeline steps={oemStages} />
+          <div className="oem-journey__cards">
+            {oemStages.map((step, index) => (
+              <Reveal className="oem-journey-card" delay={index * 0.05} key={step.title}>
+                <div className="oem-journey-card__media">
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    sizes="(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 33vw"
+                    className="oem-journey-card__image"
+                  />
+                </div>
+                <div className="oem-journey-card__body">
+                  <span className="oem-journey-card__step">{step.number}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
 
           <div className="oem-proof-grid">
             {oemProof.map((item, index) => (
               <Reveal className="oem-proof-card" delay={index * 0.05} key={item}>
                 <span />
                 <p>{item}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <Reveal className="custom-order__intro">
+            <p className="section-eyebrow">Printing & Decoration</p>
+            <div className="section-accent" />
+            <h2 className="section-title">Decoration methods for private label, OEM, and custom apparel production.</h2>
+            <p className="section-text">
+              Custom order programs often depend on the right print or embroidery finish. This section keeps the
+              decoration capability visible inside the same workflow as sizing, labels, trims, and shipment planning.
+            </p>
+          </Reveal>
+
+          <div className="cards-grid">
+            {printingTechniques.map((technique, index) => (
+              <Reveal className="detail-card" delay={index * 0.04} key={technique.title}>
+                <h3>{technique.title}</h3>
+                <p>{technique.bestFor}</p>
               </Reveal>
             ))}
           </div>

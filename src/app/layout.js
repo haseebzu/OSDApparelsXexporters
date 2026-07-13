@@ -22,8 +22,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${cormorant.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${cormorant.variable} ${mono.variable}`} suppressHydrationWarning>
         <GoogleTranslate />
         <TopBar />
         <SiteHeader />

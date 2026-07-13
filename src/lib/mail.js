@@ -92,4 +92,21 @@ export async function sendCustomerConfirmation({ enquiry, referenceId }) {
   });
 }
 
+export async function sendAdminReplyEmail({ to, subject, message, replyTo }) {
+  const text = message.trim();
+  const html = text
+    .split(/\n{2,}/)
+    .map((paragraph) => `<p>${paragraph.replace(/\n/g, "<br />")}</p>`)
+    .join("");
+
+  return sendMail({
+    from: getFromAddress(),
+    to,
+    replyTo: replyTo || process.env.COMPANY_EMAIL,
+    subject,
+    text,
+    html,
+  });
+}
+
 export { isMailConfigured };

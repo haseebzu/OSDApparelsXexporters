@@ -67,7 +67,7 @@ async function saveEnquiry(enquiry) {
     quantity: enquiry.quantity || null,
     fabric: enquiry.fabric || null,
     decoration: enquiry.decoration || null,
-    description: enquiry.description,
+    description: enquiry.description || "No design description provided.",
     status: enquiry.status,
   });
 
@@ -136,6 +136,7 @@ export async function POST(request) {
     const enquiry = {
       id: enquiryId,
       ...parsed.data,
+      description: parsed.data.description || "No design description provided.",
       status: "new",
       submittedAt: submittedAt.toISOString(),
     };

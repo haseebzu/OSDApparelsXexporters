@@ -7,18 +7,33 @@ const optionalText = z
   .optional()
   .or(z.literal(""));
 
+const requiredText = (label, max = 300) =>
+  z
+    .string()
+    .trim()
+    .min(1, `${label} is required.`)
+    .max(max, `${label} is too long.`);
+
+const phoneSchema = z
+  .string()
+  .trim()
+  .min(1, "Contact number is required.")
+  .max(30, "Contact number is too long.")
+  .refine((value) => /^[+\d\s()\-]+$/.test(value), "Enter a valid contact number.")
+  .refine((value) => value.replace(/\D/g, "").length >= 7, "Enter a valid contact number.");
+
 export const enquirySchema = z.object({
   sourcePage: z.string().trim().min(1).max(50),
   name: z.string().trim().min(2, "Full name is required.").max(120),
-  company: optionalText,
+  company: requiredText("Company name", 160),
   email: z.string().trim().email("A valid email is required.").max(120),
-  whatsapp: optionalText,
-  country: optionalText,
-  productCategory: optionalText,
-  quantity: optionalText,
-  fabric: optionalText,
+  whatsapp: phoneSchema,
+  country: requiredText("Country", 120),
+  productCategory: requiredText("Product category", 160),
+  quantity: requiredText("Quantity", 120),
+  fabric: requiredText("Fabric preference", 160),
   decoration: optionalText,
-  description: z.string().trim().min(10, "Design description is required.").max(4000),
+  description: z.string().trim().max(4000, "Design description is too long.").optional().or(z.literal("")),
 });
 
 function sanitizeInput(value, { preserveNewLines = false } = {}) {

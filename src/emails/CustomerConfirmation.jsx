@@ -106,7 +106,7 @@ const card = {
 };
 
 const header = {
-  backgroundColor: "#1f241e",
+  backgroundColor: "#000000",
   color: "#ffffff",
   padding: "28px 30px",
 };

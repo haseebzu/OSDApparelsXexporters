@@ -17,36 +17,34 @@ import { useEffect, useMemo, useRef, useState } from "react";
 const heroStates = [
   {
     id: "state-1",
-    lineStart: "We",
-    lineEnd: "Export",
+    topline: "We Export",
     display: "EXCELLENCE",
-    image: "/images/heroo 1.png",
+    image: "/images/hero1.png",
   },
   {
     id: "state-2",
-    lineStart: "Pakistan's",
-    lineEnd: "Finest",
+    topline: "Pakistan's Finest",
     display: "KNITWEAR & WOVENS",
     image: "/images/hero 2.png",
   },
   {
     id: "state-3",
-    lineStart: "Sourcing",
-    lineEnd: "Custom",
+    topline: "Sourcing Custom",
     display: "KNITTED & WOVEN GARMENTS",
     image: "/images/hero 3.png",
   },
 ];
 
 const stripImages = [
-  "/images/hero-menswear.png",
-  "/images/hero-factory.png",
-  "/images/hero-kidswear.png",
-  "/images/hoodie-brown.jpeg",
-  "/images/hoodie-gray.jpeg",
-  "/images/streetwear.jpeg",
-  "/images/factory-overview.png",
-  "/images/hero-menswear.png",
+  "/images/Kids.png",
+  "/images/Hoodie.png",
+  "/images/CottonLinen.png",
+  "/images/Gurkha pants.png",
+  "/images/Jackets.png",
+  "/images/Uniforms.png",
+  "/images/Outfits.png",
+  "/images/Tees.png",
+  
 ];
 
 function Preloader({ onDone }) {
@@ -109,27 +107,26 @@ function AccentWord({ word }) {
 }
 
 function HeroHeadline({ state, priority = false }) {
+  const isLongDisplay = state.display.length > 18;
+
   return (
     <div className="hero-cutout__state">
       <div className="hero-cutout__headline-stack">
-        <div className="hero-cutout__topline" aria-hidden="true">
-          <span className="hero-cutout__topline-word hero-cutout__topline-word--start">{state.lineStart}</span>
-          <span className="hero-cutout__topline-focal">
-            <Image
-              src={state.image}
-              alt="OSD Apparels focal product hero"
-              width={1220}
-              height={1440}
-              priority={priority}
-              fetchPriority={priority ? "high" : undefined}
-              sizes="(max-width: 960px) 42vw, 26vw"
-              className="hero-cutout__visual-image hero-cutout__visual-image--focal"
-            />
-          </span>
-          <span className="hero-cutout__topline-word hero-cutout__topline-word--end">{state.lineEnd}</span>
-        </div>
+        <p className="hero-cutout__topline">{state.topline}</p>
+        <span className="hero-cutout__topline-focal" aria-hidden="true">
+          <Image
+            src={state.image}
+            alt="OSD Apparels focal product hero"
+            width={1220}
+            height={1440}
+            priority={priority}
+            fetchPriority={priority ? "high" : undefined}
+            sizes="(max-width: 960px) 42vw, 26vw"
+            className="hero-cutout__visual-image hero-cutout__visual-image--focal"
+          />
+        </span>
 
-        <h1 className={`hero-cutout__display${state.display.length > 18 ? " hero-cutout__display--long" : ""}`}>
+        <h1 className={`hero-cutout__display${isLongDisplay ? " hero-cutout__display--long" : ""}`}>
           <AccentWord word={state.display} />
         </h1>
       </div>
@@ -173,13 +170,14 @@ function MarqueeStrip({ reducedMotion, images }) {
 
 export function HeroSlider() {
   const shouldReduceMotion = useReducedMotion();
-  const [booted, setBooted] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [mobilePhase, setMobilePhase] = useState(0);
   const rootRef = useRef(null);
   const pinRef = useRef(null);
   const stateRefs = useRef([]);
+  const prefersReducedMotion = hasMounted ? shouldReduceMotion : false;
   const { scrollYProgress } = useScroll({
     target: rootRef,
     offset: ["start start", "end start"],
@@ -213,10 +211,11 @@ export function HeroSlider() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    setHasMounted(true);
+
     const frameId = window.requestAnimationFrame(() => {
       const hasLoaded = window.sessionStorage.getItem("osd-hero-preloaded");
       setShowLoader(!hasLoaded);
-      setBooted(true);
     });
 
     return () => window.cancelAnimationFrame(frameId);
@@ -237,7 +236,7 @@ export function HeroSlider() {
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined" || shouldReduceMotion || !isDesktop) return;
+    if (typeof window === "undefined" || prefersReducedMotion || !isDesktop) return;
     if (!pinRef.current || stateRefs.current.length < heroStates.length) return;
 
     gsap.registerPlugin(ScrollTrigger);
@@ -287,7 +286,7 @@ export function HeroSlider() {
     }, rootRef);
 
     return () => ctx.revert();
-  }, [isDesktop, shouldReduceMotion]);
+  }, [isDesktop, prefersReducedMotion]);
 
   return (
     <>
@@ -303,10 +302,10 @@ export function HeroSlider() {
             <div className="hero-cutout__stage">
               <div className="hero-cutout__states">
                 {heroStates.map((state, index) => {
-                  const mobileStyle = !isDesktop && !shouldReduceMotion ? mobileStateStyles[index] : undefined;
+                  const mobileStyle = !isDesktop && !prefersReducedMotion ? mobileStateStyles[index] : undefined;
                   const mobileHidden =
                     !isDesktop &&
-                    !shouldReduceMotion &&
+                    !prefersReducedMotion &&
                     ((mobilePhase === 0 && index === 2) ||
                       (mobilePhase === 1 && index === 0) ||
                       (mobilePhase === 2 && index !== 2));
@@ -349,7 +348,7 @@ export function HeroSlider() {
         </div>
 
         <div className="hero-cutout__marquee-wrap">
-          <MarqueeStrip reducedMotion={shouldReduceMotion} images={stripImages} />
+          <MarqueeStrip reducedMotion={prefersReducedMotion} images={stripImages} />
         </div>
       </section>
     </>

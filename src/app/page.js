@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CsrShowcase } from "@/components/home/CsrShowcase";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { HeroSlider } from "@/components/home/HeroSlider";
 import { HorizontalProductShowcase } from "@/components/home/HorizontalProductShowcase";
@@ -15,8 +16,8 @@ import {
 import { createMetadata } from "@/lib/metadata";
 
 const whoWeAreStats = [
-  { value: "10+", label: "Years in Apparel" },
-  { value: "40+", label: "Buyer Markets Served" },
+  { value: "5+", label: "Years in Apparel" },
+  { value: "50+", label: "Buyer Markets Served" },
   { value: "300+", label: "Styles Developed" },
 ];
 
@@ -40,79 +41,137 @@ const whoWeAreCards = [
 
 const landingProductImages = [
   {
-    src: "/images/hero-menswear.png",
+    src: "/images/men.jpg",
     alt: "Menswear collection",
     kicker: "Menswear",
-    title: "Urban menswear made for retail-ready collections",
-    text: "Contemporary silhouettes, jackets, trousers, and coordinated looks developed for modern labels.",
+    moq: "30+",
+    href: "/products/mens",
+    title: "Menswear Collections",
   },
   {
     src: "/images/hero-kidswear.png",
     alt: "Kidswear collection",
     kicker: "Kidswear",
-    title: "Playful kidswear programs with production clarity",
-    text: "Comfort-first garments, matching sets, and custom kids collections developed for global buyers.",
+    moq: "50+",
+    href: "/products/kids",
+    title: "Kidswear Programs",
   },
   {
-    src: "/images/hoodie-gray.jpeg",
+    src: "/images/Hoodiee.png",
     alt: "Gray hoodie product",
     kicker: "Fleece",
-    title: "Heavyweight basics and elevated hoodie programs",
-    text: "Premium fleece, brushed interiors, and clean finishing for fashion-forward casualwear drops.",
+    moq: "50+",
+    href: "/products",
+    title: "Fleece & Hoodies",
   },
   {
-    src: "/images/hoodie-brown.jpeg",
-    alt: "Brown hoodie product",
-    kicker: "Private Label",
-    title: "Graphic-led private label apparel built to stand out",
-    text: "From labels and tags to print placement and fit direction, every detail is shaped around your brand.",
+    src: "/images/Women.png",
+    alt: "Womenswear collection",
+    kicker: "Womenswear",
+    moq: "50+",
+    href: "/products",
+    title: "Womenswear Lines",
   },
   {
-    src: "/images/streetwear.jpeg",
-    alt: "Streetwear outfit",
-    kicker: "Streetwear",
-    title: "Cut-and-sew streetwear with sharper styling direction",
-    text: "Oversized tees, fashion bottoms, and custom silhouettes produced with a more editorial finish.",
+    src: "/images/men active.jpg",
+    alt: "Activewear and performance collection",
+    kicker: "Activewear",
+    moq: "50+",
+    href: "/products",
+    title: "Activewear Programs",
   },
   {
-    src: "/images/hero-factory.png",
-    alt: "Custom apparel production",
-    kicker: "Factory",
-    title: "Production capacity that turns concepts into bulk-ready garments",
-    text: "Sampling, cutting, stitching, finishing, and export handling aligned under one manufacturing workflow.",
+    src: "/images/denim.jpg",
+    alt: "Denim collection",
+    kicker: "Denim",
+    moq: "80+",
+    href: "/products",
+    title: "Denim Development",
+  },
+  {
+    src: "/images/outwear.png",
+    alt: "Outerwear collection",
+    kicker: "Outerwear",
+    moq: "60+",
+    href: "/products",
+    title: "Outerwear Programs",
+  },
+  {
+    src: "/images/sleepwear.png",
+    alt: "Loungewear collection",
+    kicker: "Loungewear",
+    moq: "50+",
+    href: "/products",
+    title: "Loungewear & Sleepwear",
+  },
+  {
+    src: "/images/polooo.jpg",
+    alt: "Accessories collection",
+    kicker: "Accessories",
+    moq: "100+",
+    href: "/custom-order",
+    title: "Accessories",
+  },
+  {
+    src: "/images/teess.jpg",
+    alt: "Sustainable apparel collection",
+    kicker: "Sustainable",
+    moq: "50+",
+    href: "/sustainability",
+    title: "Sustainable Collections",
+  },
+  {
+    src: "/images/work wear.jpg",
+    alt: "Uniforms and workwear collection",
+    kicker: "Uniforms",
+    moq: "100+",
+    href: "/products",
+    title: "Uniforms & Workwear",
   },
 ];
 
 const homeCoreServices = [
   {
-    label: "MOQ",
+    label: "Low MOQ",
     title: "Small Orders Production",
     text: "We understand the challenges new startups face, and we support growing brands by accepting small order quantities so both sides can scale together.",
+    image: "/images/factory-overview.png",
+    href: "/custom-order",
   },
   {
     label: "Sustainability",
     title: "Eco-Friendly Fabrics",
     text: "Our commitment to sustainability includes eco-friendly fabric options that help brands build more responsible collections without sacrificing quality.",
+    image: "/images/Eco friendly Fabric.jpg",
+    href: "/products",
   },
   {
     label: "Quality",
     title: "Quality Guarantee",
     text: "We take pride in our product quality and follow a thorough 3-step quality assurance process before goods are shipped.",
+    image: "/images/Qcccc.png",
+    href: "/quote",
   },
   {
     label: "Customization",
     title: "Customizable Clothing",
     text: "Choose from a wide range of colors, fabrics, silhouettes, and finishing options to create apparel tailored to your business or personal needs.",
+    image: "/images/CustomSizing.jpg",
+    href: "/custom-order",
   },
   {
     label: "Support",
     title: "24/7 Customer Support",
     text: "Get help anytime from our friendly team. We stay available to support clients whenever they need updates, answers, or production guidance.",
+    image: "/images/Customoer Support.png",
+    href: "/contact",
   },
   {
     label: "Logistics",
     title: "Fast Shipping",
     text: "With streamlined processes and a dedicated team, we prioritize timely shipment so your products move quickly without unnecessary delay.",
+    image: "/images/Shipments.jpg",
+    href: "/contact",
   },
 ];
 
@@ -126,12 +185,12 @@ const facilitySections = [
   {
     title: "Lab Section",
     text: "Lab ensures quality and consistency through highly advanced equipped machines and modern tools.",
-    image: "/images/factory-overview.png",
+    image: "/images/Lab section.png",
   },
   {
     title: "Dyeing Section",
     text: "Low liquor ratio high temperature jet machines capable of producing 40-42 tons of dyeing per day.",
-    image: "/images/hero-factory.png",
+    image: "/images/Dying Section.jpg",
   },
   {
     title: "Finishing",
@@ -141,27 +200,27 @@ const facilitySections = [
   {
     title: "Cutting",
     text: "Including Orox plotters, auto spreaders, auto cutters, and spreaders.",
-    image: "/images/streetwear.jpeg",
+    image: "/images/cut and sew.jpg",
   },
   {
     title: "Printing Facility",
     text: "Oval machine, shank machine, and digital machine support flexible decoration programs.",
-    image: "/images/hoodie-brown.jpeg",
+    image: "/images/Priniting.png",
   },
   {
     title: "Embroidery Facility",
     text: "With a combined daily production capacity of 20,000 pieces.",
-    image: "/images/hero-kidswear.png",
+    image: "/images/Embrodiry.png",
   },
   {
     title: "Stitching",
     text: "With over 2780 stitching machines, manned with the most skilled and expert operators.",
-    image: "/images/hero-factory.png",
+    image: "/images/Stitching.jpg",
   },
   {
     title: "Hanger System",
     text: "We have 6 hanger systems which are more efficient in productivity.",
-    image: "/images/factory-overview.png",
+    image: "/images/hanger system.jpg",
   },
 ];
 
@@ -249,7 +308,14 @@ export default function HomePage() {
           <div className="core-services-showcase">
             {homeCoreServices.map((service, index) => (
               <Reveal delay={index * 0.06} key={service.title}>
-                <ContentCard variant="service" label={service.label} title={service.title} text={service.text} />
+                <ContentCard
+                  variant="service"
+                  label={service.label}
+                  title={service.title}
+                  text={service.text}
+                  image={service.image}
+                  href={service.href}
+                />
               </Reveal>
             ))}
           </div>
@@ -258,11 +324,18 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
-          <SectionIntro
-            eyebrow="Product Highlights"
-            title="Custom Clothing Manufacturer & Exporter of Knitted and Woven Garments"
-            text="A product-led gallery showing the kind of apparel direction, finishing, and custom manufacturing range buyers expect from a modern export partner."
-          />
+          <Reveal className="testimonial-section__intro">
+            <p className="section-eyebrow">Products</p>
+            <div className="section-accent" />
+            <h2 className="section-title testimonial-showcase__title">Product categories built for modern wholesale buyers.</h2>
+          </Reveal>
+
+          <Reveal className="testimonial-section__intro">
+            <p className="section-text testimonial-showcase__text">
+              Explore the categories OSD Apparels develops for private-label brands, retailers, and import buyers,
+              from menswear and kidswear to fleece, uniforms, and export-ready custom programs.
+            </p>
+          </Reveal>
 
           <HorizontalProductShowcase items={landingProductImages} />
         </div>
@@ -287,7 +360,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--light">
+      <section className="section">
         <div className="container">
           <SectionIntro
             eyebrow="How It Works"
@@ -295,7 +368,7 @@ export default function HomePage() {
             text="This is the scroll moment that should separate OSD from flat exporter sites: a process built to visually reinforce control, visibility, and calm execution."
           />
 
-          <ProcessTimeline steps={processSteps} />
+          <ProcessTimeline steps={processSteps} variant="map" />
         </div>
       </section>
 
@@ -312,6 +385,10 @@ export default function HomePage() {
 
             <div className="facility-showcase__grid">
               {facilitySections.map((item, index) => (
+                (() => {
+                  const imageUrl = encodeURI(item.image);
+
+                  return (
                 <Reveal
                   className={`facility-card${item.tone === "wide" ? " facility-card--wide" : ""}`}
                   delay={index * 0.04}
@@ -320,7 +397,7 @@ export default function HomePage() {
                   <div
                     className="facility-card__image"
                     style={{
-                      backgroundImage: `linear-gradient(180deg, rgba(35, 42, 32, 0.12), rgba(35, 42, 32, 0.32)), url(${item.image})`,
+                      backgroundImage: `linear-gradient(180deg, rgba(35, 42, 32, 0.12), rgba(35, 42, 32, 0.32)), url("${imageUrl}")`,
                     }}
                   />
                   <div className="facility-card__content">
@@ -328,9 +405,13 @@ export default function HomePage() {
                     <p>{item.text}</p>
                   </div>
                 </Reveal>
+                  );
+                })()
               ))}
             </div>
           </div>
+
+          <CsrShowcase />
 
           <div className="testimonial-section">
             <Reveal className="testimonial-section__intro">

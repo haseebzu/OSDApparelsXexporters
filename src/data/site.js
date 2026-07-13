@@ -1,16 +1,21 @@
 export const contact = {
-  email: "hello@osdapparels.com",
-  phone: "+92 300 0000000",
-  whatsapp: "+92 300 0000000",
+  email: "osdapparels@gmail.com",
+  phone: "+92 3710775687",
+  whatsapp: "+92 3710775687",
   address: "Faisalabad, Punjab, Pakistan",
-  hours: "Monday to Saturday, 9:00 AM to 7:00 PM PKT",
+  hours: "24/7",
+};
+
+export const socials = {
+  linkedin: "https://www.linkedin.com/company/osd-apparels/",
+  instagram: "https://www.instagram.com/osdapparels/",
 };
 
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
-  { href: "/printing", label: "Printing" },
+  { href: "/services", label: "Services" },
   { href: "/custom-order", label: "Custom Order" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
@@ -23,7 +28,7 @@ export const heroSlides = [
     text: "We develop and produce knitted and woven garments for private labels, retailers, and sourcing teams that need sharper execution, better communication, and export-ready consistency.",
     primaryCta: { href: "/quote", label: "Request Free Quote" },
     secondaryCta: { href: "/products", label: "Explore Products" },
-    image: "/images/hero-menswear.png",
+    image: "/images/Who we are.png",
   },
   {
     eyebrow: "Worldwide Exporter",
@@ -31,21 +36,21 @@ export const heroSlides = [
     text: "Sampling, cutting, stitching, printing, embroidery, packaging, and dispatch are aligned under one professional manufacturing system built for worldwide export.",
     primaryCta: { href: "/custom-order", label: "Build Custom Collection" },
     secondaryCta: { href: "/factory-tour", label: "See Factory Tour" },
-    image: "/images/hero-factory.png",
+    image: "/images/Who we are.png",
   },
   {
     eyebrow: "Private Label and OEM",
     title: "A custom apparel manufacturing partner for fashion brands, exporters, and growing labels.",
     text: "Launch shirts, hoodies, uniforms, co-ord sets, kidswear, and decorated garments with low-risk MOQs and export-focused production planning.",
     primaryCta: { href: "/contact", label: "Start Your Project" },
-    secondaryCta: { href: "/printing", label: "View Printing Options" },
+    secondaryCta: { href: "/services", label: "View Services" },
     image: "/images/hero-kidswear.png",
   },
 ];
 
 export const stats = [
-  { label: "Countries Served", value: "24+" },
-  { label: "MOQ Per Style", value: "30 pcs" },
+  { label: "Countries Served", value: "50+" },
+  { label: "MOQ Per Style", value: "50 pcs" },
   { label: "Annual Capacity", value: "50k+" },
   { label: "QC Checkpoints", value: "3" },
   { label: "Sampling Speed", value: "7 days" },

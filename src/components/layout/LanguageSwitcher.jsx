@@ -6,6 +6,7 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import {
   applyGoogleLanguage,
+  clearScheduledTranslateRefresh,
   getLanguageMeta,
   getStoredLanguage,
 } from "@/lib/googleTranslate";
@@ -21,7 +22,7 @@ const dropdownMotion = {
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [activeLanguage, setActiveLanguage] = useState(() => getStoredLanguage());
+  const [activeLanguage, setActiveLanguage] = useState("en");
   const [focusedIndex, setFocusedIndex] = useState(0);
   const deferredQuery = useDeferredValue(query);
   const buttonRef = useRef(null);
@@ -46,8 +47,19 @@ export function LanguageSwitcher() {
   useClickOutside([buttonRef, panelRef], () => setOpen(false), open);
 
   useEffect(() => {
+    clearScheduledTranslateRefresh();
+
+    const frameId = window.requestAnimationFrame(() => {
+      setActiveLanguage(getStoredLanguage());
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  useEffect(() => {
     function handleReady() {
       const storedLanguage = getStoredLanguage();
+      setActiveLanguage(storedLanguage);
       if (storedLanguage !== "en") {
         window.setTimeout(() => {
           applyGoogleLanguage(storedLanguage);
@@ -96,7 +108,7 @@ export function LanguageSwitcher() {
 
   function handleSelect(languageCode) {
     setActiveLanguage(languageCode);
-    applyGoogleLanguage(languageCode);
+    applyGoogleLanguage(languageCode, { reloadAfterApply: true });
     setOpen(false);
     setQuery("");
     buttonRef.current?.focus();

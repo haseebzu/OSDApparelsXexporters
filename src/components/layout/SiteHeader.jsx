@@ -44,8 +44,7 @@ export function SiteHeader() {
     >
       <div className="container site-header__inner">
         <Link href="/" className="brand-mark" onClick={() => setOpen(false)}>
-          <Image src="/images/osd-logo.png" alt="OSD Apparels" width={146} height={54} className="brand-mark__logo" />
-          <small>Apparels</small>
+          <Image src="/images/osd-logo.png" alt="OSD Apparels" width={178} height={66} className="brand-mark__logo" />
         </Link>
 
         <nav className="site-nav">

@@ -19,7 +19,15 @@ const iconMap = {
   PlaneTakeoff,
 };
 
-export function ProcessTimeline({ steps }) {
+const processImageMap = {
+  Inquiry: "/images/Inquriy.png",
+  Sampling: "/images/Sampling.png",
+  Production: "/images/productionTimline.jpg",
+  "Final QC": "/images/Qc.jpg",
+  Delivery: "/images/Delivery.jpg",
+};
+
+export function ProcessTimeline({ steps, variant = "default" }) {
   const rootRef = useRef(null);
   const stepRefs = useRef([]);
   const progressRef = useRef(null);
@@ -78,6 +86,45 @@ export function ProcessTimeline({ steps }) {
 
     return () => ctx.revert();
   }, [steps]);
+
+  if (variant === "map") {
+    return (
+      <div className="process-map" ref={rootRef}>
+        <svg className="process-map__paths" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M120 112C210 82 244 92 332 170C420 248 510 244 600 186C692 126 766 114 878 122" />
+          <path d="M122 314C232 284 298 278 406 324C520 374 650 370 770 302C824 272 852 256 878 238" />
+        </svg>
+
+        <div className="process-map__grid">
+          {steps.map((step, index) => {
+            const nodeClass = index < 3 ? "process-map__node process-map__node--top" : "process-map__node process-map__node--bottom";
+            const stepImage = processImageMap[step.title] ?? "/images/factory-overview.png";
+
+            return (
+              <article
+                className={nodeClass}
+                key={step.title}
+                ref={(element) => {
+                  stepRefs.current[index] = element;
+                }}
+              >
+                <h3 className="process-map__title">{step.title.toUpperCase()}</h3>
+                <div className="process-map__circle">
+                  <div
+                    className="process-map__photo"
+                    style={{
+                      backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(${stepImage})`,
+                    }}
+                  />
+                </div>
+                <p className="process-map__text">{step.description}</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="process-timeline" ref={rootRef}>

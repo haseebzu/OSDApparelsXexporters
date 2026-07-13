@@ -14,10 +14,12 @@ export function PageHero({ eyebrow, title, text, primaryCta, secondaryCta, highl
             <h1 className="page-hero__title">{title}</h1>
             <p className="page-hero__text">{text}</p>
             {highlights.length ? (
-              <div className="page-hero__highlights">
-                {highlights.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
+              <div className="page-hero__highlights" aria-label="Page highlights">
+                <div className="page-hero__highlights-track">
+                  {[...highlights, ...highlights].map((item, index) => (
+                    <span key={`${item}-${index}`}>{item}</span>
+                  ))}
+                </div>
               </div>
             ) : null}
             <div className="button-row">
@@ -31,22 +33,6 @@ export function PageHero({ eyebrow, title, text, primaryCta, secondaryCta, highl
                   {secondaryCta.label}
                 </Link>
               ) : null}
-            </div>
-          </div>
-          <div className="page-hero__aside">
-            <div className="page-hero__aside-card">
-              <strong>Private Label Ready</strong>
-              <span>Custom development, export planning, and premium production coordination.</span>
-            </div>
-            <div className="page-hero__aside-grid">
-              <div>
-                <strong>30 pcs</strong>
-                <span>MOQ</span>
-              </div>
-              <div>
-                <strong>24 hrs</strong>
-                <span>Quote Turnaround</span>
-              </div>
             </div>
           </div>
         </Reveal>

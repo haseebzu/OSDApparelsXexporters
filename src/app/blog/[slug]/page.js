@@ -1,17 +1,15 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
-import { blogPosts } from "@/data/site";
+import { getPublishedBlogPostBySlug, getPublishedBlogPosts } from "@/lib/blog-posts";
 import { createMetadata } from "@/lib/metadata";
 
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = blogPosts.find((entry) => entry.slug === slug);
+  const posts = await getPublishedBlogPosts();
+  const post = posts.find((entry) => entry.slug === slug);
   if (!post) return {};
 
   return createMetadata({
@@ -23,8 +21,7 @@ export async function generateMetadata({ params }) {
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
-  const post = blogPosts.find((entry) => entry.slug === slug);
-  if (!post) notFound();
+  const post = await getPublishedBlogPostBySlug(slug);
 
   return (
     <>

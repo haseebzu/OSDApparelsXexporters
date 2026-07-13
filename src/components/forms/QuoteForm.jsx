@@ -3,17 +3,28 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
+import { countries } from "@/utils/countries";
 
 const fields = [
-  { name: "name", label: "Full Name", type: "text" },
-  { name: "company", label: "Company", type: "text" },
-  { name: "email", label: "Email", type: "email" },
-  { name: "whatsapp", label: "WhatsApp", type: "text" },
-  { name: "country", label: "Country", type: "text" },
-  { name: "productCategory", label: "Product Category", type: "text" },
-  { name: "quantity", label: "Quantity", type: "text" },
-  { name: "fabric", label: "Fabric Preference", type: "text" },
+  { name: "name", label: "Full Name", type: "text", required: true },
+  { name: "company", label: "Company Name", type: "text", required: true },
+  { name: "email", label: "Email", type: "email", required: true },
+  { name: "whatsapp", label: "Contact Number", type: "text", required: true },
+  { name: "country", label: "Country", type: "select", required: true },
+  { name: "productCategory", label: "Product Category", type: "text", required: true },
+  { name: "quantity", label: "Quantity", type: "text", required: true },
+  { name: "fabric", label: "Fabric Preference", type: "text", required: true },
 ];
+
+const emailPattern = {
+  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+  message: "Enter a valid email address.",
+};
+
+const phonePattern = {
+  value: /^[+\d\s()\-]+$/,
+  message: "Enter a valid contact number.",
+};
 
 export function QuoteForm({ compact = false, sourcePage = "quote" }) {
   const [submitted, setSubmitted] = useState(false);
@@ -27,7 +38,13 @@ export function QuoteForm({ compact = false, sourcePage = "quote" }) {
     setValue,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      country: "",
+      decoration: "",
+      description: "",
+    },
+  });
 
   const previewUrl = useMemo(() => {
     const firstImage = selectedFiles.find((file) => file.type.startsWith("image/"));
@@ -101,10 +118,38 @@ export function QuoteForm({ compact = false, sourcePage = "quote" }) {
         {fields.map((field) => (
           <label key={field.name} className="field">
             <span>{field.label}</span>
-            <input
-              type={field.type}
-              {...register(field.name, { required: `${field.label} is required` })}
-            />
+            {field.type === "select" ? (
+              <select
+                defaultValue=""
+                {...register(field.name, {
+                  required: `${field.label} is required.`,
+                })}
+              >
+                <option value="" disabled>
+                  Select your country
+                </option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                type={field.type}
+                {...register(field.name, {
+                  required: field.required ? `${field.label} is required.` : false,
+                  ...(field.name === "email" ? { pattern: emailPattern } : {}),
+                  ...(field.name === "whatsapp"
+                    ? {
+                        pattern: phonePattern,
+                        validate: (value) =>
+                          value.replace(/\D/g, "").length >= 7 || "Enter a valid contact number.",
+                      }
+                    : {}),
+                })}
+              />
+            )}
             {errors[field.name] ? <small>{errors[field.name].message}</small> : null}
           </label>
         ))}
@@ -116,8 +161,7 @@ export function QuoteForm({ compact = false, sourcePage = "quote" }) {
 
         <label className="field field--wide">
           <span>Design Description</span>
-          <textarea rows={5} {...register("description", { required: "Design description is required" })} />
-          {errors.description ? <small>{errors.description.message}</small> : null}
+          <textarea rows={5} {...register("description")} />
         </label>
 
         <label className="field field--wide">

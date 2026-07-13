@@ -82,6 +82,17 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal className="contact-page__map">
+            <iframe
+              className="contact-page__map-frame"
+              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5581.253323154931!2d73.15674204701725!3d31.431006702047814!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1783961806477!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="OSD Apparels location map"
+            />
             <div className="contact-page__map-overlay">
               <strong>Faisalabad, Pakistan</strong>
               <span>Production support for global apparel buyers</span>

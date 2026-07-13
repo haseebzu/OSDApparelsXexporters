@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionIntro } from "@/components/shared/SectionIntro";
-import { getFamily } from "@/lib/products";
+import { getCategoryImage, getFamily } from "@/lib/products";
 import { createMetadata } from "@/lib/metadata";
 
 const familySlug = "mens";
@@ -34,19 +34,27 @@ export default function MensProductsPage() {
           />
 
           <div className="cards-grid">
-            {family.categories.map((cat, i) => (
-              <Reveal key={cat.slug} className="product-card">
-                <div className={`product-card__visual product-card__visual--${i % 3}`} />
-                <div className="product-card__body">
-                  <p className="product-card__eyebrow">50 pcs per style</p>
-                  <h3>{cat.title}</h3>
-                  <p>{cat.description}</p>
-                </div>
-                <Link className="product-card__cta" href="/quote">
-                  Request Quote
-                </Link>
-              </Reveal>
-            ))}
+            {family.categories.map((cat, i) => {
+              const image = getCategoryImage(familySlug, cat.slug);
+              const backgroundImage = `linear-gradient(180deg, rgba(35, 42, 32, 0.08), rgba(35, 42, 32, 0.36)), url("${encodeURI(image)}")`;
+
+              return (
+                <Reveal key={cat.slug} className="product-card">
+                  <div
+                    className={`product-card__visual product-card__visual--${i % 3}`}
+                    style={{ backgroundImage }}
+                  />
+                  <div className="product-card__body">
+                    <p className="product-card__eyebrow">50 pcs per style</p>
+                    <h3>{cat.title}</h3>
+                    <p>{cat.description}</p>
+                  </div>
+                  <Link className="product-card__cta" href="/quote">
+                    Request Quote
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
