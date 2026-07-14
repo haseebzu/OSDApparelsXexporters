@@ -63,7 +63,7 @@ export function HorizontalProductShowcase({ items }) {
     <section className="horizontal-products" ref={sectionRef}>
       <div className="horizontal-products__sticky" ref={stickyRef}>
         <div className="horizontal-products__nav" aria-label="Product highlight navigation">
-          <div className="horizontal-products__dots" role="tablist" aria-label="Product highlight positions">
+          <div className="horizontal-products__dots" aria-label="Product highlight positions">
             {Array.from({ length: steps }).map((_, index) => (
               <button
                 key={`dot-${index}`}
@@ -104,6 +104,7 @@ export function HorizontalProductShowcase({ items }) {
               className={`horizontal-product-card horizontal-product-card--${index + 1}`}
               href={item.href || "/products"}
               key={item.title}
+              aria-label={item.title ? `${item.title} product category` : `Product category ${index + 1}`}
             >
               <div className="horizontal-product-card__media">
                 <Image

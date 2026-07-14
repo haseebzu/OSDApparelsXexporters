@@ -10,12 +10,19 @@ import {
 import { Reveal } from "@/components/shared/Reveal";
 import { SkillCounters } from "@/components/about/SkillCounters";
 import { contact, stats, trustPoints } from "@/data/site";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "About OSD Apparels",
-  description: "Meet OSD Apparels, a modern manufacturing partner for global apparel brands and sourcing teams.",
+  title: "About OSD Apparels | Garment Exporter Pakistan",
+  description:
+    "Learn about OSD Apparels, a garment exporter in Pakistan supporting private-label brands, retailers, and sourcing teams with reliable apparel manufacturing.",
   path: "/about",
+  keywords: [
+    "about garment exporter Pakistan",
+    "about apparel manufacturer Faisalabad",
+    "private label garment manufacturer Pakistan",
+  ],
+  category: "About",
 });
 
 const coreValues = [
@@ -107,8 +114,14 @@ const pillarCards = [
 ];
 
 export default function AboutPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="about-hero">
         <div className="about-hero__topbar">
           <div className="container about-hero__topbar-inner">
@@ -145,8 +158,9 @@ export default function AboutPage() {
             <div className="section-accent" />
             <h2 className="section-title">Do well, live well, and dress well with a factory partner built for modern buyers.</h2>
             <p className="section-text">
-              OSD Apparels supports brands, sourcing teams, and private-label businesses with practical manufacturing
-              guidance, clear communication, and dependable garment execution from Faisalabad.
+              OSD Apparels is a garment exporter in Pakistan supporting brands, sourcing teams, and private-label
+              businesses with practical manufacturing guidance, clear communication, and dependable garment execution
+              from Faisalabad.
             </p>
             <p className="section-text">
               We work across knitted and woven categories, helping buyers move from concept discussion to sample

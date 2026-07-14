@@ -1,25 +1,51 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionIntro } from "@/components/shared/SectionIntro";
 import { getCategoryImage, getFamily } from "@/lib/products";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, buildItemListSchema, createMetadata } from "@/lib/metadata";
 
 const familySlug = "mens";
 
 export const metadata = createMetadata({
-  title: "Men's Apparel Collection",
+  title: "Men's Clothing Manufacturer Pakistan | OSD Apparels",
+  description:
+    "Explore menswear categories from OSD Apparels, a men's clothing manufacturer in Pakistan for retailers, private-label brands, and wholesale buyers.",
   path: "/products/mens",
+  keywords: [
+    "men's clothing manufacturer Pakistan",
+    "menswear manufacturer Pakistan",
+    "private label menswear manufacturer",
+  ],
+  category: "Menswear Manufacturing",
 });
 
 export default function MensProductsPage() {
   const family = getFamily(familySlug);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: family.label, path: "/products/mens" },
+  ]);
+  const itemListSchema = buildItemListSchema({
+    name: `${family.label} categories`,
+    description: family.description,
+    path: "/products/mens",
+    items: family.categories.map((cat) => ({
+      name: cat.title,
+      description: cat.description,
+      path: `/products/mens#${cat.slug}`,
+    })),
+  });
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <PageHero
         eyebrow="Men's Catalog"
-        title="Menswear categories built for retail collections, custom programs, and scaled repeat orders."
+        title="Menswear categories from a men's clothing manufacturer in Pakistan."
         text={family.description}
         highlights={["Streetwear to Basics", "Low MOQ", "Retail Ready Finishes"]}
       />
@@ -28,22 +54,26 @@ export default function MensProductsPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Catalog"
-            title="Browse menswear categories"
-            text="Select a category to request a quote. Each card links to the quote flow for quick enquiries."
+            title="Browse menswear categories for private-label and wholesale programs"
+            text="Select a category to request a quote. Each card connects you to OSD Apparels for faster menswear manufacturing enquiries."
             align="left"
           />
 
           <div className="cards-grid">
             {family.categories.map((cat, i) => {
               const image = getCategoryImage(familySlug, cat.slug);
-              const backgroundImage = `linear-gradient(180deg, rgba(35, 42, 32, 0.08), rgba(35, 42, 32, 0.36)), url("${encodeURI(image)}")`;
 
               return (
                 <Reveal key={cat.slug} className="product-card">
-                  <div
-                    className={`product-card__visual product-card__visual--${i % 3}`}
-                    style={{ backgroundImage }}
-                  />
+                  <div className={`product-card__visual product-card__visual--${i % 3}`}>
+                    <Image
+                      src={image}
+                      alt={cat.title}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="product-card__visual-image"
+                    />
+                  </div>
                   <div className="product-card__body">
                     <p className="product-card__eyebrow">50 pcs per style</p>
                     <h3>{cat.title}</h3>

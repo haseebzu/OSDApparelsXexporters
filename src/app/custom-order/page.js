@@ -3,11 +3,19 @@ import { QuoteForm } from "@/components/forms/QuoteForm";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { printingTechniques } from "@/data/site";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Custom OEM & Private Label",
+  title: "Private Label Clothing Manufacturer | Custom OEM Pakistan",
+  description:
+    "Work with OSD Apparels as a private-label clothing manufacturer in Pakistan for OEM development, custom garments, trims, decoration, and export delivery.",
   path: "/custom-order",
+  keywords: [
+    "private label clothing manufacturer",
+    "custom OEM clothing manufacturer Pakistan",
+    "custom garment manufacturer Pakistan",
+  ],
+  category: "Custom Manufacturing",
 });
 
 const customizationCards = [
@@ -132,12 +140,18 @@ const oemProof = [
 ];
 
 export default function CustomOrderPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Custom Order", path: "/custom-order" },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="Custom OEM"
         title="Custom fashion apparel manufacturing for private label, OEM, and export programs."
-        text="Build your garments with a manufacturing partner that supports concept development, sizing, trims, printing, embroidery, packaging, and worldwide shipment under one professional workflow."
+        text="Build your garments with a private-label clothing manufacturer in Pakistan that supports concept development, sizing, trims, printing, embroidery, packaging, and worldwide shipment under one professional workflow."
         primaryCta={{ href: "/quote", label: "Request Free Quote" }}
         secondaryCta={{ href: "/contact", label: "Talk To Our Team" }}
       />

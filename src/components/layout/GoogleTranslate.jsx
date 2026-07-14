@@ -6,7 +6,12 @@ import { getIncludedLanguages } from "@/lib/googleTranslate";
 export function GoogleTranslate() {
   return (
     <>
-      <div id="google_translate_element" className="google-translate-anchor" aria-hidden="true" />
+      <div
+        id="google_translate_element"
+        className="google-translate-anchor"
+        role="group"
+        aria-label="Google Translate language widget"
+      />
       <Script id="google-translate-init" strategy="afterInteractive">
         {`
           window.googleTranslateElementInit = window.googleTranslateElementInit || function () {

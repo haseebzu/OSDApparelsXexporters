@@ -45,13 +45,12 @@ export function CsrShowcase() {
         </p>
       </Reveal>
 
-      <div className="csr-showcase__tabs" role="tablist" aria-label="CSR highlights">
+      <div className="csr-showcase__tabs" aria-label="CSR highlights">
         {csrItems.map((item, index) => (
           <button
             key={item.id}
             type="button"
-            role="tab"
-            aria-selected={activeId === item.id}
+            aria-pressed={activeId === item.id}
             className={`csr-showcase__tab${activeId === item.id ? " csr-showcase__tab--active" : ""}`}
             onClick={() => setActiveId(item.id)}
           >

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CsrShowcase } from "@/components/home/CsrShowcase";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { HeroSlider } from "@/components/home/HeroSlider";
@@ -225,8 +226,17 @@ const facilitySections = [
 ];
 
 export const metadata = createMetadata({
-  title: "OSD Apparels | Modern Fashion Manufacturer & Exporter Worldwide",
+  title: "Apparel Manufacturer Pakistan | OSD Apparels Global",
+  description:
+    "OSD Apparels is an apparel manufacturer in Pakistan for private-label brands, retailers, and import buyers. Explore export-ready production and request a quote.",
   path: "/",
+  keywords: [
+    "apparel manufacturer Pakistan",
+    "OEM clothing manufacturer Pakistan",
+    "private label apparel manufacturer Pakistan",
+    "garment exporter Faisalabad",
+  ],
+  category: "Apparel Manufacturing",
 });
 
 export default function HomePage() {
@@ -240,11 +250,12 @@ export default function HomePage() {
             <div>
               <p className="section-eyebrow">Who We Are</p>
               <div className="section-accent" />
-              <h2 className="section-title">A custom fashion apparel manufacturer built for brands, retailers, and export buyers.</h2>
+              <h2 className="section-title">A Pakistan apparel manufacturer built for brands, retailers, and export buyers.</h2>
               <p className="section-text">
-                OSD Apparels supports private-label programs, custom developments, and bulk apparel production with a
-                more structured path from concept to shipment. Our strength is combining fashion-focused execution,
-                low-MOQ flexibility, and worldwide export readiness in one manufacturing workflow.
+                OSD Apparels is an apparel manufacturer in Pakistan supporting private-label programs, custom
+                developments, and bulk garment production with a more structured path from concept to shipment. Our
+                strength is combining fashion-focused execution, low-MOQ flexibility, and worldwide export readiness
+                in one manufacturing workflow.
               </p>
               <div className="button-row who-we-are__actions">
                 <Link className="button button--gold" href="/about">
@@ -269,6 +280,13 @@ export default function HomePage() {
           <div className="who-we-are__layout">
             <Reveal className="who-we-are__visual">
               <div className="who-we-are__photo">
+                <Image
+                  src="/images/Who we are.png"
+                  alt="OSD Apparels production floor supporting export-ready apparel manufacturing."
+                  fill
+                  sizes="(max-width: 900px) 100vw, 55vw"
+                  className="who-we-are__photo-image"
+                />
                 <div className="who-we-are__photo-badge">
                   <span>Export-ready apparel manufacturing</span>
                   <strong>Structured for serious buyers</strong>
@@ -385,28 +403,25 @@ export default function HomePage() {
 
             <div className="facility-showcase__grid">
               {facilitySections.map((item, index) => (
-                (() => {
-                  const imageUrl = encodeURI(item.image);
-
-                  return (
                 <Reveal
                   className={`facility-card${item.tone === "wide" ? " facility-card--wide" : ""}`}
                   delay={index * 0.04}
                   key={item.title}
                 >
-                  <div
-                    className="facility-card__image"
-                    style={{
-                      backgroundImage: `linear-gradient(180deg, rgba(35, 42, 32, 0.12), rgba(35, 42, 32, 0.32)), url("${imageUrl}")`,
-                    }}
-                  />
+                  <div className="facility-card__image">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="facility-card__image-media"
+                    />
+                  </div>
                   <div className="facility-card__content">
                     <h3>{item.title}</h3>
                     <p>{item.text}</p>
                   </div>
                 </Reveal>
-                  );
-                })()
               ))}
             </div>
           </div>

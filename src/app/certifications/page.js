@@ -1,20 +1,34 @@
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { certifications } from "@/data/site";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Certifications",
+  title: "Garment Manufacturer Certifications | OSD Apparels",
   path: "/certifications",
+  description:
+    "Review the garment manufacturer certifications, audit signals, and compliance standards that help position OSD Apparels as a trusted export partner in Pakistan.",
+  keywords: [
+    "garment manufacturer certifications",
+    "apparel compliance Pakistan",
+    "certified garment exporter Pakistan",
+  ],
+  category: "Certifications",
 });
 
 export default function CertificationsPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Certifications", path: "/certifications" },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="Certifications"
-        title="Global trust signals presented with the visual weight they deserve."
-        text="This page is designed to reassure brands, retailers, and sourcing managers who need evidence of responsible manufacturing alignment."
+        title="Certifications and compliance signals that support confident apparel sourcing."
+        text="This page helps brands, retailers, and sourcing managers review the audit standards and manufacturing signals they expect before placing export apparel orders."
         highlights={["GOTS", "SEDEX", "ISO Driven Trust"]}
       />
       <section className="section">

@@ -3,20 +3,34 @@ import { QuoteForm } from "@/components/forms/QuoteForm";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { contact } from "@/data/site";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Contact Us",
+  title: "Contact OSD Apparels | Apparel Manufacturer Pakistan",
+  description:
+    "Contact OSD Apparels for private-label production, export-ready apparel manufacturing, sampling support, and wholesale garment enquiries from Pakistan.",
   path: "/contact",
+  keywords: [
+    "contact apparel manufacturer Pakistan",
+    "contact garment exporter Faisalabad",
+    "private label clothing manufacturer contact",
+  ],
+  category: "Contact",
 });
 
 export default function ContactPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Contact", path: "/contact" },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="Contact"
         title="Talk to OSD Apparels through the channel that works best for your buying team."
-        text="A cleaner contact experience for global buyers who want direct details, quick support, and a professional enquiry form in one place."
+        text="Contact an apparel manufacturer in Pakistan for private-label development, bulk production planning, export support, and direct buyer communication."
         highlights={["WhatsApp First", "Fast Replies", "Global Buyer Friendly"]}
       />
 

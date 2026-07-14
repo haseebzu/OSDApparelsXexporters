@@ -2,9 +2,14 @@ import Link from "next/link";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { getPublishedBlogPostBySlug, getPublishedBlogPosts } from "@/lib/blog-posts";
-import { createMetadata } from "@/lib/metadata";
+import { brand, buildBreadcrumbSchema, createMetadata, toAbsoluteUrl } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
+  const posts = await getPublishedBlogPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -12,19 +17,54 @@ export async function generateMetadata({ params }) {
   const post = posts.find((entry) => entry.slug === slug);
   if (!post) return {};
 
+  const image = post.cover_image || "/images/osd-logo.png";
+  const publishedTime = post.published_at ? new Date(post.published_at).toISOString() : undefined;
+
   return createMetadata({
     title: post.title,
     description: post.excerpt,
     path: `/blog/${post.slug}`,
+    type: "article",
+    images: [image],
+    category: post.category,
+    publishedTime,
+    keywords: [post.category, "apparel sourcing", "garment manufacturing", "private label clothing"],
   });
 }
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
   const post = await getPublishedBlogPostBySlug(slug);
+  const coverImage = post.cover_image || "/images/osd-logo.png";
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: [toAbsoluteUrl(coverImage)],
+    datePublished: post.published_at || undefined,
+    dateModified: post.published_at || undefined,
+    articleSection: post.category,
+    mainEntityOfPage: toAbsoluteUrl(`/blog/${post.slug}`),
+    publisher: {
+      "@type": "Organization",
+      name: brand.name,
+      logo: {
+        "@type": "ImageObject",
+        url: toAbsoluteUrl(brand.defaultImage),
+      },
+    },
+  };
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <PageHero eyebrow={post.category} title={post.title} text={post.excerpt} highlights={["Insight Article", "Brand Education", "Commercial Context"]} />
       <section className="section">
         <div className="container two-col-grid">

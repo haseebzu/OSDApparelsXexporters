@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import {
   Factory,
@@ -110,12 +111,15 @@ export function ProcessTimeline({ steps, variant = "default" }) {
               >
                 <h3 className="process-map__title">{step.title.toUpperCase()}</h3>
                 <div className="process-map__circle">
-                  <div
-                    className="process-map__photo"
-                    style={{
-                      backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(${stepImage})`,
-                    }}
-                  />
+                  <div className="process-map__photo">
+                    <Image
+                      src={stepImage}
+                      alt={step.title}
+                      fill
+                      sizes="160px"
+                      className="process-map__photo-image"
+                    />
+                  </div>
                 </div>
                 <p className="process-map__text">{step.description}</p>
               </article>

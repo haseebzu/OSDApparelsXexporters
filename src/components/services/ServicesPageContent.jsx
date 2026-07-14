@@ -328,22 +328,22 @@ export function ServicesPageContent() {
         <Reveal className="services-page__intro">
           <p className="section-eyebrow">What we offer</p>
           <div className="section-accent" />
-          <h1 className="services-page__title">Production services built for labels, retailers, and export buyers</h1>
+          <h1 className="services-page__title">Custom clothing manufacturing services built for low-MOQ and export buyers</h1>
           <p className="services-page__subtitle">
-            OSD Apparels makes garments, manages approvals, and ships worldwide. This page shows the exact service
-            blocks buyers use when they need dependable manufacturing support without production guesswork.
+            OSD Apparels supports custom clothing manufacturing with low MOQ flexibility, private-label development,
+            production management, and worldwide shipment. This page shows the exact service blocks buyers use when
+            they need dependable manufacturing support without production guesswork.
           </p>
         </Reveal>
 
-        <div className="services-page__cylinders" role="tablist" aria-label="Service categories">
+        <div className="services-page__cylinders" aria-label="Service categories">
           <div className="services-page__cylinders-track" aria-hidden="true" />
           {serviceSections.map((section) => (
             <button
-              aria-selected={activeId === section.id}
+              aria-pressed={activeId === section.id}
               className={`services-page__cylinder${activeId === section.id ? " on" : ""}`}
               key={section.id}
               onClick={() => setActiveId(section.id)}
-              role="tab"
               type="button"
             >
               <span>{section.navLabel}</span>

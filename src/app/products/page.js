@@ -4,7 +4,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { productFamilies } from "@/data/site";
 import { getFamilyImage } from "@/lib/products";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 const productShowcaseImages = [
   "/images/men formal shirt full.jpg",
@@ -200,8 +200,14 @@ export const metadata = createMetadata({
 });
 
 export default function ProductsPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="Product Catalog"
         title="Explore export-ready apparel categories built for modern buyers."

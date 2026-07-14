@@ -3,11 +3,19 @@ import Link from "next/link";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { getPublishedBlogPosts } from "@/lib/blog-posts";
-import { createMetadata } from "@/lib/metadata";
+import { createMetadata, buildBreadcrumbSchema, brand } from "@/lib/metadata";
 
 export const metadata = createMetadata({
   title: "Blog",
+  description:
+    "Read OSD Apparels insights on private label clothing, garment sourcing in Pakistan, kidswear, menswear, production planning, and export-ready apparel development.",
   path: "/blog",
+  keywords: [
+    "garment manufacturing blog",
+    "private label clothing insights",
+    "Pakistan apparel sourcing blog",
+    "fashion production guide",
+  ],
 });
 
 export const dynamic = "force-dynamic";
@@ -38,9 +46,31 @@ export default async function BlogPage() {
     ...post,
     visual: getPostImage(post, index),
   }));
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+  ]);
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: `${brand.name} Blog`,
+    url: `${brand.siteUrl}/blog`,
+    description:
+      "Educational apparel sourcing content for buyers, founders, retailers, and private-label brands.",
+    publisher: {
+      "@type": "Organization",
+      name: brand.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${brand.siteUrl}${brand.defaultImage}`,
+      },
+    },
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
       <PageHero
         eyebrow="Blog"
         title="Launch-ready content that supports search visibility and buyer education."

@@ -193,7 +193,6 @@ export function LanguageSwitcher() {
 
             <div
               className="language-nav__list"
-              role="listbox"
               aria-label="Language options"
               onKeyDown={handleListKeyDown}
             >

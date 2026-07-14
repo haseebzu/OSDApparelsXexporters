@@ -1,20 +1,34 @@
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Request a Quote",
+  title: "Get a Quote | Private Label Clothing Manufacturer",
+  description:
+    "Request a quote from OSD Apparels for private-label clothing manufacturing, custom development, bulk production, and export-ready apparel support.",
   path: "/quote",
+  keywords: [
+    "get a quote clothing manufacturer",
+    "private label clothing manufacturer quote",
+    "apparel manufacturing quote Pakistan",
+  ],
+  category: "Lead Generation",
 });
 
 export default function QuotePage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Quote", path: "/quote" },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         eyebrow="Quote Form"
-        title="Tell us what you want and we will shape the right production plan."
-        text="A high-intent lead page with a premium form layout, fast validation, and clean follow-up messaging."
+        title="Get a quote for private-label clothing manufacturing and export-ready production."
+        text="Share your product requirements with OSD Apparels and we will shape the right sampling, costing, and production plan for your buying team."
       />
       <section className="section section--light">
         <div className="container quote-layout">
