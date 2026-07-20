@@ -50,7 +50,7 @@ export function SkillCounters({ skills }) {
             <SkillCounter value={skill.value} />
           </div>
           <strong>{skill.label}</strong>
-          <small>Integrated into sourcing, sampling, and final production review.</small>
+          <small>{skill.text}</small>
         </div>
       ))}
     </div>

@@ -1,5 +1,5 @@
-import { testimonials as fallbackTestimonials, blogPosts as fallbackBlogPosts } from "../../src/data/site";
-import { createReferenceId } from "../../src/lib/validation";
+import { testimonials as fallbackTestimonials, blogPosts as fallbackBlogPosts } from "@/lib/shared-data";
+import { createReferenceId } from "@/lib/validation";
 import { getAdminSupabaseClient, isSupabaseReady } from "@/lib/supabase/admin";
 
 function formatDate(value) {

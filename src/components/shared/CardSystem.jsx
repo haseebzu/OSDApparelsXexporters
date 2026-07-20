@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 function StatValue({ value }) {
@@ -55,7 +54,7 @@ function StatValue({ value }) {
 
 export function ContentCard({ variant, ...props }) {
   if (variant === "service") {
-    const { label, title, text, image, href = "/contact" } = props;
+    const { label, title, text, image } = props;
 
     return (
       <article className="content-card content-card--service">
@@ -69,9 +68,6 @@ export function ContentCard({ variant, ...props }) {
           <span className="content-card__service-label">{label}</span>
           <h3>{title}</h3>
           <p>{text}</p>
-          <Link className="content-card__service-link" href={href}>
-            Learn More
-          </Link>
         </div>
       </article>
     );

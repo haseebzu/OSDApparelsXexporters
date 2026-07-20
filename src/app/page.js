@@ -261,9 +261,6 @@ export default function HomePage() {
                 <Link className="button button--gold" href="/about">
                   More About OSD
                 </Link>
-                <Link className="button button--outline" href="/factory-tour">
-                  See Factory Tour
-                </Link>
               </div>
             </div>
 
@@ -287,10 +284,6 @@ export default function HomePage() {
                   sizes="(max-width: 900px) 100vw, 55vw"
                   className="who-we-are__photo-image"
                 />
-                <div className="who-we-are__photo-badge">
-                  <span>Export-ready apparel manufacturing</span>
-                  <strong>Structured for serious buyers</strong>
-                </div>
               </div>
             </Reveal>
 
@@ -383,7 +376,7 @@ export default function HomePage() {
           <SectionIntro
             eyebrow="How It Works"
             title="A signature sourcing flow designed to feel disciplined at every stage."
-            text="This is the scroll moment that should separate OSD from flat exporter sites: a process built to visually reinforce control, visibility, and calm execution."
+            text="A step-by-step methodology that combines precision, expertise, and consistent execution."
           />
 
           <ProcessTimeline steps={processSteps} variant="map" />
@@ -396,8 +389,7 @@ export default function HomePage() {
             <Reveal className="testimonial-showcase__intro">
               <h2 className="section-title testimonial-showcase__title">Inside the custom apparel manufacturing setup behind OSD Apparels</h2>
               <p className="section-text testimonial-showcase__text">
-                A visual overview of the departments, systems, and factory capabilities that support quality, scale,
-                consistency, and worldwide shipment readiness.
+                See how OSD Apparels combines cutting-edge apparel manufacturing, efficient production, and rigorous quality standards to produce custom garments at scales.
               </p>
             </Reveal>
 

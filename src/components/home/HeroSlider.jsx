@@ -8,7 +8,6 @@ import {
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
-  useTransform,
 } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -112,8 +111,14 @@ function HeroHeadline({ state, priority = false }) {
   return (
     <div className="hero-cutout__state">
       <div className="hero-cutout__headline-stack">
-        <p className="hero-cutout__topline">{state.topline}</p>
-        <span className="hero-cutout__topline-focal" aria-hidden="true">
+        <div className="hero-cutout__copy">
+          <p className="hero-cutout__topline">{state.topline}</p>
+          <h1 className={`hero-cutout__display${isLongDisplay ? " hero-cutout__display--long" : ""}`}>
+            <AccentWord word={state.display} />
+          </h1>
+        </div>
+
+        <div className="hero-cutout__visual" aria-hidden="true">
           <Image
             src={state.image}
             alt="OSD Apparels focal product hero"
@@ -124,11 +129,7 @@ function HeroHeadline({ state, priority = false }) {
             sizes="(max-width: 960px) 42vw, 26vw"
             className="hero-cutout__visual-image hero-cutout__visual-image--focal"
           />
-        </span>
-
-        <h1 className={`hero-cutout__display${isLongDisplay ? " hero-cutout__display--long" : ""}`}>
-          <AccentWord word={state.display} />
-        </h1>
+        </div>
       </div>
     </div>
   );
@@ -170,48 +171,24 @@ function MarqueeStrip({ reducedMotion, images }) {
 
 export function HeroSlider() {
   const shouldReduceMotion = useReducedMotion();
-  const [hasMounted, setHasMounted] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [mobilePhase, setMobilePhase] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const rootRef = useRef(null);
   const pinRef = useRef(null);
-  const stateRefs = useRef([]);
-  const prefersReducedMotion = hasMounted ? shouldReduceMotion : false;
+  const prefersReducedMotion = shouldReduceMotion;
   const { scrollYProgress } = useScroll({
     target: rootRef,
     offset: ["start start", "end start"],
   });
 
-  const mobileStateStyles = [
-    {
-      opacity: useTransform(scrollYProgress, [0, 0.12, 0.26, 0.34], [1, 1, 0.18, 0]),
-      y: useTransform(scrollYProgress, [0, 0.34], [0, -24]),
-    },
-    {
-      opacity: useTransform(scrollYProgress, [0.2, 0.34, 0.52, 0.68], [0, 0.94, 0.94, 0]),
-      y: useTransform(scrollYProgress, [0.2, 0.34, 0.68], [24, 0, -24]),
-    },
-    {
-      opacity: useTransform(scrollYProgress, [0.54, 0.72, 1], [0, 1, 1]),
-      y: useTransform(scrollYProgress, [0.54, 0.72], [24, 0]),
-    },
-  ];
-
   useMotionValueEvent(scrollYProgress, "change", (value) => {
-    if (value < 0.34) {
-      setMobilePhase(0);
-    } else if (value < 0.72) {
-      setMobilePhase(1);
-    } else {
-      setMobilePhase(2);
-    }
+    const nextIndex = value < 0.34 ? 0 : value < 0.68 ? 1 : 2;
+    setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
   });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-
-    setHasMounted(true);
 
     const frameId = window.requestAnimationFrame(() => {
       const hasLoaded = window.sessionStorage.getItem("osd-hero-preloaded");
@@ -237,52 +214,18 @@ export function HeroSlider() {
 
   useEffect(() => {
     if (typeof window === "undefined" || prefersReducedMotion || !isDesktop) return;
-    if (!pinRef.current || stateRefs.current.length < heroStates.length) return;
+    if (!pinRef.current) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      stateRefs.current.forEach((element, index) => {
-        if (!element) return;
-        gsap.set(element, {
-          opacity: index === 0 ? 1 : 0,
-          y: index === 0 ? 0 : 24,
-          visibility: index === 0 ? "visible" : "hidden",
-        });
+      ScrollTrigger.create({
+        trigger: pinRef.current,
+        start: "top top",
+        end: "+=155%",
+        pin: true,
+        invalidateOnRefresh: true,
       });
-
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: pinRef.current,
-          start: "top top",
-          end: "+=190%",
-          pin: true,
-          scrub: true,
-          invalidateOnRefresh: true,
-          onUpdate: ({ progress }) => {
-            stateRefs.current.forEach((element, index) => {
-              if (!element) return;
-
-              if (progress < 0.42) {
-                element.style.visibility = index === 2 ? "hidden" : "visible";
-                return;
-              }
-
-              if (progress < 0.84) {
-                element.style.visibility = index === 0 ? "hidden" : "visible";
-                return;
-              }
-
-              element.style.visibility = index === 2 ? "visible" : "hidden";
-            });
-          },
-        },
-      });
-
-      timeline.to(stateRefs.current[0], { opacity: 0, y: -24, ease: "none" }, 0);
-      timeline.to(stateRefs.current[1], { opacity: 1, y: 0, ease: "none" }, 0);
-      timeline.to(stateRefs.current[1], { opacity: 0, y: -24, ease: "none" }, 0.42);
-      timeline.to(stateRefs.current[2], { opacity: 1, y: 0, ease: "none" }, 0.42);
     }, rootRef);
 
     return () => ctx.revert();
@@ -301,29 +244,18 @@ export function HeroSlider() {
 
             <div className="hero-cutout__stage">
               <div className="hero-cutout__states">
-                {heroStates.map((state, index) => {
-                  const mobileStyle = !isDesktop && !prefersReducedMotion ? mobileStateStyles[index] : undefined;
-                  const mobileHidden =
-                    !isDesktop &&
-                    !prefersReducedMotion &&
-                    ((mobilePhase === 0 && index === 2) ||
-                      (mobilePhase === 1 && index === 0) ||
-                      (mobilePhase === 2 && index !== 2));
-
-                  return (
-                    <motion.div
-                      key={state.id}
-                      className={`hero-cutout__state-shell${index > 0 ? " hero-cutout__state-shell--overlay" : ""}`}
-                      ref={(element) => {
-                        stateRefs.current[index] = element;
-                      }}
-                      style={mobileStyle}
-                      data-state-hidden={mobileHidden ? "true" : "false"}
-                    >
-                      <HeroHeadline state={state} priority={index === 0} />
-                    </motion.div>
-                  );
-                })}
+                <AnimatePresence initial={false} mode="wait">
+                  <motion.div
+                    key={heroStates[activeIndex].id}
+                    className="hero-cutout__state-shell"
+                    initial={{ opacity: 0, y: 28 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -22 }}
+                    transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <HeroHeadline state={heroStates[activeIndex]} priority={activeIndex === 0} />
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 

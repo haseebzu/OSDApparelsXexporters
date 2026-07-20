@@ -4,8 +4,8 @@ import { redirect } from "next/navigation";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getAdminSupabaseClient, isSupabaseReady } from "@/lib/supabase/admin";
 import { requestPublicRevalidation } from "@/lib/revalidate";
-import { isR2Configured, uploadBufferToR2 } from "../../src/lib/r2";
-import { isMailConfigured, sendAdminReplyEmail } from "../../src/lib/mail";
+import { isR2Configured, uploadBufferToR2 } from "@/lib/r2";
+import { isMailConfigured, sendAdminReplyEmail } from "@/lib/mail";
 
 function successResult(message, extra = {}) {
   return {

@@ -1,7 +1,6 @@
 import {
   Award,
   BadgeCheck,
-  ArrowRight,
   ShieldCheck,
   Globe2,
   Handshake,
@@ -57,10 +56,26 @@ const coreValues = [
 ];
 
 const skillScores = [
-  { label: "Textile Services", value: 90 },
-  { label: "Material Readiness", value: 95 },
-  { label: "Sewing Services", value: 92 },
-  { label: "Design Support", value: 96 },
+  {
+    label: "Textile Services",
+    value: 90,
+    text: "Fabric direction, GSM understanding, and sourcing clarity that support dependable bulk decisions.",
+  },
+  {
+    label: "Material Readiness",
+    value: 95,
+    text: "Trim approvals, fabric availability, and pre-production checks aligned before manufacturing begins.",
+  },
+  {
+    label: "Sewing Services",
+    value: 92,
+    text: "Construction consistency, operator discipline, and stitching control maintained across every order run.",
+  },
+  {
+    label: "Design Support",
+    value: 96,
+    text: "Fit comments, sampling feedback, and practical development guidance for buyer-ready collections.",
+  },
 ];
 
 const teamMembers = [
@@ -72,9 +87,9 @@ const teamMembers = [
 
 const achievementStats = [
   stats[0],
-  { label: "Years Experience", value: "25+" },
+  { label: "Years Experience", value: "5+" },
   { label: "Textile Projects", value: "1,450+" },
-  { label: "Buyer Reviews", value: "999+" },
+  { label: "Buyer Reviews", value: "250+" },
 ];
 
 const reasonsToChoose = [
@@ -148,7 +163,7 @@ export default function AboutPage() {
           <Reveal className="about-story__visual">
             <div className="about-story__image" />
             <div className="about-story__badge">
-              <strong>25+</strong>
+              <strong>5+</strong>
               <span>Years Experience</span>
             </div>
           </Reveal>
@@ -358,9 +373,6 @@ export default function AboutPage() {
                 <span className="about-pillars__number">{pillar.number}</span>
                 <h3>{pillar.title}</h3>
                 <p>{pillar.text}</p>
-                <span className="about-pillars__link">
-                  Read more <ArrowRight size={18} />
-                </span>
               </Reveal>
             ))}
           </div>

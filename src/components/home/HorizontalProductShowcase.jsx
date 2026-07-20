@@ -68,6 +68,7 @@ export function HorizontalProductShowcase({ items }) {
               <button
                 key={`dot-${index}`}
                 type="button"
+                suppressHydrationWarning
                 className={`horizontal-products__dot${index === activeStep ? " is-active" : ""}`}
                 aria-label={`Go to product position ${index + 1}`}
                 aria-pressed={index === activeStep}
@@ -79,6 +80,7 @@ export function HorizontalProductShowcase({ items }) {
           <div className="horizontal-products__arrows">
             <button
               type="button"
+              suppressHydrationWarning
               className="horizontal-products__arrow-button"
               aria-label="Previous products"
               onClick={() => scrollToStep(activeStep - 1)}
@@ -88,6 +90,7 @@ export function HorizontalProductShowcase({ items }) {
             </button>
             <button
               type="button"
+              suppressHydrationWarning
               className="horizontal-products__arrow-button"
               aria-label="Next products"
               onClick={() => scrollToStep(activeStep + 1)}

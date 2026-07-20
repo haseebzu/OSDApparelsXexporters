@@ -50,6 +50,7 @@ export function CsrShowcase() {
           <button
             key={item.id}
             type="button"
+            suppressHydrationWarning
             aria-pressed={activeId === item.id}
             className={`csr-showcase__tab${activeId === item.id ? " csr-showcase__tab--active" : ""}`}
             onClick={() => setActiveId(item.id)}

@@ -163,8 +163,8 @@ export default function CustomOrderPage() {
             <div className="section-accent" />
             <h2 className="section-title">Everything needed for a modern custom apparel manufacturing program.</h2>
             <p className="section-text">
-              This page is structured for buyers who need a clearer view of what can be customized across product
-              development, production, branding, and export handling.
+              Built for private-label brands, retailers, and import buyers who need a clear view of how OSD Apparels
+              supports design development, sizing, trims, decoration, packaging, and export-ready production.
             </p>
           </Reveal>
 
@@ -251,11 +251,27 @@ export default function CustomOrderPage() {
             </p>
           </Reveal>
 
-          <div className="cards-grid">
+          <div className="printing-techniques-grid">
             {printingTechniques.map((technique, index) => (
-              <Reveal className="detail-card" delay={index * 0.04} key={technique.title}>
-                <h3>{technique.title}</h3>
-                <p>{technique.bestFor}</p>
+              <Reveal
+                className={`printing-technique-card printing-technique-card--${technique.tone || "light"}`}
+                delay={index * 0.04}
+                key={technique.title}
+              >
+                <div className="printing-technique-card__media">
+                  <Image
+                    src={technique.image}
+                    alt={technique.title}
+                    fill
+                    sizes="(max-width: 720px) 88vw, (max-width: 1080px) 44vw, 30vw"
+                    className="printing-technique-card__image"
+                  />
+                </div>
+                <div className="printing-technique-card__body">
+                  <span className="printing-technique-card__eyebrow">Printing Method</span>
+                  <h3>{technique.title}</h3>
+                  <p>{technique.bestFor}</p>
+                </div>
               </Reveal>
             ))}
           </div>

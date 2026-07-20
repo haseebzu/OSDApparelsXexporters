@@ -1,7 +1,7 @@
 export const contact = {
   email: "osdapparels@gmail.com",
-  phone: "+92 3710775687",
-  whatsapp: "+92 3710775687",
+  phone: "+92 3234578442",
+  whatsapp: "+92 3234578442",
   address: "Faisalabad, Punjab, Pakistan",
   hours: "24/7",
 };
@@ -35,7 +35,7 @@ export const heroSlides = [
     title: "From Faisalabad to international markets with disciplined production and dependable finishing.",
     text: "Sampling, cutting, stitching, printing, embroidery, packaging, and dispatch are aligned under one professional manufacturing system built for worldwide export.",
     primaryCta: { href: "/custom-order", label: "Build Custom Collection" },
-    secondaryCta: { href: "/factory-tour", label: "See Factory Tour" },
+    secondaryCta: { href: "/services", label: "Explore Services" },
     image: "/images/Who we are.png",
   },
   {
@@ -390,32 +390,44 @@ export const printingTechniques = [
   {
     title: "Screen Printing",
     bestFor: "Bold logos, graphics, and dependable retail production runs.",
+    image: "/images/screen printing.jpg.jpeg",
+    tone: "dark",
   },
   {
     title: "Embroidery",
     bestFor: "Premium logos, patches, and elevated branding on polos, jackets, and caps.",
+    image: "/images/Embrodiry.png",
+    tone: "light",
   },
   {
     title: "DTG",
     bestFor: "Detailed full-color artwork and startup-friendly short runs.",
+    image: "/images/dtg prinitng.jpg.jpeg",
+    tone: "light",
   },
   {
     title: "Sublimation",
     bestFor: "Sportswear and all-over print applications with strong color retention.",
+    image: "/images/sublimation.jpg.jpeg",
+    tone: "dark",
   },
   {
     title: "Heat Transfer",
     bestFor: "Names, numbers, test runs, and crisp branding placement.",
+    image: "/images/heat transfer.jpg.jpeg",
+    tone: "light",
   },
   {
     title: "Puff Print",
     bestFor: "Raised streetwear graphics and dimensional logo treatments.",
+    image: "/images/puff print.jpg.jpeg",
+    tone: "light",
   },
 ];
 
 export const trustPoints = [
   "Dedicated account communication",
-  "Low MOQ from 30 pieces per style",
+  "Low MOQ from 50 pieces per style",
   "Sampling before bulk confirmation",
   "Export support for global buyers",
   "Multiple decoration capabilities in-house",

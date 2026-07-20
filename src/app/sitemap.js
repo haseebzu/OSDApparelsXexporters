@@ -9,7 +9,6 @@ const staticRoutes = [
   "/how-it-works",
   "/certifications",
   "/sustainability",
-  "/factory-tour",
   "/testimonials",
   "/blog",
   "/quote",
