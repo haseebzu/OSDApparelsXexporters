@@ -5,10 +5,10 @@ import { certifications } from "@/data/site";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Sustainable Clothing Manufacturer Pakistan | OSD",
+  title: "Sustainable Apparel Manufacturing Pakistan | OSD Apparels",
   path: "/sustainability",
   description:
-    "Discover how OSD Apparels supports sustainable clothing manufacturing in Pakistan through responsible sourcing, audit-friendly systems, and ethical production conversations.",
+    "Explore OSD Apparels approach to sustainable apparel manufacturing in Pakistan, with responsible sourcing, ethical production, and supply chain transparency.",
   keywords: [
     "sustainable clothing manufacturer Pakistan",
     "ethical garment manufacturer Pakistan",
@@ -25,7 +25,7 @@ export default function SustainabilityPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Sustainability"
         title="Sustainable clothing manufacturing in Pakistan, supported by process and proof."

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getImageAlt } from "@/lib/image-alt";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
@@ -194,8 +195,9 @@ function CategoryLineIcon({ type }) {
 }
 
 export const metadata = createMetadata({
-  title: "All Products",
-  description: "Explore the full OSD Apparels product architecture for menswear and kidswear manufacturing.",
+  title: "Knitted & Woven Garments Manufacturer | OSD Apparels",
+  description:
+    "Explore knitted and woven garments from OSD Apparels in Pakistan, including menswear, kidswear, hoodies, denim, activewear, and private label collections.",
   path: "/products",
 });
 
@@ -207,7 +209,7 @@ export default function ProductsPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Product Catalog"
         title="Explore export-ready apparel categories built for modern buyers."
@@ -280,7 +282,7 @@ export default function ProductsPage() {
               <Reveal className={`product-collage__item product-collage__item--${(index % 5) + 1}`} delay={index * 0.03} key={`${src}-${index}`}>
                 <Image
                   src={src}
-                  alt="OSD Apparels product showcase"
+                  alt={getImageAlt(src)}
                   fill
                   sizes="(max-width: 720px) 50vw, (max-width: 1080px) 33vw, 20vw"
                   className="product-collage__image"

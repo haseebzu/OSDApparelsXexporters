@@ -4,10 +4,10 @@ import { testimonials } from "@/data/site";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Client Testimonials | Apparel Manufacturer Pakistan",
+  title: "OSD Apparels Reviews | Pakistan Clothing Manufacturer",
   path: "/testimonials",
   description:
-    "Read client testimonials for OSD Apparels, an apparel manufacturer in Pakistan trusted for sampling clarity, production consistency, and export delivery.",
+    "Read OSD Apparels client reviews on sampling, communication, garment quality, and delivery for private label clothing and kidswear manufacturing in Pakistan.",
   keywords: [
     "apparel manufacturer Pakistan testimonials",
     "garment exporter reviews Pakistan",
@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Testimonials"
         title="Buyer feedback for an apparel manufacturer in Pakistan that delivers with consistency."

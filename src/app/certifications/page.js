@@ -4,10 +4,10 @@ import { certifications } from "@/data/site";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Garment Manufacturer Certifications | OSD Apparels",
+  title: "Garment Manufacturing Standards & Certifications | OSD",
   path: "/certifications",
   description:
-    "Review the garment manufacturer certifications, audit signals, and compliance standards that help position OSD Apparels as a trusted export partner in Pakistan.",
+    "Explore the apparel quality, organic textile, and ethical sourcing standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
   keywords: [
     "garment manufacturer certifications",
     "apparel compliance Pakistan",
@@ -24,7 +24,7 @@ export default function CertificationsPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Certifications"
         title="Certifications and compliance signals that support confident apparel sourcing."

@@ -114,7 +114,7 @@ export function ProcessTimeline({ steps, variant = "default" }) {
                   <div className="process-map__photo">
                     <Image
                       src={stepImage}
-                      alt={step.title}
+                      alt={`${step.title} stage of the OSD Apparels garment manufacturing process`}
                       fill
                       sizes="160px"
                       className="process-map__photo-image"

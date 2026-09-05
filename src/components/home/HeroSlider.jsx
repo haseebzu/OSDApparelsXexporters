@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { getImageAlt } from "@/lib/image-alt";
 import Link from "next/link";
 import {
   AnimatePresence,
@@ -121,7 +122,7 @@ function HeroHeadline({ state, priority = false }) {
         <div className="hero-cutout__visual" aria-hidden="true">
           <Image
             src={state.image}
-            alt="OSD Apparels focal product hero"
+            alt=""
             width={1220}
             height={1440}
             priority={priority}
@@ -156,7 +157,7 @@ function MarqueeStrip({ reducedMotion, images }) {
             <div className="hero-marquee__card" key={`${src}-${index}`}>
               <Image
                 src={src}
-                alt="OSD Apparels product preview"
+                alt={getImageAlt(src)}
                 fill
                 sizes="(max-width: 720px) 54vw, 21vw"
                 className="hero-marquee__image"

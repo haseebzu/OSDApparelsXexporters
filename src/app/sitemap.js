@@ -17,16 +17,20 @@ const staticRoutes = [
   "/terms",
 ];
 
-import { productFamilies } from "@/data/site";
 import { getPublishedBlogPosts } from "@/lib/blog-posts";
+import { toIsoDate } from "@/lib/blog-seo";
+import { toAbsoluteUrl } from "@/lib/metadata";
+
+// Match the live blog routes so newly published or removed posts stay in sync.
+export const dynamic = "force-dynamic";
 
 export default async function sitemap() {
   const blogPosts = await getPublishedBlogPosts();
-  const dynamicRoutes = [
-    ...productFamilies.mens.categories.map((category) => `/products/mens/${category.slug}`),
-    ...productFamilies.kids.categories.map((category) => `/products/kids/${category.slug}`),
-    ...blogPosts.map((post) => `/blog/${post.slug}`),
-  ];
+  // Category cards are not separate routes; /printing redirects to /services.
+  const postDates = new Map(blogPosts.map((post) => [
+    `/blog/${post.slug}`,
+    toIsoDate(post.updated_at) || toIsoDate(post.published_at),
+  ]));
 
   const pagePriority = {
     "": 1,
@@ -41,9 +45,9 @@ export default async function sitemap() {
     "/contact": 0.88,
   };
 
-  return [...staticRoutes, ...dynamicRoutes].map((path) => ({
-    url: `https://osdapparels.com${path}`,
-    lastModified: "2026-07-14T00:00:00.000Z",
+  return [...staticRoutes, ...postDates.keys()].map((path) => ({
+    url: toAbsoluteUrl(path),
+    ...(postDates.get(path) ? { lastModified: postDates.get(path) } : {}),
     changeFrequency: path.startsWith("/blog/") ? "monthly" : "weekly",
     priority: pagePriority[path] ?? (path.startsWith("/products/") ? 0.8 : 0.7),
   }));

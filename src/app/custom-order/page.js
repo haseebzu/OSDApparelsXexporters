@@ -6,9 +6,9 @@ import { printingTechniques } from "@/data/site";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Private Label Clothing Manufacturer | Custom OEM Pakistan",
+  title: "Private Label Clothing Manufacturer | OSD Apparels OEM",
   description:
-    "Work with OSD Apparels as a private-label clothing manufacturer in Pakistan for OEM development, custom garments, trims, decoration, and export delivery.",
+    "Build your collection with OSD Apparels, a private label clothing manufacturer in Pakistan offering OEM sampling, custom sizing, printing, and embroidery.",
   path: "/custom-order",
   keywords: [
     "private label clothing manufacturer",
@@ -147,7 +147,7 @@ export default function CustomOrderPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Custom OEM"
         title="Custom fashion apparel manufacturing for private label, OEM, and export programs."
@@ -174,7 +174,7 @@ export default function CustomOrderPage() {
                 <div className="custom-order-card__media">
                   <Image
                     src={card.image}
-                    alt={card.title}
+                    alt={`${card.title} for private label apparel at OSD Apparels`}
                     fill
                     sizes="(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 33vw"
                     className="custom-order-card__image"
@@ -213,7 +213,7 @@ export default function CustomOrderPage() {
                 <div className="oem-journey-card__media">
                   <Image
                     src={step.image}
-                    alt={step.title}
+                    alt={`${step.title} stage of custom garment production at OSD Apparels`}
                     fill
                     sizes="(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 33vw"
                     className="oem-journey-card__image"
@@ -261,7 +261,7 @@ export default function CustomOrderPage() {
                 <div className="printing-technique-card__media">
                   <Image
                     src={technique.image}
-                    alt={technique.title}
+                    alt={`${technique.title} for custom garment decoration at OSD Apparels`}
                     fill
                     sizes="(max-width: 720px) 88vw, (max-width: 1080px) 44vw, 30vw"
                     className="printing-technique-card__image"

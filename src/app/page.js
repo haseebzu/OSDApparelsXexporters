@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getImageAlt } from "@/lib/image-alt";
 import { CsrShowcase } from "@/components/home/CsrShowcase";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { HeroSlider } from "@/components/home/HeroSlider";
@@ -226,9 +227,9 @@ const facilitySections = [
 ];
 
 export const metadata = createMetadata({
-  title: "Apparel Manufacturer Pakistan | OSD Apparels Global",
+  title: "Custom Clothing Manufacturer Pakistan | OSD Apparels",
   description:
-    "OSD Apparels is an apparel manufacturer in Pakistan for private-label brands, retailers, and import buyers. Explore export-ready production and request a quote.",
+    "OSD Apparels is a custom clothing manufacturer in Faisalabad, Pakistan, offering private label apparel, knitted and woven garments, and worldwide export.",
   path: "/",
   keywords: [
     "apparel manufacturer Pakistan",
@@ -403,7 +404,7 @@ export default function HomePage() {
                   <div className="facility-card__image">
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={getImageAlt(item.image, `${item.title} for apparel production at OSD Apparels`)}
                       fill
                       sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="facility-card__image-media"

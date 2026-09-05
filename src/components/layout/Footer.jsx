@@ -14,7 +14,7 @@ export function Footer() {
             <Link href="/" className="brand-mark brand-mark--footer" aria-label="OSD Apparels home">
               <Image
                 src="/images/Footer logo.png"
-                alt="OSD Apparels"
+                alt="OSD Apparels logo"
                 width={560}
                 height={208}
                 className="brand-mark__logo brand-mark__logo--footer"

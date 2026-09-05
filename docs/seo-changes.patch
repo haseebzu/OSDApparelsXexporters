@@ -1,0 +1,786 @@
+diff --git a/src/app/about/page.js b/src/app/about/page.js
+index 8829f68..0b9fed1 100644
+--- a/src/app/about/page.js
++++ b/src/app/about/page.js
+@@ -15 +15 @@ export const metadata = createMetadata({
+-  title: "About OSD Apparels | Garment Exporter Pakistan",
++  title: "About OSD Apparels | Garment Exporter Faisalabad, PK",
+@@ -17 +17 @@ export const metadata = createMetadata({
+-    "Learn about OSD Apparels, a garment exporter in Pakistan supporting private-label brands, retailers, and sourcing teams with reliable apparel manufacturing.",
++    "Meet OSD Apparels, a garment exporter in Faisalabad, Pakistan, supporting brands with apparel sourcing, private label development, and global delivery.",
+@@ -139 +139 @@ export default function AboutPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/blog/[slug]/page.js b/src/app/blog/[slug]/page.js
+index 7ce1e4a..a2596ed 100644
+--- a/src/app/blog/[slug]/page.js
++++ b/src/app/blog/[slug]/page.js
+@@ -6,0 +7,2 @@ import { brand, buildBreadcrumbSchema, createMetadata, toAbsoluteUrl } from "@/l
++import { getBlogSeo, toIsoDate } from "@/lib/blog-seo";
++
+@@ -21 +23,2 @@ export async function generateMetadata({ params }) {
+-  const publishedTime = post.published_at ? new Date(post.published_at).toISOString() : undefined;
++  const publishedTime = toIsoDate(post.published_at);
++  const modifiedTime = toIsoDate(post.updated_at) || publishedTime;
+@@ -24,2 +27 @@ export async function generateMetadata({ params }) {
+-    title: post.title,
+-    description: post.excerpt,
++    ...getBlogSeo(post),
+@@ -30,0 +33 @@ export async function generateMetadata({ params }) {
++    modifiedTime,
+@@ -45,2 +48,2 @@ export default async function BlogPostPage({ params }) {
+-    datePublished: post.published_at || undefined,
+-    dateModified: post.published_at || undefined,
++    datePublished: toIsoDate(post.published_at),
++    dateModified: toIsoDate(post.updated_at) || toIsoDate(post.published_at),
+@@ -66,2 +69,2 @@ export default async function BlogPostPage({ params }) {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/blog/page.js b/src/app/blog/page.js
+index b6e933f..18b1061 100644
+--- a/src/app/blog/page.js
++++ b/src/app/blog/page.js
+@@ -9 +9 @@ export const metadata = createMetadata({
+-  title: "Blog",
++  title: "Apparel Sourcing Pakistan & Private Label Blog | OSD",
+@@ -11 +11 @@ export const metadata = createMetadata({
+-    "Read OSD Apparels insights on private label clothing, garment sourcing in Pakistan, kidswear, menswear, production planning, and export-ready apparel development.",
++    "Read OSD Apparels guides to apparel sourcing in Pakistan, private label clothing for startups, menswear trends, and kidswear manufacturing for global brands.",
+@@ -72,2 +72,2 @@ export default async function BlogPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/certifications/page.js b/src/app/certifications/page.js
+index a7e5fdc..6720aa7 100644
+--- a/src/app/certifications/page.js
++++ b/src/app/certifications/page.js
+@@ -7 +7 @@ export const metadata = createMetadata({
+-  title: "Garment Manufacturer Certifications | OSD Apparels",
++  title: "Garment Manufacturing Standards & Certifications | OSD",
+@@ -10 +10 @@ export const metadata = createMetadata({
+-    "Review the garment manufacturer certifications, audit signals, and compliance standards that help position OSD Apparels as a trusted export partner in Pakistan.",
++    "Explore the apparel quality, organic textile, and ethical sourcing standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
+@@ -27 +27 @@ export default function CertificationsPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/contact/page.js b/src/app/contact/page.js
+index 159fd76..2842cfe 100644
+--- a/src/app/contact/page.js
++++ b/src/app/contact/page.js
+@@ -11 +11 @@ export const metadata = createMetadata({
+-    "Contact OSD Apparels for private-label production, export-ready apparel manufacturing, sampling support, and wholesale garment enquiries from Pakistan.",
++    "Contact OSD Apparels in Faisalabad, Pakistan, to discuss custom clothing manufacturing, private label collections, sampling, and export orders for your brand.",
+@@ -29 +29 @@ export default function ContactPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/custom-order/page.js b/src/app/custom-order/page.js
+index b4ef0b9..996b264 100644
+--- a/src/app/custom-order/page.js
++++ b/src/app/custom-order/page.js
+@@ -9 +9 @@ export const metadata = createMetadata({
+-  title: "Private Label Clothing Manufacturer | Custom OEM Pakistan",
++  title: "Private Label Clothing Manufacturer | OSD Apparels OEM",
+@@ -11 +11 @@ export const metadata = createMetadata({
+-    "Work with OSD Apparels as a private-label clothing manufacturer in Pakistan for OEM development, custom garments, trims, decoration, and export delivery.",
++    "Build your collection with OSD Apparels, a private label clothing manufacturer in Pakistan offering OEM sampling, custom sizing, printing, and embroidery.",
+@@ -150 +150 @@ export default function CustomOrderPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+@@ -177 +177 @@ export default function CustomOrderPage() {
+-                    alt={card.title}
++                    alt={`${card.title} for private label apparel at OSD Apparels`}
+@@ -216 +216 @@ export default function CustomOrderPage() {
+-                    alt={step.title}
++                    alt={`${step.title} stage of custom garment production at OSD Apparels`}
+@@ -264 +264 @@ export default function CustomOrderPage() {
+-                    alt={technique.title}
++                    alt={`${technique.title} for custom garment decoration at OSD Apparels`}
+diff --git a/src/app/how-it-works/page.js b/src/app/how-it-works/page.js
+index b42ac33..f141f33 100644
+--- a/src/app/how-it-works/page.js
++++ b/src/app/how-it-works/page.js
+@@ -6 +6 @@ import { processSteps } from "@/data/site";
+-import { buildBreadcrumbSchema, buildFaqSchema, createMetadata } from "@/lib/metadata";
++import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+@@ -9 +9 @@ export const metadata = createMetadata({
+-  title: "How It Works | Private Label Clothing Manufacturer",
++  title: "Private Label Clothing Manufacturing Process | OSD OEM",
+@@ -12 +12 @@ export const metadata = createMetadata({
+-    "Understand the private-label clothing manufacturing workflow at OSD Apparels, from enquiry and sampling to production, final QC, and export delivery.",
++    "Follow the OSD Apparels private label clothing manufacturing process, from enquiry and sample approval to bulk production, quality checks, and export delivery.",
+@@ -26,28 +25,0 @@ const breadcrumbSchema = buildBreadcrumbSchema([
+-const faqSchema = buildFaqSchema([
+-  {
+-    question: "What information should buyers share at the enquiry stage?",
+-    answer:
+-      "Buyers should share their product requirements, reference images, quantity targets, and key development notes so OSD Apparels can guide the right sampling and production route.",
+-  },
+-  {
+-    question: "When does sampling happen in the production process?",
+-    answer:
+-      "Sampling happens early in the workflow, before bulk commitment, so patterns, approvals, fit feedback, and construction decisions are cleaner before production starts.",
+-  },
+-  {
+-    question: "How does OSD Apparels manage quality control during production?",
+-    answer:
+-      "OSD Apparels uses milestone visibility, in-process monitoring, and final quality control before dispatch so buyers have clearer confidence in bulk execution.",
+-  },
+-  {
+-    question: "What happens after production is complete?",
+-    answer:
+-      "After production, garments move through final quality control, packing review, and export-ready delivery coordination so shipments are better prepared for handover.",
+-  },
+-  {
+-    question: "Is the process designed for global buyers?",
+-    answer:
+-      "Yes. The workflow is built for international buying teams that need clearer communication, organized approvals, and export delivery support from one manufacturing partner.",
+-  },
+-]);
+-
+@@ -57,2 +29 @@ export default function HowItWorksPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/layout.js b/src/app/layout.js
+index be3f2c7..2f2bdf6 100644
+--- a/src/app/layout.js
++++ b/src/app/layout.js
+@@ -85 +85 @@ export default function RootLayout({ children }) {
+-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
++          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema).replace(/</g, "\\u003c") }}
+@@ -89 +89 @@ export default function RootLayout({ children }) {
+-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
++          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }}
+diff --git a/src/app/page.js b/src/app/page.js
+index aabe297..12a99eb 100644
+--- a/src/app/page.js
++++ b/src/app/page.js
+@@ -2,0 +3 @@ import Image from "next/image";
++import { getImageAlt } from "@/lib/image-alt";
+@@ -229 +230 @@ export const metadata = createMetadata({
+-  title: "Apparel Manufacturer Pakistan | OSD Apparels Global",
++  title: "Custom Clothing Manufacturer Pakistan | OSD Apparels",
+@@ -231 +232 @@ export const metadata = createMetadata({
+-    "OSD Apparels is an apparel manufacturer in Pakistan for private-label brands, retailers, and import buyers. Explore export-ready production and request a quote.",
++    "OSD Apparels is a custom clothing manufacturer in Faisalabad, Pakistan, offering private label apparel, knitted and woven garments, and worldwide export.",
+@@ -406 +407 @@ export default function HomePage() {
+-                      alt={item.title}
++                      alt={getImageAlt(item.image, `${item.title} for apparel production at OSD Apparels`)}
+diff --git a/src/app/printing/page.js b/src/app/printing/page.js
+index 1585678..10fd318 100644
+--- a/src/app/printing/page.js
++++ b/src/app/printing/page.js
+@@ -5,2 +5,2 @@ export const metadata = createMetadata({
+-  title: "Printing Services | Custom Clothing Manufacturer",
+-  path: "/printing",
++  title: "Garment Printing & Embroidery Services | OSD Apparels",
++  path: "/services",
+@@ -8 +8 @@ export const metadata = createMetadata({
+-    "Explore garment printing and decoration services from OSD Apparels, including screen printing, graphic applications, and production-ready apparel finishing.",
++    "Explore garment printing and embroidery through OSD Apparels manufacturing services, including screen printing, DTG, sublimation, heat transfer, and puff print.",
+diff --git a/src/app/privacy-policy/page.js b/src/app/privacy-policy/page.js
+index 4fd36eb..34a6b2e 100644
+--- a/src/app/privacy-policy/page.js
++++ b/src/app/privacy-policy/page.js
+@@ -2 +2 @@ import { PageHero } from "@/components/shared/PageHero";
+-import { createMetadata } from "@/lib/metadata";
++import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+@@ -5 +5,3 @@ export const metadata = createMetadata({
+-  title: "Privacy Policy",
++  title: "OSD Apparels Privacy Policy | Business Enquiry Details",
++  description:
++    "Read how OSD Apparels describes handling enquiry details, quote requests, and business contact information for commercial follow-up and project coordination.",
+@@ -11,0 +14,4 @@ export default function PrivacyPolicyPage() {
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema([
++        { name: "Home", path: "/" },
++        { name: "Privacy Policy", path: "/privacy-policy" },
++      ])).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/products/kids/page.js b/src/app/products/kids/page.js
+index d3d54a8..4bbbe98 100644
+--- a/src/app/products/kids/page.js
++++ b/src/app/products/kids/page.js
+@@ -7 +7,2 @@ import { getCategoryImage, getFamily } from "@/lib/products";
+-import { buildBreadcrumbSchema, buildItemListSchema, createMetadata } from "@/lib/metadata";
++import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
++import { buildProductCategorySchema } from "@/lib/product-schema";
+@@ -12 +13 @@ export const metadata = createMetadata({
+-  title: "Kids Clothing Manufacturer Pakistan | OSD Apparels",
++  title: "Wholesale Kidswear Manufacturer Pakistan | OSD Apparels",
+@@ -14 +15 @@ export const metadata = createMetadata({
+-    "Explore kidswear categories from OSD Apparels, a kids clothing manufacturer in Pakistan for schoolwear, basics, activewear, and export buyers.",
++    "Explore wholesale kidswear manufacturing at OSD Apparels in Pakistan, from t-shirts and hoodies to school uniforms, activewear, and matching co-ord sets.",
+@@ -31,10 +32 @@ export default function KidsProductsPage() {
+-  const itemListSchema = buildItemListSchema({
+-    name: `${family.label} categories`,
+-    description: family.description,
+-    path: "/products/kids",
+-    items: family.categories.map((cat) => ({
+-      name: cat.title,
+-      description: cat.description,
+-      path: `/products/kids#${cat.slug}`,
+-    })),
+-  });
++  const itemListSchema = buildProductCategorySchema(familySlug, family);
+@@ -44,2 +36,2 @@ export default function KidsProductsPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema).replace(/</g, "\\u003c") }} />
+@@ -71 +63 @@ export default function KidsProductsPage() {
+-                      alt={cat.title}
++                      alt={`Kids ${cat.title.replace(/^Kids /, "")} from the OSD Apparels clothing collection`}
+diff --git a/src/app/products/mens/page.js b/src/app/products/mens/page.js
+index 75ecc3e..3468b33 100644
+--- a/src/app/products/mens/page.js
++++ b/src/app/products/mens/page.js
+@@ -7 +7,2 @@ import { getCategoryImage, getFamily } from "@/lib/products";
+-import { buildBreadcrumbSchema, buildItemListSchema, createMetadata } from "@/lib/metadata";
++import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
++import { buildProductCategorySchema } from "@/lib/product-schema";
+@@ -12 +13 @@ export const metadata = createMetadata({
+-  title: "Men's Clothing Manufacturer Pakistan | OSD Apparels",
++  title: "Menswear Manufacturer in Pakistan | OSD Apparels OEM",
+@@ -14 +15 @@ export const metadata = createMetadata({
+-    "Explore menswear categories from OSD Apparels, a men's clothing manufacturer in Pakistan for retailers, private-label brands, and wholesale buyers.",
++    "Source menswear from OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
+@@ -31,10 +32 @@ export default function MensProductsPage() {
+-  const itemListSchema = buildItemListSchema({
+-    name: `${family.label} categories`,
+-    description: family.description,
+-    path: "/products/mens",
+-    items: family.categories.map((cat) => ({
+-      name: cat.title,
+-      description: cat.description,
+-      path: `/products/mens#${cat.slug}`,
+-    })),
+-  });
++  const itemListSchema = buildProductCategorySchema(familySlug, family);
+@@ -44,2 +36,2 @@ export default function MensProductsPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema).replace(/</g, "\\u003c") }} />
+@@ -71 +63 @@ export default function MensProductsPage() {
+-                      alt={cat.title}
++                      alt={`Men's ${cat.title.replace(/^Kids /, "")} from the OSD Apparels clothing collection`}
+diff --git a/src/app/products/page.js b/src/app/products/page.js
+index 1421da6..ae2ab8b 100644
+--- a/src/app/products/page.js
++++ b/src/app/products/page.js
+@@ -1,0 +2 @@ import Image from "next/image";
++import { getImageAlt } from "@/lib/image-alt";
+@@ -197,2 +198,3 @@ export const metadata = createMetadata({
+-  title: "All Products",
+-  description: "Explore the full OSD Apparels product architecture for menswear and kidswear manufacturing.",
++  title: "Knitted & Woven Garments Manufacturer | OSD Apparels",
++  description:
++    "Explore knitted and woven garments from OSD Apparels in Pakistan, including menswear, kidswear, hoodies, denim, activewear, and private label collections.",
+@@ -210 +212 @@ export default function ProductsPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+@@ -283 +285 @@ export default function ProductsPage() {
+-                  alt="OSD Apparels product showcase"
++                  alt={getImageAlt(src)}
+diff --git a/src/app/quote/page.js b/src/app/quote/page.js
+index 83d261f..36d1a4c 100644
+--- a/src/app/quote/page.js
++++ b/src/app/quote/page.js
+@@ -7 +7 @@ export const metadata = createMetadata({
+-  title: "Get a Quote | Private Label Clothing Manufacturer",
++  title: "Request a Custom Clothing Manufacturing Quote | OSD",
+@@ -9 +9 @@ export const metadata = createMetadata({
+-    "Request a quote from OSD Apparels for private-label clothing manufacturing, custom development, bulk production, and export-ready apparel support.",
++    "Request a quote from OSD Apparels for custom clothing and private label manufacturing in Pakistan. Share your styles, quantities, and sampling requirements.",
+@@ -27 +27 @@ export default function QuotePage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/services/page.js b/src/app/services/page.js
+index 271abba..ad5cce9 100644
+--- a/src/app/services/page.js
++++ b/src/app/services/page.js
+@@ -2 +2 @@ import { ServicesPageContent } from "@/components/services/ServicesPageContent";
+-import { buildBreadcrumbSchema, buildFaqSchema, createMetadata } from "@/lib/metadata";
++import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+@@ -5 +5 @@ export const metadata = createMetadata({
+-  title: "Custom Clothing Manufacturer Low MOQ | OSD Services",
++  title: "Low MOQ Clothing Manufacturer Services | OSD Apparels",
+@@ -7 +7 @@ export const metadata = createMetadata({
+-    "Explore OSD Apparels services as a custom clothing manufacturer with low MOQ support, private-label development, production management, and export delivery.",
++    "Explore OSD Apparels clothing manufacturing services: low MOQ from 50 pieces per style, fabric sourcing, sampling, quality checks, and export coordination.",
+@@ -22,28 +21,0 @@ const breadcrumbSchema = buildBreadcrumbSchema([
+-const faqSchema = buildFaqSchema([
+-  {
+-    question: "Can OSD Apparels support low-MOQ custom clothing manufacturing?",
+-    answer:
+-      "Yes. OSD Apparels supports low-MOQ development so newer brands and test programs can start with cleaner production planning before scaling into larger repeat orders.",
+-  },
+-  {
+-    question: "Does OSD Apparels handle private-label development from concept to shipment?",
+-    answer:
+-      "Yes. The services workflow covers concept support, sourcing, labels, trims, sampling, production management, and export coordination inside one manufacturing system.",
+-  },
+-  {
+-    question: "What happens before bulk production starts?",
+-    answer:
+-      "Before bulk execution, OSD Apparels aligns on sourcing direction, tech packs, trims, fit comments, labels, and sample approval so the production plan is clearer and easier to control.",
+-  },
+-  {
+-    question: "Can buyers request printing, embroidery, and custom branding in the same order?",
+-    answer:
+-      "Yes. OSD Apparels supports decoration methods such as printing, embroidery, private-label tags, and packaging inside the same custom manufacturing workflow.",
+-  },
+-  {
+-    question: "Does OSD Apparels help with export and delivery?",
+-    answer:
+-      "Yes. OSD Apparels supports export packing, freight coordination, customs documentation, and shipment visibility for global buying teams.",
+-  },
+-]);
+-
+@@ -53,2 +25 @@ export default function ServicesPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/sitemap.js b/src/app/sitemap.js
+index 49d79de..0fb2c31 100644
+--- a/src/app/sitemap.js
++++ b/src/app/sitemap.js
+@@ -20 +19,0 @@ const staticRoutes = [
+-import { productFamilies } from "@/data/site";
+@@ -21,0 +21,5 @@ import { getPublishedBlogPosts } from "@/lib/blog-posts";
++import { toIsoDate } from "@/lib/blog-seo";
++import { toAbsoluteUrl } from "@/lib/metadata";
++
++// Match the live blog routes so newly published or removed posts stay in sync.
++export const dynamic = "force-dynamic";
+@@ -25,5 +29,5 @@ export default async function sitemap() {
+-  const dynamicRoutes = [
+-    ...productFamilies.mens.categories.map((category) => `/products/mens/${category.slug}`),
+-    ...productFamilies.kids.categories.map((category) => `/products/kids/${category.slug}`),
+-    ...blogPosts.map((post) => `/blog/${post.slug}`),
+-  ];
++  // Category cards are not separate routes; /printing redirects to /services.
++  const postDates = new Map(blogPosts.map((post) => [
++    `/blog/${post.slug}`,
++    toIsoDate(post.updated_at) || toIsoDate(post.published_at),
++  ]));
+@@ -44,3 +48,3 @@ export default async function sitemap() {
+-  return [...staticRoutes, ...dynamicRoutes].map((path) => ({
+-    url: `https://osdapparels.com${path}`,
+-    lastModified: "2026-07-14T00:00:00.000Z",
++  return [...staticRoutes, ...postDates.keys()].map((path) => ({
++    url: toAbsoluteUrl(path),
++    ...(postDates.get(path) ? { lastModified: postDates.get(path) } : {}),
+diff --git a/src/app/sustainability/page.js b/src/app/sustainability/page.js
+index a8b6f73..c2f5fca 100644
+--- a/src/app/sustainability/page.js
++++ b/src/app/sustainability/page.js
+@@ -8 +8 @@ export const metadata = createMetadata({
+-  title: "Sustainable Clothing Manufacturer Pakistan | OSD",
++  title: "Sustainable Apparel Manufacturing Pakistan | OSD Apparels",
+@@ -11 +11 @@ export const metadata = createMetadata({
+-    "Discover how OSD Apparels supports sustainable clothing manufacturing in Pakistan through responsible sourcing, audit-friendly systems, and ethical production conversations.",
++    "Explore OSD Apparels approach to sustainable apparel manufacturing in Pakistan, with responsible sourcing, ethical production, and supply chain transparency.",
+@@ -28 +28 @@ export default function SustainabilityPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/terms/page.js b/src/app/terms/page.js
+index 7c824ff..04161ce 100644
+--- a/src/app/terms/page.js
++++ b/src/app/terms/page.js
+@@ -2 +2 @@ import { PageHero } from "@/components/shared/PageHero";
+-import { createMetadata } from "@/lib/metadata";
++import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+@@ -5 +5,3 @@ export const metadata = createMetadata({
+-  title: "Terms & Conditions",
++  title: "OSD Apparels Commercial Terms | Manufacturing Orders",
++  description:
++    "Review OSD Apparels notes on pricing, sampling, production schedules, approvals, and dispatch commitments to confirm in manufacturing project discussions.",
+@@ -11,0 +14,4 @@ export default function TermsPage() {
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema([
++        { name: "Home", path: "/" },
++        { name: "Terms & Conditions", path: "/terms" },
++      ])).replace(/</g, "\\u003c") }} />
+diff --git a/src/app/testimonials/page.js b/src/app/testimonials/page.js
+index ded4d00..068519b 100644
+--- a/src/app/testimonials/page.js
++++ b/src/app/testimonials/page.js
+@@ -7 +7 @@ export const metadata = createMetadata({
+-  title: "Client Testimonials | Apparel Manufacturer Pakistan",
++  title: "OSD Apparels Reviews | Pakistan Clothing Manufacturer",
+@@ -10 +10 @@ export const metadata = createMetadata({
+-    "Read client testimonials for OSD Apparels, an apparel manufacturer in Pakistan trusted for sampling clarity, production consistency, and export delivery.",
++    "Read OSD Apparels client reviews on sampling, communication, garment quality, and delivery for private label clothing and kidswear manufacturing in Pakistan.",
+@@ -27 +27 @@ export default function TestimonialsPage() {
+-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
++      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+diff --git a/src/components/forms/QuoteForm.jsx b/src/components/forms/QuoteForm.jsx
+index 7b89d2d..f538b5c 100644
+--- a/src/components/forms/QuoteForm.jsx
++++ b/src/components/forms/QuoteForm.jsx
+@@ -190 +190 @@ export function QuoteForm({ compact = false, sourcePage = "quote" }) {
+-                <Image src={previewUrl} alt="Reference preview" fill className="upload-preview__img" unoptimized />
++                <Image src={previewUrl} alt="Uploaded garment reference for your custom clothing enquiry" fill className="upload-preview__img" unoptimized />
+diff --git a/src/components/home/HeroSlider.jsx b/src/components/home/HeroSlider.jsx
+index 04dfd28..b170dc8 100644
+--- a/src/components/home/HeroSlider.jsx
++++ b/src/components/home/HeroSlider.jsx
+@@ -3,0 +4 @@ import Image from "next/image";
++import { getImageAlt } from "@/lib/image-alt";
+@@ -124 +125 @@ function HeroHeadline({ state, priority = false }) {
+-            alt="OSD Apparels focal product hero"
++            alt=""
+@@ -159 +160 @@ function MarqueeStrip({ reducedMotion, images }) {
+-                alt="OSD Apparels product preview"
++                alt={getImageAlt(src)}
+diff --git a/src/components/layout/Footer.jsx b/src/components/layout/Footer.jsx
+index 52bdb34..4abbf27 100644
+--- a/src/components/layout/Footer.jsx
++++ b/src/components/layout/Footer.jsx
+@@ -17 +17 @@ export function Footer() {
+-                alt="OSD Apparels"
++                alt="OSD Apparels logo"
+diff --git a/src/components/layout/SiteHeader.jsx b/src/components/layout/SiteHeader.jsx
+index 1d661e4..7df13db 100644
+--- a/src/components/layout/SiteHeader.jsx
++++ b/src/components/layout/SiteHeader.jsx
+@@ -47 +47 @@ export function SiteHeader() {
+-          <Image src="/images/osd-logo.png" alt="OSD Apparels" width={178} height={66} className="brand-mark__logo" />
++          <Image src="/images/osd-logo.png" alt="OSD Apparels logo" width={178} height={66} className="brand-mark__logo" />
+diff --git a/src/components/services/ServicesPageContent.jsx b/src/components/services/ServicesPageContent.jsx
+index 96f428b..1a38025 100644
+--- a/src/components/services/ServicesPageContent.jsx
++++ b/src/components/services/ServicesPageContent.jsx
+@@ -393 +393 @@ export function ServicesPageContent() {
+-                  alt={activeService.title}
++                  alt={`${activeService.title} for OSD Apparels clothing manufacturing`}
+@@ -409 +409 @@ export function ServicesPageContent() {
+-                        alt={item.title}
++                        alt={`${item.title} for private label apparel production`}
+diff --git a/src/components/shared/CardSystem.jsx b/src/components/shared/CardSystem.jsx
+index dddc088..6f958ec 100644
+--- a/src/components/shared/CardSystem.jsx
++++ b/src/components/shared/CardSystem.jsx
+@@ -63 +63 @@ export function ContentCard({ variant, ...props }) {
+-            <Image src={image} alt={title} fill sizes="(max-width: 720px) 88vw, (max-width: 1080px) 44vw, 25vw" className="content-card__service-image" />
++            <Image src={image} alt={`${title} for custom apparel at OSD Apparels`} fill sizes="(max-width: 720px) 88vw, (max-width: 1080px) 44vw, 25vw" className="content-card__service-image" />
+@@ -82 +82 @@ export function ContentCard({ variant, ...props }) {
+-          <Image src={image} alt={alt} fill sizes="(max-width: 720px) 88vw, 34vw" className="content-card__product-image" />
++          <Image src={image} alt={alt || `${title} from the OSD Apparels clothing range`} fill sizes="(max-width: 720px) 88vw, 34vw" className="content-card__product-image" />
+diff --git a/src/components/shared/ProcessTimeline.jsx b/src/components/shared/ProcessTimeline.jsx
+index 7521c5e..0457218 100644
+--- a/src/components/shared/ProcessTimeline.jsx
++++ b/src/components/shared/ProcessTimeline.jsx
+@@ -117 +117 @@ export function ProcessTimeline({ steps, variant = "default" }) {
+-                      alt={step.title}
++                      alt={`${step.title} stage of the OSD Apparels garment manufacturing process`}
+diff --git a/src/lib/metadata.js b/src/lib/metadata.js
+index 9424458..077114d 100644
+--- a/src/lib/metadata.js
++++ b/src/lib/metadata.js
+@@ -0,0 +1,2 @@
++import { contact, socials } from "@/data/site";
++
+@@ -8 +10 @@ export const brand = {
+-  defaultTitle: "OSD Apparels | Modern Fashion Manufacturer & Exporter Worldwide",
++  defaultTitle: "Custom Clothing Manufacturer Pakistan | OSD Apparels",
+@@ -10 +12 @@ export const brand = {
+-    "OSD Apparels is a custom fashion apparel manufacturer and exporter from Pakistan, delivering private label development, knitted and woven garment production, low-MOQ support, and export-ready quality for global buyers.",
++    "OSD Apparels is a custom clothing manufacturer in Faisalabad, Pakistan, offering private label apparel, knitted and woven garments, and worldwide export.",
+@@ -13,2 +15,2 @@ export const brand = {
+-    email: "osdapparels@gmail.com",
+-    phone: "+92 3710775687",
++    email: contact.email,
++    phone: contact.phone,
+@@ -19,4 +21 @@ export const brand = {
+-  socialLinks: [
+-    "https://www.linkedin.com/company/osd-apparels/",
+-    "https://www.instagram.com/osdapparels/",
+-  ],
++  socialLinks: [socials.linkedin, socials.instagram],
+@@ -86 +85 @@ export function createMetadata({
+-    keywords: [...brand.keywords, ...keywords],
++    keywords: [...new Set([brand.name, ...keywords])],
+diff --git a/src/lib/blog-seo.js b/src/lib/blog-seo.js
+new file mode 100644
+--- /dev/null
++++ b/src/lib/blog-seo.js
+@@ -0,0 +1,173 @@
++// Editorial metadata only: the article's visible title and copy stay unchanged.
++const articleMetadata = {
++  "private-label-clothing-manufacturing-pakistan": {
++    title: "Private Label Clothing for Startups in Pakistan | OSD",
++    description:
++      "Explore private label clothing manufacturing in Pakistan for startups, including low MOQ flexibility, fabric sourcing, sampling, and export readiness.",
++  },
++  "coord-sets-trend-guide-2026": {
++    title: "Co-Ord Set Manufacturing: 2026 Sourcing Guide | OSD",
++    description:
++      "Explore co-ord set sourcing for 2026 with OSD Apparels, covering fabric choices, fit planning, and manufacturing details for contemporary menswear brands.",
++  },
++  "kidswear-manufacturing-guide-pakistan": {
++    title: "Kidswear Manufacturing in Pakistan: Buyer Guide | OSD",
++    description:
++      "Learn what to consider when sourcing kidswear in Pakistan, including sizing, comfort, school uniforms, fabric durability, and scalable garment production.",
++  },
++  "ddd": {
++    "title": "Co-Ord Sets for Fashion Brands in 2026 | OSD Apparels",
++    "description": "View the OSD Apparels blog entry on co-ord sets in 2026 for fashion brands. This published entry currently contains placeholder text awaiting completion."
++  },
++  "custom-apparel-packaging-branding-guide": {
++    "title": "Custom Apparel Packaging & Branding Guide | OSD Apparels",
++    "description": "A guide to custom apparel packaging and branding for startups — labels, hang tags, poly bags, and eco-friendly options, with realistic budgeting tips."
++  },
++  "faisalabad-cotton-tshirts-high-demand": {
++    "title": "Cotton T-Shirt Manufacturing in Faisalabad | OSD Apparels",
++    "description": "Why international buyers increasingly choose Faisalabad, Pakistan for cotton t-shirt manufacturing — cotton supply, cost, and quality explained."
++  },
++  "mistakes-sourcing-clothing-overseas": {
++    "title": "Overseas Clothing Sourcing Mistakes to Avoid | OSD Apparels",
++    "description": "Learn about common mistakes when sourcing clothing overseas, from choosing suppliers to planning production, with practical guidance for new apparel brands."
++  },
++  "apparel-sourcing-timeline-new-brands": {
++    "title": "Apparel Sourcing Timeline for New Brands | OSD Apparels",
++    "description": "From first inquiry to delivered product — a realistic, stage-by-stage timeline for sourcing apparel overseas, so you can plan your launch accurately."
++  },
++  "private-label-streetwear-brand-launch": {
++    "title": "Private Label Streetwear: Brand Launch Guide | OSD Apparels",
++    "description": "A practical roadmap for launching a private label streetwear brand — design direction, fabric choices, printing, and your first production run."
++  },
++  "dye-sublimation-printing-explained": {
++    "title": "Dye Sublimation Printing for Custom Apparel | OSD Apparels",
++    "description": "Learn how dye sublimation printing works for custom apparel and sportswear, including fabric compatibility, all-over designs, and garment production planning."
++  },
++  "apparel-quality-inspection-stages": {
++    "title": "Apparel Quality Inspections: Buyer Guide | OSD Apparels",
++    "description": "Understand pre-production, in-line, and final apparel inspections, with guidance on quality checks and what clothing buyers should review at each stage."
++  },
++  "workwear-uniform-manufacturing-guide": {
++    "title": "Workwear & Uniform Manufacturing Guide | OSD Apparels",
++    "description": "Everything businesses need to know about sourcing corporate uniforms, workwear, and branded staff apparel — fabric, durability, and customization."
++  },
++  "denim-manufacturing-101-pakistan": {
++    "title": "Denim Manufacturing in Pakistan: Buyer Guide | OSD Apparels",
++    "description": "Explore denim manufacturing in Pakistan, including jeans fits, wash types, fabric weights, minimum order quantities, and delivery planning for apparel buyers."
++  },
++  "choose-apparel-sourcing-agent-pakistan": {
++    "title": "Choosing an Apparel Sourcing Agent in Pakistan | OSD",
++    "description": "What to look for in an apparel sourcing agent in Pakistan — vetting process, red flags, and questions to ask before committing to a partner."
++  },
++  "kids-clothing-manufacturing-guide": {
++    "title": "Kids Clothing Manufacturing: Wholesale Buyer Guide | OSD",
++    "description": "Sourcing kids' clothing requires extra care around safety and compliance. Here's what buyers need to know about fabric, certification, and manufacturing."
++  },
++  "source-custom-sportswear-activewear-pakistan": {
++    "title": "Custom Activewear Manufacturing in Pakistan | OSD Apparels",
++    "description": "Explore custom sportswear and activewear sourcing in Pakistan, including performance fabrics, sublimation printing, minimum orders, and supplier discussions."
++  },
++  "fabric-gsm-guide-tshirts-hoodies-sportswear": {
++    "title": "Fabric GSM Guide for T-Shirts & Hoodies | OSD Apparels",
++    "description": "Understand fabric GSM for t-shirts, hoodies, and sportswear. Explore how garment weight affects fabric choices and product planning for your clothing brand."
++  },
++  "low-moq-clothing-manufacturer-startups": {
++    "title": "Low MOQ Clothing Manufacturer for Startups | OSD Apparels",
++    "description": "Learn how startups can work with low MOQ clothing manufacturers, with practical guidance on order quantities, supplier discussions, and small-batch sourcing."
++  },
++  "fob-vs-cif-vs-ddp-shipping-terms": {
++    "title": "FOB vs CIF vs DDP: Apparel Shipping Terms | OSD Apparels",
++    "description": "FOB, CIF, and DDP explained for apparel buyers — who's responsible for shipping, insurance, and customs under each term, and which to choose."
++  },
++  "embroidery-vs-screen-printing-corporate-uniforms": {
++    "title": "Embroidery vs Screen Printing for Uniforms | OSD Apparels",
++    "description": "Comparing embroidery and screen printing for corporate uniforms and workwear — durability, cost, and appearance explained for business buyers."
++  },
++  "start-private-label-clothing-brand-2026": {
++    "title": "Start a Private Label Clothing Brand in 2026 | OSD Apparels",
++    "description": "A step-by-step guide to launching a private label clothing brand in 2026 — from choosing a niche to sourcing, branding, and your first production run."
++  },
++  "sustainable-apparel-manufacturing-guide": {
++    "title": "Sustainable Apparel Manufacturing Guide | OSD Apparels",
++    "description": "A practical guide to sustainable apparel manufacturing — fabrics, certifications, and supplier practices brands need for a genuinely eco-friendly clothing line."
++  },
++  "custom-hoodie-manufacturing-guide": {
++    "title": "Custom Hoodie Manufacturing for Streetwear | OSD Apparels",
++    "description": "Everything streetwear brands need to know about custom hoodie manufacturing — fabric weights, construction details, printing options, and MOQs."
++  },
++  "faisalabad-textile-capital-of-asia": {
++    "title": "Faisalabad Textile Manufacturing & Sourcing | OSD Apparels",
++    "description": "Why Faisalabad, Pakistan is called the Textile Capital of Asia, and what that means for brands sourcing cotton apparel, printing, and manufacturing."
++  },
++  "aql-inspection-standards-explained": {
++    "title": "AQL Inspection Standards for Apparel Buyers | OSD Apparels",
++    "description": "What is AQL 2.5 and why does it matter for your clothing order? A clear explanation of Acceptable Quality Level inspection standards for apparel buyers."
++  },
++  "how-to-write-a-tech-pack-guide": {
++    "title": "How to Write a Clothing Tech Pack: Brand Guide | OSD",
++    "description": "A tech pack is the blueprint of your garment. Learn what to include and how to create one that manufacturers can produce accurately, first time."
++  },
++  "screen-print-vs-dtg-vs-sublimation": {
++    "title": "Screen Print vs DTG vs Sublimation: Buyer Guide | OSD",
++    "description": "Comparing screen printing, DTG, and dye sublimation for custom apparel — cost, quality, and best use cases explained for brands and print buyers."
++  },
++  "understanding-moq-clothing-manufacturing": {
++    "title": "Clothing Manufacturing MOQ: How to Negotiate | OSD Apparels",
++    "description": "What is MOQ in apparel manufacturing, why does it exist, and how can startups negotiate lower minimum order quantities? Here's everything you need to know."
++  },
++  "questions-to-ask-clothing-supplier": {
++    "title": "10 Questions to Ask Your Clothing Supplier | OSD Apparels",
++    "description": "Avoid costly sourcing mistakes. Here are the 10 essential questions every buyer should ask a clothing manufacturer before committing to an order."
++  },
++  "gots-vs-oeko-tex-certification-clothing": {
++    "title": "GOTS vs OEKO-TEX: Clothing Certification Guide | OSD",
++    "description": "GOTS and OEKO-TEX are the two most requested apparel certifications — but they measure different things. Here's how to choose the right one for your brand."
++  },
++  "fashion-trends-2026-what-to-source": {
++    "title": "Fashion Trends 2026: Apparel Sourcing Guide | OSD Apparels",
++    "description": "The apparel trends shaping 2026 — fabrics, silhouettes, and print styles brands should be sourcing now. A sourcing-focused trend guide from OSD Apparels."
++  },
++  "pakistan-vs-bangladesh-vs-china-apparel-sourcing": {
++    "title": "Apparel Sourcing: Pakistan vs Bangladesh vs China | OSD",
++    "description": "Comparing Pakistan, Bangladesh, and China for apparel sourcing — cost, MOQ, lead time, and quality. Find out which country fits your brand's needs."
++  },
++  "oem-vs-odm-vs-private-label-apparel": {
++    "title": "OEM vs ODM vs Private Label Clothing | OSD Apparels",
++    "description": "Confused between OEM, ODM, and Private Label apparel manufacturing? Here's a clear breakdown of each model and which one fits your clothing brand."
++  },
++  "source-mens-apparel-pakistan-2026-guide": {
++    "title": "Menswear Sourcing in Pakistan: 2026 Guide | OSD Apparels",
++    "description": "Explore menswear sourcing in Pakistan for 2026, including production costs, minimum orders, certification questions, and working with suppliers in Faisalabad."
++  },
++};
++
++function shorten(text, maximum) {
++  if (text.length <= maximum) return text;
++  const prefix = text.slice(0, maximum - 1);
++  return `${prefix.slice(0, prefix.lastIndexOf(" ") || prefix.length).trimEnd()}…`;
++}
++
++export function getBlogSeo(post) {
++  if (articleMetadata[post.slug]) return articleMetadata[post.slug];
++
++  // New CMS articles retain their own subject; editorial overrides can be added above.
++  const sourceTitle = String(post.title || "Apparel Sourcing Guide").replace(/\s+/g, " ").trim();
++  const title = sourceTitle.length >= 50
++    ? shorten(sourceTitle, 60)
++    : shorten(`${sourceTitle} | OSD Apparels Manufacturing Blog`, 60);
++  const excerpt = String(post.excerpt || post.content?.[0] || sourceTitle).replace(/\s+/g, " ").trim();
++  const description = shorten(
++    excerpt.length >= 140
++      ? excerpt
++      : `${excerpt} Read OSD Apparels insights for brands exploring garment sourcing, private label development, and clothing production in Pakistan.`,
++    160,
++  );
++
++  return { title, description };
++}
++
++export function toIsoDate(value) {
++  if (!value) return undefined;
++  const date = new Date(value);
++  return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
++}
+diff --git a/src/lib/image-alt.js b/src/lib/image-alt.js
+new file mode 100644
+--- /dev/null
++++ b/src/lib/image-alt.js
+@@ -0,0 +1,30 @@
++const apparelImageAlts = {
++  "/images/men formal shirt full.jpg": "Men's formal shirt from the OSD Apparels woven clothing range",
++  "/images/men over-sized t shirt.png": "Oversized men's t-shirt for private label clothing collections",
++  "/images/men tie and dye hoddies.png": "Men's tie-dye hoodie for custom streetwear collections",
++  "/images/kids t shirt.jpg": "Children's t-shirt from the OSD Apparels kidswear collection",
++  "/images/kids hoodies.jpg": "Children's hoodies for wholesale kidswear collections",
++  "/images/kids school uniform.png": "Children's school uniform from the OSD Apparels clothing range",
++  "/images/men linen co-ord sets.jpg": "Men's linen co-ord set for private label collections",
++  "/images/kids co-ord sets.jpg": "Matching children's co-ord set from OSD Apparels",
++  "/images/Jackets.png": "Jackets from the OSD Apparels outerwear collection",
++  "/images/kids jackets.jpg": "Children's jackets from the OSD Apparels kidswear range",
++  "/images/polo.png": "Polo shirt for custom knitted clothing collections",
++  "/images/trousers-chino-final.jpg": "Men's chino trousers from the OSD Apparels woven garment range",
++  "/images/hoodie-gray.jpeg": "Gray hoodie from the OSD Apparels casual clothing range",
++  "/images/hoodie-brown.jpeg": "Brown hoodie for private label casualwear collections",
++  "/images/Tees.png": "T-shirts from the OSD Apparels knitted garment collection",
++  "/images/Uniforms.png": "Uniforms for custom clothing and export orders",
++  "/images/denim.jpg": "Denim garments from the OSD Apparels clothing collection",
++  "/images/Hoodie.png": "Hoodie from the OSD Apparels knitted clothing range",
++  "/images/TieNdye.png": "Tie-dye clothing for custom apparel collections",
++  "/images/sleepwear.png": "Sleepwear from the OSD Apparels loungewear range",
++  "/images/Kids.png": "Children's clothing from the OSD Apparels kidswear collection",
++  "/images/CottonLinen.png": "Cotton and linen clothing for woven apparel collections",
++  "/images/Gurkha pants.png": "Gurkha pants from the OSD Apparels trouser collection",
++  "/images/Outfits.png": "Coordinated outfits from the OSD Apparels clothing range",
++};
++
++export function getImageAlt(src, fallback = "OSD Apparels clothing collection") {
++  return apparelImageAlts[src] || fallback;
++}
+diff --git a/src/lib/product-schema.js b/src/lib/product-schema.js
+new file mode 100644
+--- /dev/null
++++ b/src/lib/product-schema.js
+@@ -0,0 +1,27 @@
++import { brand, toAbsoluteUrl } from "@/lib/metadata";
++import { getCategoryImage } from "@/lib/products";
++
++export function buildProductCategorySchema(familySlug, family) {
++  const url = toAbsoluteUrl(`/products/${familySlug}`);
++  return {
++    "@context": "https://schema.org",
++    "@type": "ItemList",
++    name: `${family.label} categories`,
++    description: family.description,
++    url,
++    itemListElement: family.categories.map((category, index) => ({
++      "@type": "ListItem",
++      position: index + 1,
++      item: {
++        "@type": "Product",
++        "@id": `${url}#product-${category.slug}`,
++        name: `${family.label}: ${category.title}`,
++        description: category.description,
++        image: toAbsoluteUrl(getCategoryImage(familySlug, category.slug)),
++        url,
++        category: family.label,
++        manufacturer: { "@type": "Organization", name: brand.name, url: brand.siteUrl },
++      },
++    })),
++  };
++}
+diff --git a/public/llms.txt b/public/llms.txt
+new file mode 100644
+--- /dev/null
++++ b/public/llms.txt
+@@ -0,0 +1,31 @@
++# OSD Apparels
++
++> OSD Apparels is an apparel manufacturer and garment exporter in Faisalabad, Punjab, Pakistan, serving private label brands and international buyers.
++
++OSD Apparels supports knitted and woven garments, sampling, custom branding, production, and export coordination. The website describes a minimum order of 50 pieces per style. Confirm pricing, lead times, and order-specific requirements with the company.
++
++## Company
++
++- [Home](https://osdapparels.com/): Custom clothing manufacturing and export overview.
++- [About](https://osdapparels.com/about): Company background and manufacturing approach.
++- [Contact](https://osdapparels.com/contact): Enquiries and current contact details.
++- [Reviews](https://osdapparels.com/testimonials): Published client testimonials.
++
++## Products and services
++
++- [Products](https://osdapparels.com/products): Knitted and woven apparel categories.
++- [Menswear](https://osdapparels.com/products/mens): Shirts, hoodies, jackets, denim, co-ord sets, activewear, and loungewear.
++- [Kidswear](https://osdapparels.com/products/kids): Children's clothing, school uniforms, activewear, and matching sets.
++- [Services](https://osdapparels.com/services): Sourcing, sampling, garment production, and export support.
++- [Custom orders](https://osdapparels.com/custom-order): Private label and OEM development, printing, embroidery, sizing, and packaging.
++- [How it works](https://osdapparels.com/how-it-works): Enquiry, sampling, production, quality control, and delivery.
++- [Request a quote](https://osdapparels.com/quote): Submit manufacturing requirements.
++
++## Further information
++
++- [Blog](https://osdapparels.com/blog): Apparel sourcing and manufacturing articles.
++- [Sustainability](https://osdapparels.com/sustainability): Responsible sourcing and production approach.
++- [Certifications](https://osdapparels.com/certifications): Standards discussed on the website; contact the company for current documentation and scope.
++- [Privacy policy](https://osdapparels.com/privacy-policy): Enquiry data handling notes.
++- [Terms](https://osdapparels.com/terms): Commercial terms notes.
++- [Sitemap](https://osdapparels.com/sitemap.xml): Canonical public pages and currently published articles.

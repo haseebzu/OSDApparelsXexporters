@@ -60,7 +60,7 @@ export function ContentCard({ variant, ...props }) {
       <article className="content-card content-card--service">
         {image ? (
           <div className="content-card__service-media">
-            <Image src={image} alt={title} fill sizes="(max-width: 720px) 88vw, (max-width: 1080px) 44vw, 25vw" className="content-card__service-image" />
+            <Image src={image} alt={`${title} for custom apparel at OSD Apparels`} fill sizes="(max-width: 720px) 88vw, (max-width: 1080px) 44vw, 25vw" className="content-card__service-image" />
             <div className="content-card__service-overlay" />
           </div>
         ) : null}
@@ -79,7 +79,7 @@ export function ContentCard({ variant, ...props }) {
     return (
       <article className="content-card content-card--product">
         <div className="content-card__product-media">
-          <Image src={image} alt={alt} fill sizes="(max-width: 720px) 88vw, 34vw" className="content-card__product-image" />
+          <Image src={image} alt={alt || `${title} from the OSD Apparels clothing range`} fill sizes="(max-width: 720px) 88vw, 34vw" className="content-card__product-image" />
           <div className="content-card__product-overlay">
             <span>{meta}</span>
           </div>

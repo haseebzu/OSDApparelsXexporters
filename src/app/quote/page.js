@@ -4,9 +4,9 @@ import { Reveal } from "@/components/shared/Reveal";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Get a Quote | Private Label Clothing Manufacturer",
+  title: "Request a Custom Clothing Manufacturing Quote | OSD",
   description:
-    "Request a quote from OSD Apparels for private-label clothing manufacturing, custom development, bulk production, and export-ready apparel support.",
+    "Request a quote from OSD Apparels for custom clothing and private label manufacturing in Pakistan. Share your styles, quantities, and sampling requirements.",
   path: "/quote",
   keywords: [
     "get a quote clothing manufacturer",
@@ -24,7 +24,7 @@ export default function QuotePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Quote Form"
         title="Get a quote for private-label clothing manufacturing and export-ready production."

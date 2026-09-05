@@ -6,9 +6,9 @@ import { getPublishedBlogPosts } from "@/lib/blog-posts";
 import { createMetadata, buildBreadcrumbSchema, brand } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Blog",
+  title: "Apparel Sourcing Pakistan & Private Label Blog | OSD",
   description:
-    "Read OSD Apparels insights on private label clothing, garment sourcing in Pakistan, kidswear, menswear, production planning, and export-ready apparel development.",
+    "Read OSD Apparels guides to apparel sourcing in Pakistan, private label clothing for startups, menswear trends, and kidswear manufacturing for global brands.",
   path: "/blog",
   keywords: [
     "garment manufacturing blog",
@@ -69,8 +69,8 @@ export default async function BlogPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Blog"
         title="Launch-ready content that supports search visibility and buyer education."

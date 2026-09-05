@@ -12,9 +12,9 @@ import { contact, stats, trustPoints } from "@/data/site";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "About OSD Apparels | Garment Exporter Pakistan",
+  title: "About OSD Apparels | Garment Exporter Faisalabad, PK",
   description:
-    "Learn about OSD Apparels, a garment exporter in Pakistan supporting private-label brands, retailers, and sourcing teams with reliable apparel manufacturing.",
+    "Meet OSD Apparels, a garment exporter in Faisalabad, Pakistan, supporting brands with apparel sourcing, private label development, and global delivery.",
   path: "/about",
   keywords: [
     "about garment exporter Pakistan",
@@ -136,7 +136,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <section className="about-hero">
         <div className="about-hero__topbar">
           <div className="container about-hero__topbar-inner">

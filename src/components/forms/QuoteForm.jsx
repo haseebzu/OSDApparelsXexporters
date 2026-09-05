@@ -187,7 +187,7 @@ export function QuoteForm({ compact = false, sourcePage = "quote" }) {
           <div className="upload-preview field--wide">
             {previewUrl ? (
               <div className="upload-preview__image">
-                <Image src={previewUrl} alt="Reference preview" fill className="upload-preview__img" unoptimized />
+                <Image src={previewUrl} alt="Uploaded garment reference for your custom clothing enquiry" fill className="upload-preview__img" unoptimized />
               </div>
             ) : null}
             <div className="upload-preview__files">

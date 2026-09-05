@@ -1,0 +1,2396 @@
+{
+  "environment": "Local production build; existing CMS data; Googlebot user agent. Homepage trailing slash normalized for comparison.",
+  "printingRedirect": {
+    "status": 307,
+    "location": "/services"
+  },
+  "unknownBlogStatus": 404,
+  "robots": "User-Agent: *\nAllow: /\n\nHost: https://osdapparels.com\nSitemap: https://osdapparels.com/sitemap.xml\n",
+  "llmsStatus": 200,
+  "routeCount": 47,
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Custom Clothing Manufacturer Pakistan | OSD Apparels",
+      "titleLength": 52,
+      "description": "OSD Apparels is a custom clothing manufacturer in Faisalabad, Pakistan, offering private label apparel, knitted and woven garments, and worldwide export.",
+      "descriptionLength": 153,
+      "canonical": "https://osdapparels.com",
+      "schemas": [
+        "WebSite",
+        "Organization"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "EXCELLENCE"
+        },
+        {
+          "level": 2,
+          "text": "A Pakistan apparel manufacturer built for brands, retailers, and export buyers."
+        },
+        {
+          "level": 3,
+          "text": "Private Label Development"
+        },
+        {
+          "level": 3,
+          "text": "Production Coordination"
+        },
+        {
+          "level": 3,
+          "text": "Quality Built Into The Flow"
+        },
+        {
+          "level": 2,
+          "text": "Production support designed for modern fashion brands, startups, and worldwide buyers."
+        },
+        {
+          "level": 3,
+          "text": "Small Orders Production"
+        },
+        {
+          "level": 3,
+          "text": "Eco-Friendly Fabrics"
+        },
+        {
+          "level": 3,
+          "text": "Quality Guarantee"
+        },
+        {
+          "level": 3,
+          "text": "Customizable Clothing"
+        },
+        {
+          "level": 3,
+          "text": "24/7 Customer Support"
+        },
+        {
+          "level": 3,
+          "text": "Fast Shipping"
+        },
+        {
+          "level": 2,
+          "text": "Product categories built for modern wholesale buyers."
+        },
+        {
+          "level": 2,
+          "text": "Compliance and production discipline that support international sourcing decisions."
+        },
+        {
+          "level": 2,
+          "text": "A signature sourcing flow designed to feel disciplined at every stage."
+        },
+        {
+          "level": 3,
+          "text": "INQUIRY"
+        },
+        {
+          "level": 3,
+          "text": "SAMPLING"
+        },
+        {
+          "level": 3,
+          "text": "PRODUCTION"
+        },
+        {
+          "level": 3,
+          "text": "FINAL QC"
+        },
+        {
+          "level": 3,
+          "text": "DELIVERY"
+        },
+        {
+          "level": 2,
+          "text": "Inside the custom apparel manufacturing setup behind OSD Apparels"
+        },
+        {
+          "level": 3,
+          "text": "The Outfit Hub"
+        },
+        {
+          "level": 3,
+          "text": "Lab Section"
+        },
+        {
+          "level": 3,
+          "text": "Dyeing Section"
+        },
+        {
+          "level": 3,
+          "text": "Finishing"
+        },
+        {
+          "level": 3,
+          "text": "Cutting"
+        },
+        {
+          "level": 3,
+          "text": "Printing Facility"
+        },
+        {
+          "level": 3,
+          "text": "Embroidery Facility"
+        },
+        {
+          "level": 3,
+          "text": "Stitching"
+        },
+        {
+          "level": 3,
+          "text": "Hanger System"
+        },
+        {
+          "level": 2,
+          "text": "We believe responsible growth should strengthen both communities and opportunity."
+        },
+        {
+          "level": 3,
+          "text": "Women empowerment through work, dignity, and long-term opportunity."
+        },
+        {
+          "level": 2,
+          "text": "Read reviews, work with confidence."
+        },
+        {
+          "level": 3,
+          "text": "What our customers are saying"
+        },
+        {
+          "level": 2,
+          "text": "Tell us what you want to build and we will shape the right export-ready manufacturing plan."
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About OSD Apparels | Garment Exporter Faisalabad, PK",
+      "titleLength": 52,
+      "description": "Meet OSD Apparels, a garment exporter in Faisalabad, Pakistan, supporting brands with apparel sourcing, private label development, and global delivery.",
+      "descriptionLength": 151,
+      "canonical": "https://osdapparels.com/about",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "About OSD Apparels"
+        },
+        {
+          "level": 2,
+          "text": "Do well, live well, and dress well with a factory partner built for modern buyers."
+        },
+        {
+          "level": 2,
+          "text": "Meet the professionals"
+        },
+        {
+          "level": 2,
+          "text": "Our Core Values"
+        },
+        {
+          "level": 3,
+          "text": "Quality First"
+        },
+        {
+          "level": 3,
+          "text": "Pakistan Proud"
+        },
+        {
+          "level": 3,
+          "text": "True Partnership"
+        },
+        {
+          "level": 3,
+          "text": "Global Ambition"
+        },
+        {
+          "level": 3,
+          "text": "Redefining what Pakistani garments mean to the world."
+        },
+        {
+          "level": 3,
+          "text": "Pakistan's most trusted garment export company."
+        },
+        {
+          "level": 2,
+          "text": "Enhancing product quality through deeper textile understanding."
+        },
+        {
+          "level": 2,
+          "text": "Milestones that show our manufacturing discipline in motion."
+        },
+        {
+          "level": 2,
+          "text": "Cut the cost, keep the expertise"
+        },
+        {
+          "level": 2,
+          "text": "Our five key pillars of success"
+        },
+        {
+          "level": 3,
+          "text": "Buyer-First Communication"
+        },
+        {
+          "level": 3,
+          "text": "Multi-Product Capability"
+        },
+        {
+          "level": 3,
+          "text": "Strong Design Support"
+        },
+        {
+          "level": 3,
+          "text": "Operational Excellence"
+        },
+        {
+          "level": 3,
+          "text": "Export-Ready Reliability"
+        },
+        {
+          "level": 2,
+          "text": "Redefining sustainability with sourcing that's as refined as it is responsible."
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "title": "Apparel Sourcing Pakistan & Private Label Blog | OSD",
+      "titleLength": 52,
+      "description": "Read OSD Apparels guides to apparel sourcing in Pakistan, private label clothing for startups, menswear trends, and kidswear manufacturing for global brands.",
+      "descriptionLength": 157,
+      "canonical": "https://osdapparels.com/blog",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "Blog"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Launch-ready content that supports search visibility and buyer education."
+        },
+        {
+          "level": 3,
+          "text": "Co-Ord Sets in 2026: What Fashion Brands Should Be Sourcing Right Now"
+        },
+        {
+          "level": 3,
+          "text": "Common Mistakes New Clothing Brands Make When Sourcing Overseas (and How to Avoid Them)"
+        },
+        {
+          "level": 3,
+          "text": "Why Faisalabad-Made Cotton T-Shirts Are in High Demand Worldwide"
+        },
+        {
+          "level": 3,
+          "text": "Custom Packaging & Branding for Apparel Startups: Everything You Need to Know"
+        },
+        {
+          "level": 3,
+          "text": "How Long Does Apparel Sourcing Take? A Realistic Timeline for New Brands"
+        },
+        {
+          "level": 3,
+          "text": "What Buyers Need to Know About Pre-Production, In-Line & Final Inspections"
+        },
+        {
+          "level": 3,
+          "text": "Building a Private Label Streetwear Brand: From Concept to Launch"
+        },
+        {
+          "level": 3,
+          "text": "Dye Sublimation Printing Explained: The Best Choice for All-Over Print Apparel"
+        },
+        {
+          "level": 3,
+          "text": "How to Choose a Reliable Apparel Sourcing Agent in Pakistan"
+        },
+        {
+          "level": 3,
+          "text": "The Complete Guide to Workwear & Uniform Manufacturing for Businesses"
+        },
+        {
+          "level": 3,
+          "text": "Denim Manufacturing 101: Washes, Fits & Sourcing Jeans from Pakistan"
+        },
+        {
+          "level": 3,
+          "text": "Kids' Clothing Manufacturing: A Buyer's Guide to Safety, Fabric & Compliance"
+        },
+        {
+          "level": 3,
+          "text": "How to Source Custom Sportswear & Activewear from Pakistan"
+        },
+        {
+          "level": 3,
+          "text": "FOB vs CIF vs DDP: Shipping Terms Every Apparel Importer Must Know"
+        },
+        {
+          "level": 3,
+          "text": "Low MOQ Clothing Manufacturers: How Startups Can Source Without Big Budgets"
+        },
+        {
+          "level": 3,
+          "text": "How to Choose the Right Fabric GSM for T-Shirts, Hoodies & Sportswear"
+        },
+        {
+          "level": 3,
+          "text": "The Ultimate Guide to Embroidery vs Screen Printing for Corporate Uniforms"
+        },
+        {
+          "level": 3,
+          "text": "Sustainable Apparel Manufacturing: How to Build an Eco-Friendly Clothing Line"
+        },
+        {
+          "level": 3,
+          "text": "A Complete Guide to Custom Hoodie Manufacturing for Streetwear Brands"
+        },
+        {
+          "level": 3,
+          "text": "How to Start a Private Label Clothing Brand from Scratch in 2026"
+        },
+        {
+          "level": 3,
+          "text": "Faisalabad: The Textile Capital of Asia — Why It Matters for Your Brand"
+        },
+        {
+          "level": 3,
+          "text": "AQL Inspection Standards Explained: Protecting Your Order Quality"
+        },
+        {
+          "level": 3,
+          "text": "Screen Print vs DTG vs Dye Sublimation: Which Is Right for Your Brand?"
+        },
+        {
+          "level": 3,
+          "text": "How to Write a Tech Pack: A Step-by-Step Guide for Fashion Brands"
+        },
+        {
+          "level": 3,
+          "text": "Men's & Women's Fashion Trends 2026: What to Source Now for Your Brand"
+        },
+        {
+          "level": 3,
+          "text": "GOTS vs OEKO-TEX: Which Certification Should Your Brand Look For?"
+        },
+        {
+          "level": 3,
+          "text": "Understanding MOQ: What It Means and How to Negotiate It"
+        },
+        {
+          "level": 3,
+          "text": "Top 10 Questions to Ask a Clothing Supplier Before Placing an Order"
+        },
+        {
+          "level": 3,
+          "text": "Pakistan vs Bangladesh vs China: Which Is Best for Apparel Sourcing?"
+        },
+        {
+          "level": 3,
+          "text": "What Is OEM vs ODM vs Private Label in Apparel Manufacturing?"
+        },
+        {
+          "level": 3,
+          "text": "How to Source Men's Apparel from Pakistan: A Complete 2026 Guide"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/apparel-quality-inspection-stages",
+      "status": 200,
+      "title": "Apparel Quality Inspections: Buyer Guide | OSD Apparels",
+      "titleLength": 55,
+      "description": "Understand pre-production, in-line, and final apparel inspections, with guidance on quality checks and what clothing buyers should review at each stage.",
+      "descriptionLength": 152,
+      "canonical": "https://osdapparels.com/blog/apparel-quality-inspection-stages",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "What Buyers Need to Know About Pre-Production, In-Line & Final Inspections"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/apparel-sourcing-timeline-new-brands",
+      "status": 200,
+      "title": "Apparel Sourcing Timeline for New Brands | OSD Apparels",
+      "titleLength": 55,
+      "description": "From first inquiry to delivered product — a realistic, stage-by-stage timeline for sourcing apparel overseas, so you can plan your launch accurately.",
+      "descriptionLength": 149,
+      "canonical": "https://osdapparels.com/blog/apparel-sourcing-timeline-new-brands",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "How Long Does Apparel Sourcing Take? A Realistic Timeline for New Brands"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/aql-inspection-standards-explained",
+      "status": 200,
+      "title": "AQL Inspection Standards for Apparel Buyers | OSD Apparels",
+      "titleLength": 58,
+      "description": "What is AQL 2.5 and why does it matter for your clothing order? A clear explanation of Acceptable Quality Level inspection standards for apparel buyers.",
+      "descriptionLength": 152,
+      "canonical": "https://osdapparels.com/blog/aql-inspection-standards-explained",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "AQL Inspection Standards Explained: Protecting Your Order Quality"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/choose-apparel-sourcing-agent-pakistan",
+      "status": 200,
+      "title": "Choosing an Apparel Sourcing Agent in Pakistan | OSD",
+      "titleLength": 52,
+      "description": "What to look for in an apparel sourcing agent in Pakistan — vetting process, red flags, and questions to ask before committing to a partner.",
+      "descriptionLength": 140,
+      "canonical": "https://osdapparels.com/blog/choose-apparel-sourcing-agent-pakistan",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Choose a Reliable Apparel Sourcing Agent in Pakistan"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/custom-apparel-packaging-branding-guide",
+      "status": 200,
+      "title": "Custom Apparel Packaging & Branding Guide | OSD Apparels",
+      "titleLength": 56,
+      "description": "A guide to custom apparel packaging and branding for startups — labels, hang tags, poly bags, and eco-friendly options, with realistic budgeting tips.",
+      "descriptionLength": 150,
+      "canonical": "https://osdapparels.com/blog/custom-apparel-packaging-branding-guide",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Custom Packaging & Branding for Apparel Startups: Everything You Need to Know"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/custom-hoodie-manufacturing-guide",
+      "status": 200,
+      "title": "Custom Hoodie Manufacturing for Streetwear | OSD Apparels",
+      "titleLength": 57,
+      "description": "Everything streetwear brands need to know about custom hoodie manufacturing — fabric weights, construction details, printing options, and MOQs.",
+      "descriptionLength": 143,
+      "canonical": "https://osdapparels.com/blog/custom-hoodie-manufacturing-guide",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "A Complete Guide to Custom Hoodie Manufacturing for Streetwear Brands"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/ddd",
+      "status": 200,
+      "title": "Co-Ord Sets for Fashion Brands in 2026 | OSD Apparels",
+      "titleLength": 53,
+      "description": "View the OSD Apparels blog entry on co-ord sets in 2026 for fashion brands. This published entry currently contains placeholder text awaiting completion.",
+      "descriptionLength": 153,
+      "canonical": "https://osdapparels.com/blog/ddd",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Co-Ord Sets in 2026: What Fashion Brands Should Be Sourcing Right Now"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/denim-manufacturing-101-pakistan",
+      "status": 200,
+      "title": "Denim Manufacturing in Pakistan: Buyer Guide | OSD Apparels",
+      "titleLength": 59,
+      "description": "Explore denim manufacturing in Pakistan, including jeans fits, wash types, fabric weights, minimum order quantities, and delivery planning for apparel buyers.",
+      "descriptionLength": 158,
+      "canonical": "https://osdapparels.com/blog/denim-manufacturing-101-pakistan",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Denim Manufacturing 101: Washes, Fits & Sourcing Jeans from Pakistan"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/dye-sublimation-printing-explained",
+      "status": 200,
+      "title": "Dye Sublimation Printing for Custom Apparel | OSD Apparels",
+      "titleLength": 58,
+      "description": "Learn how dye sublimation printing works for custom apparel and sportswear, including fabric compatibility, all-over designs, and garment production planning.",
+      "descriptionLength": 158,
+      "canonical": "https://osdapparels.com/blog/dye-sublimation-printing-explained",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Dye Sublimation Printing Explained: The Best Choice for All-Over Print Apparel"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/embroidery-vs-screen-printing-corporate-uniforms",
+      "status": 200,
+      "title": "Embroidery vs Screen Printing for Uniforms | OSD Apparels",
+      "titleLength": 57,
+      "description": "Comparing embroidery and screen printing for corporate uniforms and workwear — durability, cost, and appearance explained for business buyers.",
+      "descriptionLength": 142,
+      "canonical": "https://osdapparels.com/blog/embroidery-vs-screen-printing-corporate-uniforms",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "The Ultimate Guide to Embroidery vs Screen Printing for Corporate Uniforms"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/fabric-gsm-guide-tshirts-hoodies-sportswear",
+      "status": 200,
+      "title": "Fabric GSM Guide for T-Shirts & Hoodies | OSD Apparels",
+      "titleLength": 54,
+      "description": "Understand fabric GSM for t-shirts, hoodies, and sportswear. Explore how garment weight affects fabric choices and product planning for your clothing brand.",
+      "descriptionLength": 156,
+      "canonical": "https://osdapparels.com/blog/fabric-gsm-guide-tshirts-hoodies-sportswear",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Choose the Right Fabric GSM for T-Shirts, Hoodies & Sportswear"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/faisalabad-cotton-tshirts-high-demand",
+      "status": 200,
+      "title": "Cotton T-Shirt Manufacturing in Faisalabad | OSD Apparels",
+      "titleLength": 57,
+      "description": "Why international buyers increasingly choose Faisalabad, Pakistan for cotton t-shirt manufacturing — cotton supply, cost, and quality explained.",
+      "descriptionLength": 144,
+      "canonical": "https://osdapparels.com/blog/faisalabad-cotton-tshirts-high-demand",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Why Faisalabad-Made Cotton T-Shirts Are in High Demand Worldwide"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/faisalabad-textile-capital-of-asia",
+      "status": 200,
+      "title": "Faisalabad Textile Manufacturing & Sourcing | OSD Apparels",
+      "titleLength": 58,
+      "description": "Why Faisalabad, Pakistan is called the Textile Capital of Asia, and what that means for brands sourcing cotton apparel, printing, and manufacturing.",
+      "descriptionLength": 148,
+      "canonical": "https://osdapparels.com/blog/faisalabad-textile-capital-of-asia",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Faisalabad: The Textile Capital of Asia — Why It Matters for Your Brand"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/fashion-trends-2026-what-to-source",
+      "status": 200,
+      "title": "Fashion Trends 2026: Apparel Sourcing Guide | OSD Apparels",
+      "titleLength": 58,
+      "description": "The apparel trends shaping 2026 — fabrics, silhouettes, and print styles brands should be sourcing now. A sourcing-focused trend guide from OSD Apparels.",
+      "descriptionLength": 153,
+      "canonical": "https://osdapparels.com/blog/fashion-trends-2026-what-to-source",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Men's & Women's Fashion Trends 2026: What to Source Now for Your Brand"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/fob-vs-cif-vs-ddp-shipping-terms",
+      "status": 200,
+      "title": "FOB vs CIF vs DDP: Apparel Shipping Terms | OSD Apparels",
+      "titleLength": 56,
+      "description": "FOB, CIF, and DDP explained for apparel buyers — who's responsible for shipping, insurance, and customs under each term, and which to choose.",
+      "descriptionLength": 141,
+      "canonical": "https://osdapparels.com/blog/fob-vs-cif-vs-ddp-shipping-terms",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "FOB vs CIF vs DDP: Shipping Terms Every Apparel Importer Must Know"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/gots-vs-oeko-tex-certification-clothing",
+      "status": 200,
+      "title": "GOTS vs OEKO-TEX: Clothing Certification Guide | OSD",
+      "titleLength": 52,
+      "description": "GOTS and OEKO-TEX are the two most requested apparel certifications — but they measure different things. Here's how to choose the right one for your brand.",
+      "descriptionLength": 155,
+      "canonical": "https://osdapparels.com/blog/gots-vs-oeko-tex-certification-clothing",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "GOTS vs OEKO-TEX: Which Certification Should Your Brand Look For?"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/how-to-write-a-tech-pack-guide",
+      "status": 200,
+      "title": "How to Write a Clothing Tech Pack: Brand Guide | OSD",
+      "titleLength": 52,
+      "description": "A tech pack is the blueprint of your garment. Learn what to include and how to create one that manufacturers can produce accurately, first time.",
+      "descriptionLength": 144,
+      "canonical": "https://osdapparels.com/blog/how-to-write-a-tech-pack-guide",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Write a Tech Pack: A Step-by-Step Guide for Fashion Brands"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/kids-clothing-manufacturing-guide",
+      "status": 200,
+      "title": "Kids Clothing Manufacturing: Wholesale Buyer Guide | OSD",
+      "titleLength": 56,
+      "description": "Sourcing kids' clothing requires extra care around safety and compliance. Here's what buyers need to know about fabric, certification, and manufacturing.",
+      "descriptionLength": 153,
+      "canonical": "https://osdapparels.com/blog/kids-clothing-manufacturing-guide",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Kids' Clothing Manufacturing: A Buyer's Guide to Safety, Fabric & Compliance"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/low-moq-clothing-manufacturer-startups",
+      "status": 200,
+      "title": "Low MOQ Clothing Manufacturer for Startups | OSD Apparels",
+      "titleLength": 57,
+      "description": "Learn how startups can work with low MOQ clothing manufacturers, with practical guidance on order quantities, supplier discussions, and small-batch sourcing.",
+      "descriptionLength": 157,
+      "canonical": "https://osdapparels.com/blog/low-moq-clothing-manufacturer-startups",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Low MOQ Clothing Manufacturers: How Startups Can Source Without Big Budgets"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/mistakes-sourcing-clothing-overseas",
+      "status": 200,
+      "title": "Overseas Clothing Sourcing Mistakes to Avoid | OSD Apparels",
+      "titleLength": 59,
+      "description": "Learn about common mistakes when sourcing clothing overseas, from choosing suppliers to planning production, with practical guidance for new apparel brands.",
+      "descriptionLength": 156,
+      "canonical": "https://osdapparels.com/blog/mistakes-sourcing-clothing-overseas",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Common Mistakes New Clothing Brands Make When Sourcing Overseas (and How to Avoid Them)"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/oem-vs-odm-vs-private-label-apparel",
+      "status": 200,
+      "title": "OEM vs ODM vs Private Label Clothing | OSD Apparels",
+      "titleLength": 51,
+      "description": "Confused between OEM, ODM, and Private Label apparel manufacturing? Here's a clear breakdown of each model and which one fits your clothing brand.",
+      "descriptionLength": 146,
+      "canonical": "https://osdapparels.com/blog/oem-vs-odm-vs-private-label-apparel",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "What Is OEM vs ODM vs Private Label in Apparel Manufacturing?"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/pakistan-vs-bangladesh-vs-china-apparel-sourcing",
+      "status": 200,
+      "title": "Apparel Sourcing: Pakistan vs Bangladesh vs China | OSD",
+      "titleLength": 55,
+      "description": "Comparing Pakistan, Bangladesh, and China for apparel sourcing — cost, MOQ, lead time, and quality. Find out which country fits your brand's needs.",
+      "descriptionLength": 147,
+      "canonical": "https://osdapparels.com/blog/pakistan-vs-bangladesh-vs-china-apparel-sourcing",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Pakistan vs Bangladesh vs China: Which Is Best for Apparel Sourcing?"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/private-label-streetwear-brand-launch",
+      "status": 200,
+      "title": "Private Label Streetwear: Brand Launch Guide | OSD Apparels",
+      "titleLength": 59,
+      "description": "A practical roadmap for launching a private label streetwear brand — design direction, fabric choices, printing, and your first production run.",
+      "descriptionLength": 143,
+      "canonical": "https://osdapparels.com/blog/private-label-streetwear-brand-launch",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Building a Private Label Streetwear Brand: From Concept to Launch"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/questions-to-ask-clothing-supplier",
+      "status": 200,
+      "title": "10 Questions to Ask Your Clothing Supplier | OSD Apparels",
+      "titleLength": 57,
+      "description": "Avoid costly sourcing mistakes. Here are the 10 essential questions every buyer should ask a clothing manufacturer before committing to an order.",
+      "descriptionLength": 145,
+      "canonical": "https://osdapparels.com/blog/questions-to-ask-clothing-supplier",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Top 10 Questions to Ask a Clothing Supplier Before Placing an Order"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/screen-print-vs-dtg-vs-sublimation",
+      "status": 200,
+      "title": "Screen Print vs DTG vs Sublimation: Buyer Guide | OSD",
+      "titleLength": 53,
+      "description": "Comparing screen printing, DTG, and dye sublimation for custom apparel — cost, quality, and best use cases explained for brands and print buyers.",
+      "descriptionLength": 145,
+      "canonical": "https://osdapparels.com/blog/screen-print-vs-dtg-vs-sublimation",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Screen Print vs DTG vs Dye Sublimation: Which Is Right for Your Brand?"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/source-custom-sportswear-activewear-pakistan",
+      "status": 200,
+      "title": "Custom Activewear Manufacturing in Pakistan | OSD Apparels",
+      "titleLength": 58,
+      "description": "Explore custom sportswear and activewear sourcing in Pakistan, including performance fabrics, sublimation printing, minimum orders, and supplier discussions.",
+      "descriptionLength": 157,
+      "canonical": "https://osdapparels.com/blog/source-custom-sportswear-activewear-pakistan",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Source Custom Sportswear & Activewear from Pakistan"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/source-mens-apparel-pakistan-2026-guide",
+      "status": 200,
+      "title": "Menswear Sourcing in Pakistan: 2026 Guide | OSD Apparels",
+      "titleLength": 56,
+      "description": "Explore menswear sourcing in Pakistan for 2026, including production costs, minimum orders, certification questions, and working with suppliers in Faisalabad.",
+      "descriptionLength": 158,
+      "canonical": "https://osdapparels.com/blog/source-mens-apparel-pakistan-2026-guide",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Source Men's Apparel from Pakistan: A Complete 2026 Guide"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/start-private-label-clothing-brand-2026",
+      "status": 200,
+      "title": "Start a Private Label Clothing Brand in 2026 | OSD Apparels",
+      "titleLength": 59,
+      "description": "A step-by-step guide to launching a private label clothing brand in 2026 — from choosing a niche to sourcing, branding, and your first production run.",
+      "descriptionLength": 150,
+      "canonical": "https://osdapparels.com/blog/start-private-label-clothing-brand-2026",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Start a Private Label Clothing Brand from Scratch in 2026"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/sustainable-apparel-manufacturing-guide",
+      "status": 200,
+      "title": "Sustainable Apparel Manufacturing Guide | OSD Apparels",
+      "titleLength": 54,
+      "description": "A practical guide to sustainable apparel manufacturing — fabrics, certifications, and supplier practices brands need for a genuinely eco-friendly clothing line.",
+      "descriptionLength": 160,
+      "canonical": "https://osdapparels.com/blog/sustainable-apparel-manufacturing-guide",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Sustainable Apparel Manufacturing: How to Build an Eco-Friendly Clothing Line"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/understanding-moq-clothing-manufacturing",
+      "status": 200,
+      "title": "Clothing Manufacturing MOQ: How to Negotiate | OSD Apparels",
+      "titleLength": 59,
+      "description": "What is MOQ in apparel manufacturing, why does it exist, and how can startups negotiate lower minimum order quantities? Here's everything you need to know.",
+      "descriptionLength": 155,
+      "canonical": "https://osdapparels.com/blog/understanding-moq-clothing-manufacturing",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Understanding MOQ: What It Means and How to Negotiate It"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/blog/workwear-uniform-manufacturing-guide",
+      "status": 200,
+      "title": "Workwear & Uniform Manufacturing Guide | OSD Apparels",
+      "titleLength": 53,
+      "description": "Everything businesses need to know about sourcing corporate uniforms, workwear, and branded staff apparel — fabric, durability, and customization.",
+      "descriptionLength": 146,
+      "canonical": "https://osdapparels.com/blog/workwear-uniform-manufacturing-guide",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "The Complete Guide to Workwear & Uniform Manufacturing for Businesses"
+        },
+        {
+          "level": 3,
+          "text": "Need a manufacturing partner?"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/certifications",
+      "status": 200,
+      "title": "Garment Manufacturing Standards & Certifications | OSD",
+      "titleLength": 54,
+      "description": "Explore the apparel quality, organic textile, and ethical sourcing standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
+      "descriptionLength": 156,
+      "canonical": "https://osdapparels.com/certifications",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Certifications and compliance signals that support confident apparel sourcing."
+        },
+        {
+          "level": 3,
+          "text": "GOTS"
+        },
+        {
+          "level": 3,
+          "text": "SEDEX"
+        },
+        {
+          "level": 3,
+          "text": "SMETA 4-Pillar"
+        },
+        {
+          "level": 3,
+          "text": "ISO 9001:2015"
+        },
+        {
+          "level": 3,
+          "text": "OEKO-TEX"
+        },
+        {
+          "level": 3,
+          "text": "BSCI"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "title": "Contact OSD Apparels | Apparel Manufacturer Pakistan",
+      "titleLength": 52,
+      "description": "Contact OSD Apparels in Faisalabad, Pakistan, to discuss custom clothing manufacturing, private label collections, sampling, and export orders for your brand.",
+      "descriptionLength": 158,
+      "canonical": "https://osdapparels.com/contact",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Talk to OSD Apparels through the channel that works best for your buying team."
+        },
+        {
+          "level": 2,
+          "text": "Need More Information? Get in touch"
+        },
+        {
+          "level": 2,
+          "text": "Send Message"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/custom-order",
+      "status": 200,
+      "title": "Private Label Clothing Manufacturer | OSD Apparels OEM",
+      "titleLength": 54,
+      "description": "Build your collection with OSD Apparels, a private label clothing manufacturer in Pakistan offering OEM sampling, custom sizing, printing, and embroidery.",
+      "descriptionLength": 154,
+      "canonical": "https://osdapparels.com/custom-order",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Custom fashion apparel manufacturing for private label, OEM, and export programs."
+        },
+        {
+          "level": 2,
+          "text": "Everything needed for a modern custom apparel manufacturing program."
+        },
+        {
+          "level": 3,
+          "text": "Custom Design / Style"
+        },
+        {
+          "level": 3,
+          "text": "Custom Sizing"
+        },
+        {
+          "level": 3,
+          "text": "Shipping Around The World"
+        },
+        {
+          "level": 3,
+          "text": "Custom Label / Tag"
+        },
+        {
+          "level": 3,
+          "text": "Custom Print"
+        },
+        {
+          "level": 3,
+          "text": "Custom Embroidery"
+        },
+        {
+          "level": 3,
+          "text": "Custom Cut & Sew"
+        },
+        {
+          "level": 2,
+          "text": "A numbered custom-order process that keeps buyer expectations visible from sample to shipment."
+        },
+        {
+          "level": 3,
+          "text": "Concept Review"
+        },
+        {
+          "level": 3,
+          "text": "Sampling"
+        },
+        {
+          "level": 3,
+          "text": "Bulk Execution"
+        },
+        {
+          "level": 3,
+          "text": "Final QA"
+        },
+        {
+          "level": 3,
+          "text": "Export Delivery"
+        },
+        {
+          "level": 2,
+          "text": "Decoration methods for private label, OEM, and custom apparel production."
+        },
+        {
+          "level": 3,
+          "text": "Screen Printing"
+        },
+        {
+          "level": 3,
+          "text": "Embroidery"
+        },
+        {
+          "level": 3,
+          "text": "DTG"
+        },
+        {
+          "level": 3,
+          "text": "Sublimation"
+        },
+        {
+          "level": 3,
+          "text": "Heat Transfer"
+        },
+        {
+          "level": 3,
+          "text": "Puff Print"
+        },
+        {
+          "level": 2,
+          "text": "Share your product idea and we will shape the right development and production plan."
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/how-it-works",
+      "status": 200,
+      "title": "Private Label Clothing Manufacturing Process | OSD OEM",
+      "titleLength": 54,
+      "description": "Follow the OSD Apparels private label clothing manufacturing process, from enquiry and sample approval to bulk production, quality checks, and export delivery.",
+      "descriptionLength": 159,
+      "canonical": "https://osdapparels.com/how-it-works",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "A clear five-step private-label clothing manufacturing journey from enquiry to delivery."
+        },
+        {
+          "level": 2,
+          "text": "Clarity at each stage helps buyers commit faster."
+        },
+        {
+          "level": 3,
+          "text": "1. Inquiry"
+        },
+        {
+          "level": 3,
+          "text": "2. Sampling"
+        },
+        {
+          "level": 3,
+          "text": "3. Production"
+        },
+        {
+          "level": 3,
+          "text": "4. Final QC"
+        },
+        {
+          "level": 3,
+          "text": "5. Delivery"
+        },
+        {
+          "level": 3,
+          "text": "Why this layout is better"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "title": "OSD Apparels Privacy Policy | Business Enquiry Details",
+      "titleLength": 54,
+      "description": "Read how OSD Apparels describes handling enquiry details, quote requests, and business contact information for commercial follow-up and project coordination.",
+      "descriptionLength": 157,
+      "canonical": "https://osdapparels.com/privacy-policy",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Clear handling expectations for enquiries and business communication."
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "title": "Knitted & Woven Garments Manufacturer | OSD Apparels",
+      "titleLength": 52,
+      "description": "Explore knitted and woven garments from OSD Apparels in Pakistan, including menswear, kidswear, hoodies, denim, activewear, and private label collections.",
+      "descriptionLength": 154,
+      "canonical": "https://osdapparels.com/products",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Explore export-ready apparel categories built for modern buyers."
+        },
+        {
+          "level": 2,
+          "text": "Our Clothing Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contemporary menswear categories built for labels, retail programs, wholesalers, and custom collections."
+        },
+        {
+          "level": 3,
+          "text": "Reliable kidswear manufacturing across basics, schoolwear, activewear, and coordinated seasonal programs."
+        },
+        {
+          "level": 2,
+          "text": "A broader look at the style direction behind our catalog."
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/kids",
+      "status": 200,
+      "title": "Wholesale Kidswear Manufacturer Pakistan | OSD Apparels",
+      "titleLength": 55,
+      "description": "Explore wholesale kidswear manufacturing at OSD Apparels in Pakistan, from t-shirts and hoodies to school uniforms, activewear, and matching co-ord sets.",
+      "descriptionLength": 153,
+      "canonical": "https://osdapparels.com/products/kids",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "ItemList"
+      ],
+      "productCount": 10,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Kidswear categories from a kids clothing manufacturer in Pakistan."
+        },
+        {
+          "level": 2,
+          "text": "Browse kidswear categories for schoolwear, basics, and retail programs"
+        },
+        {
+          "level": 3,
+          "text": "Kids T-Shirts"
+        },
+        {
+          "level": 3,
+          "text": "Kids Shirts"
+        },
+        {
+          "level": 3,
+          "text": "Kids Trousers"
+        },
+        {
+          "level": 3,
+          "text": "Kids Hoodies"
+        },
+        {
+          "level": 3,
+          "text": "Kids Jackets"
+        },
+        {
+          "level": 3,
+          "text": "Kids Co-Ord Sets"
+        },
+        {
+          "level": 3,
+          "text": "Kids Activewear"
+        },
+        {
+          "level": 3,
+          "text": "Kids Swimwear"
+        },
+        {
+          "level": 3,
+          "text": "School Uniforms"
+        },
+        {
+          "level": 3,
+          "text": "Pyjamas & Loungewear"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/mens",
+      "status": 200,
+      "title": "Menswear Manufacturer in Pakistan | OSD Apparels OEM",
+      "titleLength": 52,
+      "description": "Source menswear from OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
+      "descriptionLength": 152,
+      "canonical": "https://osdapparels.com/products/mens",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList",
+        "ItemList"
+      ],
+      "productCount": 10,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Menswear categories from a men's clothing manufacturer in Pakistan."
+        },
+        {
+          "level": 2,
+          "text": "Browse menswear categories for private-label and wholesale programs"
+        },
+        {
+          "level": 3,
+          "text": "Formal Shirts"
+        },
+        {
+          "level": 3,
+          "text": "T-Shirts"
+        },
+        {
+          "level": 3,
+          "text": "Polo Shirts"
+        },
+        {
+          "level": 3,
+          "text": "Hoodies & Sweatshirts"
+        },
+        {
+          "level": 3,
+          "text": "Jackets"
+        },
+        {
+          "level": 3,
+          "text": "Trousers & Bottoms"
+        },
+        {
+          "level": 3,
+          "text": "Activewear"
+        },
+        {
+          "level": 3,
+          "text": "Denim Collection"
+        },
+        {
+          "level": 3,
+          "text": "Co-Ord Sets"
+        },
+        {
+          "level": 3,
+          "text": "Loungewear"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/quote",
+      "status": 200,
+      "title": "Request a Custom Clothing Manufacturing Quote | OSD",
+      "titleLength": 51,
+      "description": "Request a quote from OSD Apparels for custom clothing and private label manufacturing in Pakistan. Share your styles, quantities, and sampling requirements.",
+      "descriptionLength": 156,
+      "canonical": "https://osdapparels.com/quote",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Get a quote for private-label clothing manufacturing and export-ready production."
+        },
+        {
+          "level": 3,
+          "text": "What happens next"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "title": "Low MOQ Clothing Manufacturer Services | OSD Apparels",
+      "titleLength": 53,
+      "description": "Explore OSD Apparels clothing manufacturing services: low MOQ from 50 pieces per style, fabric sourcing, sampling, quality checks, and export coordination.",
+      "descriptionLength": 155,
+      "canonical": "https://osdapparels.com/services",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Custom clothing manufacturing services built for low-MOQ and export buyers"
+        },
+        {
+          "level": 2,
+          "text": "Your first collection, done right from day one"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/sustainability",
+      "status": 200,
+      "title": "Sustainable Apparel Manufacturing Pakistan | OSD Apparels",
+      "titleLength": 57,
+      "description": "Explore OSD Apparels approach to sustainable apparel manufacturing in Pakistan, with responsible sourcing, ethical production, and supply chain transparency.",
+      "descriptionLength": 157,
+      "canonical": "https://osdapparels.com/sustainability",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Sustainable clothing manufacturing in Pakistan, supported by process and proof."
+        },
+        {
+          "level": 2,
+          "text": "Responsible manufacturing is part of the value proposition."
+        },
+        {
+          "level": 3,
+          "text": "Focus Areas"
+        },
+        {
+          "level": 3,
+          "text": "GOTS"
+        },
+        {
+          "level": 3,
+          "text": "SEDEX"
+        },
+        {
+          "level": 3,
+          "text": "SMETA 4-Pillar"
+        },
+        {
+          "level": 3,
+          "text": "ISO 9001:2015"
+        },
+        {
+          "level": 3,
+          "text": "OEKO-TEX"
+        },
+        {
+          "level": 3,
+          "text": "BSCI"
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "title": "OSD Apparels Commercial Terms | Manufacturing Orders",
+      "titleLength": 52,
+      "description": "Review OSD Apparels notes on pricing, sampling, production schedules, approvals, and dispatch commitments to confirm in manufacturing project discussions.",
+      "descriptionLength": 154,
+      "canonical": "https://osdapparels.com/terms",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Commercial terms placeholder for a launch-ready frontend structure."
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/testimonials",
+      "status": 200,
+      "title": "OSD Apparels Reviews | Pakistan Clothing Manufacturer",
+      "titleLength": 53,
+      "description": "Read OSD Apparels client reviews on sampling, communication, garment quality, and delivery for private label clothing and kidswear manufacturing in Pakistan.",
+      "descriptionLength": 157,
+      "canonical": "https://osdapparels.com/testimonials",
+      "schemas": [
+        "WebSite",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "productCount": 0,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Buyer feedback for an apparel manufacturer in Pakistan that delivers with consistency."
+        },
+        {
+          "level": 3,
+          "text": "Quick Links"
+        },
+        {
+          "level": 3,
+          "text": "Categories"
+        },
+        {
+          "level": 3,
+          "text": "Contact"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

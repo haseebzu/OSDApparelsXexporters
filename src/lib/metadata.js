@@ -1,3 +1,5 @@
+import { contact, socials } from "@/data/site";
+
 const siteUrl = "https://osdapparels.com";
 
 export const brand = {
@@ -5,21 +7,18 @@ export const brand = {
   legalName: "OSD Apparels",
   siteUrl,
   locale: "en_PK",
-  defaultTitle: "OSD Apparels | Modern Fashion Manufacturer & Exporter Worldwide",
+  defaultTitle: "Custom Clothing Manufacturer Pakistan | OSD Apparels",
   defaultDescription:
-    "OSD Apparels is a custom fashion apparel manufacturer and exporter from Pakistan, delivering private label development, knitted and woven garment production, low-MOQ support, and export-ready quality for global buyers.",
+    "OSD Apparels is a custom clothing manufacturer in Faisalabad, Pakistan, offering private label apparel, knitted and woven garments, and worldwide export.",
   defaultImage: "/images/osd-logo.png",
   contact: {
-    email: "osdapparels@gmail.com",
-    phone: "+92 3710775687",
+    email: contact.email,
+    phone: contact.phone,
     addressLocality: "Faisalabad",
     addressRegion: "Punjab",
     addressCountry: "PK",
   },
-  socialLinks: [
-    "https://www.linkedin.com/company/osd-apparels/",
-    "https://www.instagram.com/osdapparels/",
-  ],
+  socialLinks: [socials.linkedin, socials.instagram],
   keywords: [
     "OSD Apparels",
     "custom clothing manufacturer",
@@ -83,7 +82,7 @@ export function createMetadata({
     alternates: {
       canonical: path,
     },
-    keywords: [...brand.keywords, ...keywords],
+    keywords: [...new Set([brand.name, ...keywords])],
     category,
     robots: {
       index: !noIndex,

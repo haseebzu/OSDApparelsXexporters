@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Contact OSD Apparels | Apparel Manufacturer Pakistan",
   description:
-    "Contact OSD Apparels for private-label production, export-ready apparel manufacturing, sampling support, and wholesale garment enquiries from Pakistan.",
+    "Contact OSD Apparels in Faisalabad, Pakistan, to discuss custom clothing manufacturing, private label collections, sampling, and export orders for your brand.",
   path: "/contact",
   keywords: [
     "contact apparel manufacturer Pakistan",
@@ -26,7 +26,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Contact"
         title="Talk to OSD Apparels through the channel that works best for your buying team."

@@ -4,14 +4,15 @@ import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionIntro } from "@/components/shared/SectionIntro";
 import { getCategoryImage, getFamily } from "@/lib/products";
-import { buildBreadcrumbSchema, buildItemListSchema, createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+import { buildProductCategorySchema } from "@/lib/product-schema";
 
 const familySlug = "mens";
 
 export const metadata = createMetadata({
-  title: "Men's Clothing Manufacturer Pakistan | OSD Apparels",
+  title: "Menswear Manufacturer in Pakistan | OSD Apparels OEM",
   description:
-    "Explore menswear categories from OSD Apparels, a men's clothing manufacturer in Pakistan for retailers, private-label brands, and wholesale buyers.",
+    "Source menswear from OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
   path: "/products/mens",
   keywords: [
     "men's clothing manufacturer Pakistan",
@@ -28,21 +29,12 @@ export default function MensProductsPage() {
     { name: "Products", path: "/products" },
     { name: family.label, path: "/products/mens" },
   ]);
-  const itemListSchema = buildItemListSchema({
-    name: `${family.label} categories`,
-    description: family.description,
-    path: "/products/mens",
-    items: family.categories.map((cat) => ({
-      name: cat.title,
-      description: cat.description,
-      path: `/products/mens#${cat.slug}`,
-    })),
-  });
+  const itemListSchema = buildProductCategorySchema(familySlug, family);
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Men's Catalog"
         title="Menswear categories from a men's clothing manufacturer in Pakistan."
@@ -68,7 +60,7 @@ export default function MensProductsPage() {
                   <div className={`product-card__visual product-card__visual--${i % 3}`}>
                     <Image
                       src={image}
-                      alt={cat.title}
+                      alt={`Men's ${cat.title.replace(/^Kids /, "")} from the OSD Apparels clothing collection`}
                       fill
                       sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="product-card__visual-image"

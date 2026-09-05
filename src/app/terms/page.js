@@ -1,14 +1,20 @@
 import { PageHero } from "@/components/shared/PageHero";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Terms & Conditions",
+  title: "OSD Apparels Commercial Terms | Manufacturing Orders",
+  description:
+    "Review OSD Apparels notes on pricing, sampling, production schedules, approvals, and dispatch commitments to confirm in manufacturing project discussions.",
   path: "/terms",
 });
 
 export default function TermsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Terms & Conditions", path: "/terms" },
+      ])).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Terms"
         title="Commercial terms placeholder for a launch-ready frontend structure."

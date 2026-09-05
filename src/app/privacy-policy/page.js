@@ -1,14 +1,20 @@
 import { PageHero } from "@/components/shared/PageHero";
-import { createMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Privacy Policy",
+  title: "OSD Apparels Privacy Policy | Business Enquiry Details",
+  description:
+    "Read how OSD Apparels describes handling enquiry details, quote requests, and business contact information for commercial follow-up and project coordination.",
   path: "/privacy-policy",
 });
 
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Privacy Policy", path: "/privacy-policy" },
+      ])).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Privacy Policy"
         title="Clear handling expectations for enquiries and business communication."

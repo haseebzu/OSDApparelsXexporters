@@ -390,7 +390,7 @@ export function ServicesPageContent() {
             <div className="services-page__panel-side">
               <div className="services-page__panel-media">
                 <Image
-                  alt={activeService.title}
+                  alt={`${activeService.title} for OSD Apparels clothing manufacturing`}
                   className="services-page__panel-image"
                   fill
                   sizes="(max-width: 980px) 100vw, 34vw"
@@ -406,7 +406,7 @@ export function ServicesPageContent() {
                   <Reveal className="services-page__highlight-card" delay={index * 0.05} key={item.title}>
                     <div className="services-page__highlight-media">
                       <Image
-                        alt={item.title}
+                        alt={`${item.title} for private label apparel production`}
                         className="services-page__highlight-image"
                         fill
                         sizes="(max-width: 760px) 100vw, (max-width: 1180px) 50vw, 33vw"

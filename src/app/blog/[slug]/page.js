@@ -4,6 +4,8 @@ import { Reveal } from "@/components/shared/Reveal";
 import { getPublishedBlogPostBySlug, getPublishedBlogPosts } from "@/lib/blog-posts";
 import { brand, buildBreadcrumbSchema, createMetadata, toAbsoluteUrl } from "@/lib/metadata";
 
+import { getBlogSeo, toIsoDate } from "@/lib/blog-seo";
+
 export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
@@ -18,16 +20,17 @@ export async function generateMetadata({ params }) {
   if (!post) return {};
 
   const image = post.cover_image || "/images/osd-logo.png";
-  const publishedTime = post.published_at ? new Date(post.published_at).toISOString() : undefined;
+  const publishedTime = toIsoDate(post.published_at);
+  const modifiedTime = toIsoDate(post.updated_at) || publishedTime;
 
   return createMetadata({
-    title: post.title,
-    description: post.excerpt,
+    ...getBlogSeo(post),
     path: `/blog/${post.slug}`,
     type: "article",
     images: [image],
     category: post.category,
     publishedTime,
+    modifiedTime,
     keywords: [post.category, "apparel sourcing", "garment manufacturing", "private label clothing"],
   });
 }
@@ -42,8 +45,8 @@ export default async function BlogPostPage({ params }) {
     headline: post.title,
     description: post.excerpt,
     image: [toAbsoluteUrl(coverImage)],
-    datePublished: post.published_at || undefined,
-    dateModified: post.published_at || undefined,
+    datePublished: toIsoDate(post.published_at),
+    dateModified: toIsoDate(post.updated_at) || toIsoDate(post.published_at),
     articleSection: post.category,
     mainEntityOfPage: toAbsoluteUrl(`/blog/${post.slug}`),
     publisher: {
@@ -63,8 +66,8 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c") }} />
       <PageHero eyebrow={post.category} title={post.title} text={post.excerpt} highlights={["Insight Article", "Brand Education", "Commercial Context"]} />
       <section className="section">
         <div className="container two-col-grid">
