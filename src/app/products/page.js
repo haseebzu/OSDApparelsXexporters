@@ -69,7 +69,7 @@ const apparelCategories = [
   {
     title: "Hoodies",
     icon: "hoodies",
-    href: "/products/mens",
+    href: "/products/hoodies",
   },
   {
     title: "Work Uniform",
@@ -79,7 +79,7 @@ const apparelCategories = [
   {
     title: "Graphic Tees",
     icon: "graphic-tees",
-    href: "/products/mens",
+    href: "/products/t-shirts",
   },
 ];
 
@@ -197,7 +197,7 @@ function CategoryLineIcon({ type }) {
 export const metadata = createMetadata({
   title: "Knitted & Woven Garments Manufacturer | OSD Apparels",
   description:
-    "Explore knitted and woven garments from OSD Apparels in Pakistan, including menswear, kidswear, hoodies, denim, activewear, and private label collections.",
+    "Explore custom knitted and woven apparel from OSD Apparels in Pakistan, including menswear, kidswear, hoodies, denim, activewear, and private label collections.",
   path: "/products",
 });
 
@@ -213,7 +213,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Product Catalog"
         title="Explore export-ready apparel categories built for modern buyers."
-        text="Discover the knitted, woven, kidswear, fleece, uniform, and private-label product ranges OSD Apparels develops for retailers, wholesalers, and global sourcing teams."
+        text="Discover the custom knitted and woven apparel ranges OSD Apparels manufactures for brands, retailers, and other businesses ordering in bulk."
         highlights={["Menswear Range", "Kidswear Programs", "Private Label Expansion"]}
       />
 
