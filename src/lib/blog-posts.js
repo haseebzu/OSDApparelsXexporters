@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { blogPosts as fallbackBlogPosts } from "@/data/site";
 import { getSupabaseAdminClient, isSupabaseConfigured } from "@/lib/supabase";
+import { isRetiredBlogSlug } from "@/lib/retired-blog-routes";
 
 function normalizeContent(value) {
   if (Array.isArray(value)) {
@@ -38,17 +39,19 @@ export async function getPublishedBlogPosts() {
         .order("published_at", { ascending: false, nullsFirst: false });
 
       if (!error && data?.length) {
-        return data.map((post) => ({
-          ...post,
-          content: normalizeContent(post.content),
-        }));
+        return data
+          .filter((post) => !isRetiredBlogSlug(post.slug))
+          .map((post) => ({
+            ...post,
+            content: normalizeContent(post.content),
+          }));
       }
     } catch (error) {
       console.error("Falling back to static blog posts:", error);
     }
   }
 
-  return fallbackBlogPosts.map(mapStaticPost);
+  return fallbackBlogPosts.map(mapStaticPost).filter((post) => !isRetiredBlogSlug(post.slug));
 }
 
 export async function getPublishedBlogPostBySlug(slug) {

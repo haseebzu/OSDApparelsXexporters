@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
     category: post.category,
     publishedTime,
     modifiedTime,
-    keywords: [post.category, "apparel sourcing", "garment manufacturing", "private label clothing"],
+    keywords: [post.category, "garment manufacturing", "private label clothing"],
   });
 }
 

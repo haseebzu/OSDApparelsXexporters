@@ -18,7 +18,7 @@ const heroStates = [
   {
     id: "state-1",
     topline: "We Export",
-    display: "EXCELLENCE",
+    display: "CUSTOM\nAPPAREL\nMANUFACTURING",
     image: "/images/hero1.png",
   },
   {
@@ -29,7 +29,7 @@ const heroStates = [
   },
   {
     id: "state-3",
-    topline: "Sourcing Custom",
+    topline: "Manufacturing Custom",
     display: "KNITTED & WOVEN GARMENTS",
     image: "/images/hero 3.png",
   },
@@ -114,7 +114,7 @@ function HeroHeadline({ state, priority = false }) {
       <div className="hero-cutout__headline-stack">
         <div className="hero-cutout__copy">
           <p className="hero-cutout__topline">{state.topline}</p>
-          <h1 className={`hero-cutout__display${isLongDisplay ? " hero-cutout__display--long" : ""}`}>
+          <h1 className={`hero-cutout__display hero-cutout__display--${state.id}${isLongDisplay ? " hero-cutout__display--long" : ""}`}>
             <AccentWord word={state.display} />
           </h1>
         </div>
@@ -143,8 +143,8 @@ function MarqueeStrip({ reducedMotion, images }) {
     <div className="hero-marquee">
       <div className={`hero-marquee__ticker${reducedMotion ? " hero-marquee__ticker--static" : ""}`}>
         <div className="hero-marquee__ticker-track">
-          <span>GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY / GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY</span>
-          <span>GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY / GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY</span>
+          <span>GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY / GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY</span>
+          <span>GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY / GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY</span>
         </div>
       </div>
 
@@ -183,9 +183,14 @@ export function HeroSlider() {
     offset: ["start start", "end start"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (value) => {
-    const nextIndex = value < 0.34 ? 0 : value < 0.68 ? 1 : 2;
+  const selectHeroState = (progress) => {
+    const nextIndex = Math.min(heroStates.length - 1, Math.floor(progress * heroStates.length));
     setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
+  };
+
+  useMotionValueEvent(scrollYProgress, "change", (value) => {
+    // Mobile is not pinned, so it continues to use the section's native scroll progress.
+    if (!isDesktop) selectHeroState(value);
   });
 
   useEffect(() => {
@@ -223,9 +228,12 @@ export function HeroSlider() {
       ScrollTrigger.create({
         trigger: pinRef.current,
         start: "top top",
-        end: "+=155%",
+        // Give all three hero states an equal, deliberate scroll interval.
+        end: "+=260%",
         pin: true,
+        anticipatePin: 1,
         invalidateOnRefresh: true,
+        onUpdate: (self) => selectHeroState(self.progress),
       });
     }, rootRef);
 
@@ -241,7 +249,7 @@ export function HeroSlider() {
 
         <div className="hero-cutout__pin" ref={pinRef}>
           <div className="container hero-cutout__inner">
-            <p className="hero-cutout__eyebrow">Apparel Sourcing & Export / Faisalabad, Pakistan</p>
+            <p className="hero-cutout__eyebrow">Apparel Manufacturing / Faisalabad, Pakistan</p>
 
             <div className="hero-cutout__stage">
               <div className="hero-cutout__states">
@@ -249,10 +257,10 @@ export function HeroSlider() {
                   <motion.div
                     key={heroStates[activeIndex].id}
                     className="hero-cutout__state-shell"
-                    initial={{ opacity: 0, y: 28 }}
+                    initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -22 }}
-                    transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                    exit={{ opacity: 0, y: -14 }}
+                    transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <HeroHeadline state={heroStates[activeIndex]} priority={activeIndex === 0} />
                   </motion.div>
@@ -262,8 +270,7 @@ export function HeroSlider() {
 
             <div className="hero-cutout__bottom">
               <p className="hero-cutout__caption">
-                Specialized in private-label sourcing, export coordination, and apparel vendor alignment for serious
-                buying programs.
+                Your Brand, Your Way. Custom apparel manufactured to your agreed product specifications.
               </p>
 
               <div className="hero-cutout__cta">
@@ -273,8 +280,7 @@ export function HeroSlider() {
               </div>
 
               <p className="hero-cutout__support">
-                Partnering with fashion brands across USA, UK, EU, and UAE through Faisalabad&apos;s strongest factory
-                and supplier networks.
+                Supporting international clothing brands with custom apparel manufacturing in Faisalabad, Pakistan.
               </p>
             </div>
           </div>

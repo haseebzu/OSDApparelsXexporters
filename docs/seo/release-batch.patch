@@ -1,0 +1,124 @@
+diff --git a/public/llms.txt b/public/llms.txt
+index dd789c5..a785923 100644
+--- a/public/llms.txt
++++ b/public/llms.txt
+@@ -6,26 +6,26 @@ OSD Apparels supports knitted and woven garments, sampling, custom branding, pro
+ 
+ ## Company
+ 
+-- [Home](https://osdapparels.com/): Custom clothing manufacturing and export overview.
+-- [About](https://osdapparels.com/about): Company background and manufacturing approach.
+-- [Contact](https://osdapparels.com/contact): Enquiries and current contact details.
+-- [Reviews](https://osdapparels.com/testimonials): Published client testimonials.
++- [Home](https://www.osdapparels.com/): Custom clothing manufacturing and export overview.
++- [About](https://www.osdapparels.com/about): Company background and manufacturing approach.
++- [Contact](https://www.osdapparels.com/contact): Enquiries and current contact details.
++- [Reviews](https://www.osdapparels.com/testimonials): Published client testimonials.
+ 
+ ## Products and services
+ 
+-- [Products](https://osdapparels.com/products): Knitted and woven apparel categories.
+-- [Menswear](https://osdapparels.com/products/mens): Shirts, hoodies, jackets, denim, co-ord sets, activewear, and loungewear.
+-- [Kidswear](https://osdapparels.com/products/kids): Children's clothing, school uniforms, activewear, and matching sets.
+-- [Services](https://osdapparels.com/services): Sourcing, sampling, garment production, and export support.
+-- [Custom orders](https://osdapparels.com/custom-order): Private label and OEM development, printing, embroidery, sizing, and packaging.
+-- [How it works](https://osdapparels.com/how-it-works): Enquiry, sampling, production, quality control, and delivery.
+-- [Request a quote](https://osdapparels.com/quote): Submit manufacturing requirements.
++- [Products](https://www.osdapparels.com/products): Knitted and woven apparel categories.
++- [Menswear](https://www.osdapparels.com/products/mens): Shirts, hoodies, jackets, denim, co-ord sets, activewear, and loungewear.
++- [Kidswear](https://www.osdapparels.com/products/kids): Children's clothing, school uniforms, activewear, and matching sets.
++- [Services](https://www.osdapparels.com/services): Sourcing, sampling, garment production, and export support.
++- [Custom orders](https://www.osdapparels.com/custom-order): Private label and OEM development, printing, embroidery, sizing, and packaging.
++- [How it works](https://www.osdapparels.com/how-it-works): Enquiry, sampling, production, quality control, and delivery.
++- [Request a quote](https://www.osdapparels.com/quote): Submit manufacturing requirements.
+ 
+ ## Further information
+ 
+-- [Blog](https://osdapparels.com/blog): Apparel sourcing and manufacturing articles.
+-- [Sustainability](https://osdapparels.com/sustainability): Responsible sourcing and production approach.
+-- [Certifications](https://osdapparels.com/certifications): Standards discussed on the website; contact the company for current documentation and scope.
+-- [Privacy policy](https://osdapparels.com/privacy-policy): Enquiry data handling notes.
+-- [Terms](https://osdapparels.com/terms): Commercial terms notes.
+-- [Sitemap](https://osdapparels.com/sitemap.xml): Canonical public pages and currently published articles.
++- [Blog](https://www.osdapparels.com/blog): Apparel sourcing and manufacturing articles.
++- [Sustainability](https://www.osdapparels.com/sustainability): Responsible sourcing and production approach.
++- [Certifications](https://www.osdapparels.com/certifications): Standards discussed on the website; contact the company for current documentation and scope.
++- [Privacy policy](https://www.osdapparels.com/privacy-policy): Enquiry data handling notes.
++- [Terms](https://www.osdapparels.com/terms): Commercial terms notes.
++- [Sitemap](https://www.osdapparels.com/sitemap.xml): Canonical public pages and currently published articles.
+diff --git a/src/app/page.js b/src/app/page.js
+index 12a99eb..83b12ee 100644
+--- a/src/app/page.js
++++ b/src/app/page.js
+@@ -314,7 +314,7 @@ export default function HomePage() {
+           <SectionIntro
+             eyebrow="Core Services"
+             title="Production support designed for modern fashion brands, startups, and worldwide buyers."
+-            text="Service cards should read as compact strategic modules, not image tiles repeated with new headlines."
++            text="Custom apparel manufacturing and sourcing based on your garment, material and design requirements."
+           />
+ 
+           <div className="core-services-showcase">
+diff --git a/src/app/products/kids/page.js b/src/app/products/kids/page.js
+index 4bbbe98..4284818 100644
+--- a/src/app/products/kids/page.js
++++ b/src/app/products/kids/page.js
+@@ -60,7 +60,9 @@ export default function KidsProductsPage() {
+                   <div className={`product-card__visual product-card__visual--${i % 3}`}>
+                     <Image
+                       src={image}
+-                      alt={`Kids ${cat.title.replace(/^Kids /, "")} from the OSD Apparels clothing collection`}
++                      alt={image === "/images/Kids.png"
++                        ? "Four children wearing short-sleeved shirts with trousers or shorts"
++                        : `Kids ${cat.title.replace(/^Kids /, "")} from the OSD Apparels clothing collection`}
+                       fill
+                       sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       className="product-card__visual-image"
+diff --git a/src/app/robots.js b/src/app/robots.js
+index 91f2155..64d6f11 100644
+--- a/src/app/robots.js
++++ b/src/app/robots.js
+@@ -1,3 +1,5 @@
++import { brand, toAbsoluteUrl } from "@/lib/metadata";
++
+ export default function robots() {
+   return {
+     rules: [
+@@ -6,7 +8,7 @@ export default function robots() {
+         allow: "/",
+       },
+     ],
+-    host: "https://osdapparels.com",
+-    sitemap: "https://osdapparels.com/sitemap.xml",
++    host: brand.siteUrl,
++    sitemap: toAbsoluteUrl("/sitemap.xml"),
+   };
+ }
+diff --git a/src/app/services/page.js b/src/app/services/page.js
+index ad5cce9..85c41ca 100644
+--- a/src/app/services/page.js
++++ b/src/app/services/page.js
+@@ -2,9 +2,9 @@ import { ServicesPageContent } from "@/components/services/ServicesPageContent";
+ import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+ 
+ export const metadata = createMetadata({
+-  title: "Low MOQ Clothing Manufacturer Services | OSD Apparels",
++  title: "Apparel Manufacturing & Sourcing Services | OSD Apparels",
+   description:
+-    "Explore OSD Apparels clothing manufacturing services: low MOQ from 50 pieces per style, fabric sourcing, sampling, quality checks, and export coordination.",
++    "Explore OSD Apparels manufacturing and sourcing services, from fabric sourcing and sample development to garment production, quality checks and export coordination.",
+   path: "/services",
+   keywords: [
+     "custom clothing manufacturer low MOQ",
+diff --git a/src/lib/metadata.js b/src/lib/metadata.js
+index 077114d..ea7430f 100644
+--- a/src/lib/metadata.js
++++ b/src/lib/metadata.js
+@@ -1,6 +1,6 @@
+ import { contact, socials } from "@/data/site";
+ 
+-const siteUrl = "https://osdapparels.com";
++const siteUrl = "https://www.osdapparels.com";
+ 
+ export const brand = {
+   name: "OSD Apparels",

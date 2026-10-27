@@ -1,6 +1,7 @@
 import { languageList } from "@/utils/languageList";
 
 export const GOOGLE_TRANSLATE_STORAGE_KEY = "osd-language";
+const LEGACY_GOOGLE_TRANSLATE_STORAGE_KEY = "osd-language";
 export const GOOGLE_TRANSLATE_COOKIE_KEY = "googtrans";
 export const GOOGLE_TRANSLATE_REFRESH_KEY = "osd-language-refresh";
 const TRANSLATE_SELECT_SELECTOR = ".goog-te-combo";
@@ -44,12 +45,20 @@ export function getIncludedLanguages() {
   return languageList.map((language) => language.code).join(",");
 }
 
+export function hasStoredLanguage() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return Boolean(window.sessionStorage.getItem(GOOGLE_TRANSLATE_STORAGE_KEY));
+}
+
 export function getStoredLanguage() {
   if (typeof window === "undefined") {
     return "en";
   }
 
-  return window.localStorage.getItem(GOOGLE_TRANSLATE_STORAGE_KEY) || "en";
+  return window.sessionStorage.getItem(GOOGLE_TRANSLATE_STORAGE_KEY) || "en";
 }
 
 export function setStoredLanguage(languageCode) {
@@ -57,7 +66,17 @@ export function setStoredLanguage(languageCode) {
     return;
   }
 
-  window.localStorage.setItem(GOOGLE_TRANSLATE_STORAGE_KEY, languageCode);
+  window.sessionStorage.setItem(GOOGLE_TRANSLATE_STORAGE_KEY, languageCode);
+}
+
+export function resetStoredTranslation() {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.sessionStorage.removeItem(GOOGLE_TRANSLATE_STORAGE_KEY);
+  window.localStorage.removeItem(LEGACY_GOOGLE_TRANSLATE_STORAGE_KEY);
+  document.cookie = `${GOOGLE_TRANSLATE_COOKIE_KEY}=;path=/;max-age=0`;
 }
 
 export function setTranslateCookie(languageCode) {
@@ -66,7 +85,7 @@ export function setTranslateCookie(languageCode) {
   }
 
   const value = `/en/${languageCode}`;
-  document.cookie = `${GOOGLE_TRANSLATE_COOKIE_KEY}=${value};path=/;max-age=31536000`;
+  document.cookie = `${GOOGLE_TRANSLATE_COOKIE_KEY}=${value};path=/`;
 }
 
 export function applyGoogleLanguage(languageCode, options = {}) {

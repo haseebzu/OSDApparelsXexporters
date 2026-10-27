@@ -8,11 +8,10 @@ export const metadata = createMetadata({
   title: "Sustainable Apparel Manufacturing Pakistan | OSD Apparels",
   path: "/sustainability",
   description:
-    "Explore OSD Apparels approach to sustainable apparel manufacturing in Pakistan, with responsible sourcing, ethical production, and supply chain transparency.",
+    "Explore OSD Apparels approach to sustainable apparel manufacturing in Pakistan, with material considerations, production practices, and documentation for buyer review.",
   keywords: [
     "sustainable clothing manufacturer Pakistan",
     "ethical garment manufacturer Pakistan",
-    "sustainable apparel sourcing Pakistan",
   ],
   category: "Sustainability",
 });
@@ -29,7 +28,7 @@ export default function SustainabilityPage() {
       <PageHero
         eyebrow="Sustainability"
         title="Sustainable clothing manufacturing in Pakistan, supported by process and proof."
-        text="OSD Apparels supports buyers looking for ethical sourcing conversations, responsible garment production, and stronger sustainability positioning across private-label and export programs."
+        text="OSD Apparels supports buyers looking for material and documentation discussions, responsible garment production, and stronger sustainability positioning across private-label and export programs."
         highlights={["Ethical Standards", "Audit Friendly", "Responsible Positioning"]}
       />
       <section className="section">
@@ -38,14 +37,14 @@ export default function SustainabilityPage() {
             <SectionIntro
               eyebrow="Ethics"
               title="Responsible manufacturing is part of the value proposition."
-              text="We have structured this page to support buyer due diligence with clear language around responsible sourcing, safer production practices, and documentation expectations that global teams can evaluate with confidence."
+              text="We have structured this page to support buyer due diligence with clear language around material selection, safer production practices, and documentation expectations that global teams can evaluate with confidence."
               align="left"
             />
           </Reveal>
           <Reveal className="detail-card">
             <h3>Focus Areas</h3>
             <div className="check-list">
-              <span>Responsible sourcing conversations</span>
+              <span>Material requirements discussions</span>
               <span>Safe workplace expectations</span>
               <span>Quality systems that reduce waste</span>
               <span>Audit-friendly documentation culture</span>

@@ -26,7 +26,7 @@ const whoWeAreStats = [
 const whoWeAreCards = [
   {
     title: "Private Label Development",
-    text: "From sourcing direction to trims and packaging, we help brands shape collections that feel commercially ready.",
+    text: "From garment specifications to trims and packaging, we help brands shape collections that feel commercially ready.",
     tone: "blue",
   },
   {
@@ -191,7 +191,7 @@ const facilitySections = [
   },
   {
     title: "Dyeing Section",
-    text: "Low liquor ratio high temperature jet machines capable of producing 40-42 tons of dyeing per day.",
+    text: "Low-liquor-ratio, high-temperature jet machines capable of dyeing 20–25 tons per day.",
     image: "/images/Dying Section.jpg",
   },
   {
@@ -210,18 +210,18 @@ const facilitySections = [
     image: "/images/Priniting.png",
   },
   {
-    title: "Embroidery Facility",
-    text: "With a combined daily production capacity of 20,000 pieces.",
+    title: "Production Capacity",
+    text: "A combined daily production capacity of 2,000 pieces.",
     image: "/images/Embrodiry.png",
   },
   {
     title: "Stitching",
-    text: "With over 2780 stitching machines, manned with the most skilled and expert operators.",
+    text: "Over 278 stitching machines operated by skilled, experienced operators.",
     image: "/images/Stitching.jpg",
   },
   {
     title: "Hanger System",
-    text: "We have 6 hanger systems which are more efficient in productivity.",
+    text: "5 hanger systems to support production efficiency.",
     image: "/images/hanger system.jpg",
   },
 ];
@@ -314,7 +314,7 @@ export default function HomePage() {
           <SectionIntro
             eyebrow="Core Services"
             title="Production support designed for modern fashion brands, startups, and worldwide buyers."
-            text="Service cards should read as compact strategic modules, not image tiles repeated with new headlines."
+            text="Custom apparel manufactured to your agreed garment, material and design specifications."
           />
 
           <div className="core-services-showcase">
@@ -339,13 +339,13 @@ export default function HomePage() {
           <Reveal className="testimonial-section__intro">
             <p className="section-eyebrow">Products</p>
             <div className="section-accent" />
-            <h2 className="section-title testimonial-showcase__title">Product categories built for modern wholesale buyers.</h2>
+            <h2 className="section-title testimonial-showcase__title">Product categories built for modern fashion brands.</h2>
           </Reveal>
 
           <Reveal className="testimonial-section__intro">
             <p className="section-text testimonial-showcase__text">
-              Explore the categories OSD Apparels develops for private-label brands, retailers, and import buyers,
-              from menswear and kidswear to fleece, uniforms, and export-ready custom programs.
+              Explore the categories OSD Apparels develops for fashion brands, from menswear and kidswear to fleece,
+              uniforms, and export-ready custom programs.
             </p>
           </Reveal>
 
@@ -357,7 +357,7 @@ export default function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Globally Certified"
-            title="Compliance and production discipline that support international sourcing decisions."
+            title="Compliance and production discipline that support international buyers."
             text="Certifications, quality systems, and transparent operating standards help position OSD as a reliable fashion manufacturing and export partner."
             light
           />
@@ -376,7 +376,7 @@ export default function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="How It Works"
-            title="A signature sourcing flow designed to feel disciplined at every stage."
+            title="A custom manufacturing process guided by your specifications."
             text="A step-by-step methodology that combines precision, expertise, and consistent execution."
           />
 
@@ -425,7 +425,7 @@ export default function HomePage() {
             <Reveal className="testimonial-section__intro">
               <h2 className="section-title testimonial-showcase__title">Read reviews, work with confidence.</h2>
               <p className="section-text testimonial-showcase__text">
-                Feedback from fashion brands, sourcing teams, and import buyers who value production discipline,
+                Feedback from fashion brands, buying teams, and import buyers who value production discipline,
                 quality consistency, and dependable communication.
               </p>
               <div className="testimonial-section__meta">

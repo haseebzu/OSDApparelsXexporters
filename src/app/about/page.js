@@ -14,7 +14,7 @@ import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "About OSD Apparels | Garment Exporter Faisalabad, PK",
   description:
-    "Meet OSD Apparels, a garment exporter in Faisalabad, Pakistan, supporting brands with apparel sourcing, private label development, and global delivery.",
+    "Meet OSD Apparels, an apparel manufacturer in Faisalabad, Pakistan, making custom garments to agreed specifications for private-label brands.",
   path: "/about",
   keywords: [
     "about garment exporter Pakistan",
@@ -28,7 +28,7 @@ const coreValues = [
   {
     number: "01",
     title: "Quality First",
-    text: "No compromise - ever. Every garment we source meets international quality standards before it leaves Pakistan.",
+    text: "Every garment we manufacture is made to the agreed product specifications.",
     icon: ShieldCheck,
     image: "/images/Quality fiest.jpg",
   },
@@ -42,7 +42,7 @@ const coreValues = [
   {
     number: "03",
     title: "True Partnership",
-    text: "We don't just process orders - we build long-term relationships with buyers who trust us as their dedicated sourcing partner.",
+    text: "We don't just process orders - we build long-term relationships with buyers who trust us as their apparel manufacturing partner.",
     icon: Handshake,
     image: "/images/partnership.jpg",
   },
@@ -59,7 +59,7 @@ const skillScores = [
   {
     label: "Textile Services",
     value: 90,
-    text: "Fabric direction, GSM understanding, and sourcing clarity that support dependable bulk decisions.",
+    text: "Fabric direction, GSM understanding, and specification clarity that support dependable bulk decisions.",
   },
   {
     label: "Material Readiness",
@@ -173,17 +173,17 @@ export default function AboutPage() {
             <div className="section-accent" />
             <h2 className="section-title">Do well, live well, and dress well with a factory partner built for modern buyers.</h2>
             <p className="section-text">
-              OSD Apparels is a garment exporter in Pakistan supporting brands, sourcing teams, and private-label
+              OSD Apparels is an apparel manufacturer in Pakistan supporting brands, buying teams, and private-label
               businesses with practical manufacturing guidance, clear communication, and dependable garment execution
               from Faisalabad.
             </p>
             <p className="section-text">
               We work across knitted and woven categories, helping buyers move from concept discussion to sample
-              approval, bulk planning, quality control, finishing, and export coordination with less confusion and more
+              approval, bulk planning, quality control, finishing, and shipping arrangements with less confusion and more
               confidence in the process.
             </p>
             <p className="section-text">
-              Our focus is not only on producing garments, but on creating a smoother sourcing experience for brands
+              Our focus is not only on producing garments, but on creating a smoother manufacturing experience for brands
               that need responsive communication, commercial quality, and long-term manufacturing support they can rely
               on as collections grow.
             </p>
@@ -260,7 +260,7 @@ export default function AboutPage() {
               </h3>
               <p className="section-text">
                 To connect global wholesale buyers with Pakistan&apos;s finest manufacturing - delivering premium quality,
-                uncompromising craftsmanship, and end-to-end sourcing solutions.
+                uncompromising craftsmanship, and custom apparel manufacturing.
               </p>
             </Reveal>
 
@@ -328,12 +328,12 @@ export default function AboutPage() {
             <div className="section-accent" />
             <h2 className="about-reasons__title">Cut the cost, keep the expertise</h2>
             <p className="about-reasons__lead">
-              Skip the overhead of managing multiple vendors, fragmented communication, and inconsistent production
-              support. OSD Apparels gives brands the benefit of coordinated expertise through one dependable
+              Skip fragmented communication and inconsistent production support. OSD Apparels gives brands coordinated
+              in-house expertise through one dependable
               manufacturing partner.
             </p>
             <p className="about-reasons__lead">
-              The result is clearer execution, faster decision-making, stronger quality control, and a sourcing model
+              The result is clearer execution, faster decision-making, stronger quality control, and a manufacturing process
               that helps buyers protect margins without losing professional support.
             </p>
 
@@ -358,7 +358,7 @@ export default function AboutPage() {
             <div className="section-accent" />
             <h2 className="about-pillars__title">Our five key pillars of success</h2>
             <p className="section-text">
-              The operating principles behind OSD Apparels that help brands, retailers, and sourcing teams buy with
+              The operating principles behind OSD Apparels that help brands, retailers, and buying teams buy with
               more confidence.
             </p>
           </Reveal>
@@ -385,7 +385,7 @@ export default function AboutPage() {
           <div className="about-sustainability-banner__overlay">
             <p className="about-sustainability-banner__eyebrow">Refined Ethical Supply</p>
             <h2 className="about-sustainability-banner__title">
-              Redefining sustainability with sourcing that&apos;s as refined as it is responsible.
+              Considering materials and production practices as part of each apparel project.
             </h2>
           </div>
         </Reveal>

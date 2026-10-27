@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Private Label Clothing Manufacturer | OSD Apparels OEM",
   description:
-    "Build your collection with OSD Apparels, a private label clothing manufacturer in Pakistan offering OEM sampling, custom sizing, printing, and embroidery.",
+    "Build your collection with OSD Apparels, a private label clothing manufacturer in Pakistan. Share a tech pack, reference garment, drawing, or photo for sampling, custom labels, packaging, and quoted shipping arrangements.",
   path: "/custom-order",
   keywords: [
     "private label clothing manufacturer",
@@ -24,77 +24,72 @@ const customizationCards = [
     image: "/images/custom d.png",
     points: [
       "Fully customized garment design based on your concept, sketch, or reference sample",
-      "In-house development support for silhouettes, fits, and fashion details",
+      "Specialist-team support for pattern development, sizing, and sampling",
       "Fabric, trims, colors, and finishes tailored to your brand identity",
-      "Sampling and prototype development before bulk production",
-      "Suitable for private label and brand-exclusive styles",
+      "Custom samples charged according to the product",
+      "Buyer sample approval before bulk production",
     ],
   },
   {
     title: "Custom Sizing",
     image: "/images/customm Sizingg.png",
     points: [
-      "Flexible size charts based on your target market (US, EU, UK, AU, Asia, Arab countries)",
-      "Made-to-measure size grading available",
-      "Plus-size and extended-size programs supported",
-      "Fit samples provided for approval before production",
-      "Consistent measurement control across bulk orders",
+      "Sizing support based on your product requirements",
+      "Share a tech pack, reference garment, drawing, or photograph",
+      "Pattern development and sizing support from a specialist team",
+      "Custom samples charged according to the product",
+      "Buyer sample approval before bulk production",
     ],
   },
   {
-    title: "Shipping Around The World",
+    title: "Shipping Arrangements",
     image: "/images/WORLDWIDEShupping.jpg",
     points: [
-      "Worldwide shipping by air and sea freight",
-      "Support with major courier and logistics partners",
-      "Export documentation handled by our team",
-      "Buyer-nominated forwarders welcome",
-      "Flexible Incoterms (EXW, FOB, CIF, DDP options available)",
-      "Consolidated and bulk shipment handling",
+      "Shipping can be arranged to more than 50 countries",
+      "Choose shipping arranged by OSD or your own shipping arrangements",
+      "DDP delivery can be quoted where available",
+      "Your quotation confirms the agreed shipping terms",
+      "Your quotation confirms included costs and delivery estimate",
     ],
   },
   {
     title: "Custom Label / Tag",
     image: "/images/Label and tags.jpg",
     points: [
-      "Private label main tags with your brand name and logo",
-      "Custom woven and printed labels",
-      "Hang tags, size tags, care labels, and barcode stickers",
-      "Sustainable label options available on request",
-      "Brand-compliant packaging and tagging solutions",
+      "Custom labels, tags, and packaging available",
+      "Private-label options for your project",
+      "Requirements confirmed with your quotation",
     ],
   },
   {
     title: "Custom Print",
     image: "/images/Custom Printing.png",
     points: [
-      "Multiple printing techniques available: screen print, puff print, DTF, DTG, sublimation",
-      "Pantone color matching support",
-      "Special effects prints (high-density, rubber, vintage wash, cracked)",
-      "Wash-tested print durability standards",
-      "Sampling for print approval before bulk run",
+      "Screen printing, puff printing, DTG, sublimation, and heat transfer available",
+      "Garment washing and finishing available",
+      "The appropriate method depends on the garment, fabric, and requested result",
+      "Custom samples charged according to the product",
+      "Buyer sample approval before bulk production",
     ],
   },
   {
     title: "Custom Embroidery",
     image: "/images/embrodirey custom.png",
     points: [
-      "Flat, 3D, puff, and applique embroidery options",
-      "High stitch-definition logo embroidery",
-      "Chest, sleeve, back, and panel placements available",
-      "Digitizing support for new logos",
-      "Production sampling to verify stitch quality",
+      "Embroidery available for custom apparel projects",
+      "The appropriate method depends on the garment, fabric, and requested result",
+      "Custom samples charged according to the product",
+      "Buyer sample approval before bulk production",
     ],
   },
   {
     title: "Custom Cut & Sew",
     image: "/images/cut and sew.jpg",
     points: [
-      "Complete cut & sew manufacturing from raw fabric to finished garment",
-      "Panel-based construction and complex styles supported",
-      "Pattern making and marker planning included",
-      "Multi-fabric and multi-panel garment capability",
-      "Strict quality control at each production stage",
+      "Custom knitted and woven apparel manufacturing",
+      "Buyers provide their garment and customization requirements",
+      "Pattern development, sizing, and sampling support",
+      "Quality checks form part of the manufacturing process",
     ],
   },
 ];
@@ -109,25 +104,25 @@ const oemStages = [
   {
     number: "Step Two",
     title: "Sampling",
-    description: "Patterns, fit comments, labels, trims, and reference standards are confirmed before the bulk plan is locked.",
+    description: "Custom samples are charged according to the product and must be approved before bulk production.",
     image: "/images/SamplingOEM.jpg",
   },
   {
     number: "Step Three",
     title: "Bulk Execution",
-    description: "Approved styles move into production with milestone visibility, quality checkpoints, and timeline control.",
+    description: "Approved samples move into bulk production, with quality checks forming part of the manufacturing process.",
     image: "/images/production.png",
   },
   {
     number: "Step Four",
     title: "Final QA",
-    description: "Finishing, packing, labeling, and shipment readiness are reviewed carefully before final dispatch approval.",
+    description: "Finishing, packing, labelling, and shipping arrangements are confirmed for the agreed order.",
     image: "/images/Quality check.png",
   },
   {
     number: "Step Five",
     title: "Export Delivery",
-    description: "Documentation and logistics support are coordinated for a smooth international handover to your buying team.",
+    description: "Choose shipping arranged by OSD or your own shipping arrangements; your quotation confirms the agreed terms and delivery estimate.",
     image: "/images/deliveryOEM.jpg",
   },
 ];
@@ -151,7 +146,7 @@ export default function CustomOrderPage() {
       <PageHero
         eyebrow="Custom OEM"
         title="Custom fashion apparel manufacturing for private label, OEM, and export programs."
-        text="Build your garments with a private-label clothing manufacturer in Pakistan that supports concept development, sizing, trims, printing, embroidery, packaging, and worldwide shipment under one professional workflow."
+        text="Build your garments with a private-label clothing manufacturer in Pakistan. Share a tech pack, reference garment, drawing, or photograph for pattern development, sizing, sampling, decoration, labels, packaging, and shipping arrangements."
         primaryCta={{ href: "/quote", label: "Request Free Quote" }}
         secondaryCta={{ href: "/contact", label: "Talk To Our Team" }}
       />
@@ -164,7 +159,7 @@ export default function CustomOrderPage() {
             <h2 className="section-title">Everything needed for a modern custom apparel manufacturing program.</h2>
             <p className="section-text">
               Built for private-label brands, retailers, and import buyers who need a clear view of how OSD Apparels
-              supports design development, sizing, trims, decoration, packaging, and export-ready production.
+              supports pattern development, sizing, samples, decoration, custom labels, packaging, and bulk production.
             </p>
           </Reveal>
 
@@ -202,8 +197,8 @@ export default function CustomOrderPage() {
             <h2 className="section-title">A numbered custom-order process that keeps buyer expectations visible from sample to shipment.</h2>
             <p className="section-text">
               The strongest OEM pages reduce uncertainty. This one is built to show how OSD handles product
-              development, approvals, decoration, and bulk execution without turning the experience into operational
-              clutter.
+              development, sample approval, decoration, shipping arrangements, and bulk execution without turning
+              the experience into operational clutter.
             </p>
           </Reveal>
 
@@ -247,7 +242,7 @@ export default function CustomOrderPage() {
             <h2 className="section-title">Decoration methods for private label, OEM, and custom apparel production.</h2>
             <p className="section-text">
               Custom order programs often depend on the right print or embroidery finish. This section keeps the
-              decoration capability visible inside the same workflow as sizing, labels, trims, and shipment planning.
+              decoration options visible inside the same workflow as sizing, labels, packaging, and shipping planning.
             </p>
           </Reveal>
 
@@ -285,8 +280,8 @@ export default function CustomOrderPage() {
             <div className="section-accent" />
             <h2 className="section-title">Share your product idea and we will shape the right development and production plan.</h2>
             <p className="section-text">
-              Send your concept, sketch, sample reference, or specification details and our team will guide you through
-              sampling, costing, and export-ready production.
+              Send a tech pack, reference garment, drawing, photograph, or specification details. Custom samples are
+              charged according to the product and require your approval before bulk production.
             </p>
           </Reveal>
 

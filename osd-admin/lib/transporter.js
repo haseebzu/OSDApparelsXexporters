@@ -7,7 +7,7 @@ export function isMailConfigured() {
 }
 
 export function getFromAddress() {
-  return process.env.EMAIL_FROM || process.env.SMTP_USER || "osdapparels@gmail.com";
+  return process.env.EMAIL_FROM || process.env.SMTP_USER || "exports@osdapparel.com";
 }
 
 export function getTransporter() {

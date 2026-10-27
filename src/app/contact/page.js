@@ -89,7 +89,7 @@ export default function ContactPage() {
             <div className="contact-page__trust-grid">
               <span>Worldwide Export Support</span>
               <span>Private Label Manufacturing</span>
-              <span>MOQ from 30 Pieces</span>
+              <span>Minimum Order Starts at 30 Pieces</span>
               <span>Fast Sampling Response</span>
               <span>Knitted & Woven Garments</span>
             </div>

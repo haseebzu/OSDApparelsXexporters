@@ -1,0 +1,598 @@
+diff --git a/src/app/page.js b/src/app/page.js
+index 83b12ee..0b91bc6 100644
+--- a/src/app/page.js
++++ b/src/app/page.js
+@@ -26,7 +26,7 @@ const whoWeAreStats = [
+ const whoWeAreCards = [
+   {
+     title: "Private Label Development",
+-    text: "From sourcing direction to trims and packaging, we help brands shape collections that feel commercially ready.",
++    text: "From garment specifications to trims and packaging, we help brands shape collections that feel commercially ready.",
+     tone: "blue",
+   },
+   {
+@@ -191,7 +191,7 @@ const facilitySections = [
+   },
+   {
+     title: "Dyeing Section",
+-    text: "Low liquor ratio high temperature jet machines capable of producing 40-42 tons of dyeing per day.",
++    text: "Low-liquor-ratio, high-temperature jet machines capable of dyeing 20–25 tons per day.",
+     image: "/images/Dying Section.jpg",
+   },
+   {
+@@ -210,18 +210,18 @@ const facilitySections = [
+     image: "/images/Priniting.png",
+   },
+   {
+-    title: "Embroidery Facility",
+-    text: "With a combined daily production capacity of 20,000 pieces.",
++    title: "Production Capacity",
++    text: "A combined daily production capacity of 2,000 pieces.",
+     image: "/images/Embrodiry.png",
+   },
+   {
+     title: "Stitching",
+-    text: "With over 2780 stitching machines, manned with the most skilled and expert operators.",
++    text: "Over 278 stitching machines operated by skilled, experienced operators.",
+     image: "/images/Stitching.jpg",
+   },
+   {
+     title: "Hanger System",
+-    text: "We have 6 hanger systems which are more efficient in productivity.",
++    text: "5 hanger systems to support production efficiency.",
+     image: "/images/hanger system.jpg",
+   },
+ ];
+@@ -314,7 +314,7 @@ export default function HomePage() {
+           <SectionIntro
+             eyebrow="Core Services"
+             title="Production support designed for modern fashion brands, startups, and worldwide buyers."
+-            text="Custom apparel manufacturing and sourcing based on your garment, material and design requirements."
++            text="Custom apparel manufactured to your agreed garment, material and design specifications."
+           />
+ 
+           <div className="core-services-showcase">
+@@ -357,7 +357,7 @@ export default function HomePage() {
+         <div className="container">
+           <SectionIntro
+             eyebrow="Globally Certified"
+-            title="Compliance and production discipline that support international sourcing decisions."
++            title="Compliance and production discipline that support international buyers."
+             text="Certifications, quality systems, and transparent operating standards help position OSD as a reliable fashion manufacturing and export partner."
+             light
+           />
+@@ -376,7 +376,7 @@ export default function HomePage() {
+         <div className="container">
+           <SectionIntro
+             eyebrow="How It Works"
+-            title="A signature sourcing flow designed to feel disciplined at every stage."
++            title="A custom manufacturing process guided by your specifications."
+             text="A step-by-step methodology that combines precision, expertise, and consistent execution."
+           />
+ 
+@@ -425,7 +425,7 @@ export default function HomePage() {
+             <Reveal className="testimonial-section__intro">
+               <h2 className="section-title testimonial-showcase__title">Read reviews, work with confidence.</h2>
+               <p className="section-text testimonial-showcase__text">
+-                Feedback from fashion brands, sourcing teams, and import buyers who value production discipline,
++                Feedback from fashion brands, buying teams, and import buyers who value production discipline,
+                 quality consistency, and dependable communication.
+               </p>
+               <div className="testimonial-section__meta">
+diff --git a/src/components/home/HeroSlider.jsx b/src/components/home/HeroSlider.jsx
+index b170dc8..f95da8f 100644
+--- a/src/components/home/HeroSlider.jsx
++++ b/src/components/home/HeroSlider.jsx
+@@ -29,7 +29,7 @@ const heroStates = [
+   },
+   {
+     id: "state-3",
+-    topline: "Sourcing Custom",
++    topline: "Manufacturing Custom",
+     display: "KNITTED & WOVEN GARMENTS",
+     image: "/images/hero 3.png",
+   },
+@@ -143,8 +143,8 @@ function MarqueeStrip({ reducedMotion, images }) {
+     <div className="hero-marquee">
+       <div className={`hero-marquee__ticker${reducedMotion ? " hero-marquee__ticker--static" : ""}`}>
+         <div className="hero-marquee__ticker-track">
+-          <span>GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY / GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY</span>
+-          <span>GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY / GLOBAL COMPLIANCE / FASTER SOURCING / TRUSTED QUALITY</span>
++          <span>GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY / GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY</span>
++          <span>GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY / GLOBAL COMPLIANCE / CUSTOM APPAREL / TRUSTED QUALITY</span>
+         </div>
+       </div>
+ 
+@@ -241,7 +241,7 @@ export function HeroSlider() {
+ 
+         <div className="hero-cutout__pin" ref={pinRef}>
+           <div className="container hero-cutout__inner">
+-            <p className="hero-cutout__eyebrow">Apparel Sourcing & Export / Faisalabad, Pakistan</p>
++            <p className="hero-cutout__eyebrow">Apparel Manufacturing / Faisalabad, Pakistan</p>
+ 
+             <div className="hero-cutout__stage">
+               <div className="hero-cutout__states">
+@@ -262,8 +262,7 @@ export function HeroSlider() {
+ 
+             <div className="hero-cutout__bottom">
+               <p className="hero-cutout__caption">
+-                Specialized in private-label sourcing, export coordination, and apparel vendor alignment for serious
+-                buying programs.
++                Your Brand, Your Way. Custom apparel manufactured to your agreed product specifications.
+               </p>
+ 
+               <div className="hero-cutout__cta">
+@@ -273,8 +272,7 @@ export function HeroSlider() {
+               </div>
+ 
+               <p className="hero-cutout__support">
+-                Partnering with fashion brands across USA, UK, EU, and UAE through Faisalabad&apos;s strongest factory
+-                and supplier networks.
++                Supporting international clothing brands with custom apparel manufacturing in Faisalabad, Pakistan.
+               </p>
+             </div>
+           </div>
+diff --git a/src/app/about/page.js b/src/app/about/page.js
+index 0b9fed1..15635ad 100644
+--- a/src/app/about/page.js
++++ b/src/app/about/page.js
+@@ -14,7 +14,7 @@ import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+ export const metadata = createMetadata({
+   title: "About OSD Apparels | Garment Exporter Faisalabad, PK",
+   description:
+-    "Meet OSD Apparels, a garment exporter in Faisalabad, Pakistan, supporting brands with apparel sourcing, private label development, and global delivery.",
++    "Meet OSD Apparels, an apparel manufacturer in Faisalabad, Pakistan, making custom garments to agreed specifications for private-label brands.",
+   path: "/about",
+   keywords: [
+     "about garment exporter Pakistan",
+@@ -28,7 +28,7 @@ const coreValues = [
+   {
+     number: "01",
+     title: "Quality First",
+-    text: "No compromise - ever. Every garment we source meets international quality standards before it leaves Pakistan.",
++    text: "Every garment we manufacture is made to the agreed product specifications.",
+     icon: ShieldCheck,
+     image: "/images/Quality fiest.jpg",
+   },
+@@ -42,7 +42,7 @@ const coreValues = [
+   {
+     number: "03",
+     title: "True Partnership",
+-    text: "We don't just process orders - we build long-term relationships with buyers who trust us as their dedicated sourcing partner.",
++    text: "We don't just process orders - we build long-term relationships with buyers who trust us as their apparel manufacturing partner.",
+     icon: Handshake,
+     image: "/images/partnership.jpg",
+   },
+@@ -59,7 +59,7 @@ const skillScores = [
+   {
+     label: "Textile Services",
+     value: 90,
+-    text: "Fabric direction, GSM understanding, and sourcing clarity that support dependable bulk decisions.",
++    text: "Fabric direction, GSM understanding, and specification clarity that support dependable bulk decisions.",
+   },
+   {
+     label: "Material Readiness",
+@@ -173,7 +173,7 @@ export default function AboutPage() {
+             <div className="section-accent" />
+             <h2 className="section-title">Do well, live well, and dress well with a factory partner built for modern buyers.</h2>
+             <p className="section-text">
+-              OSD Apparels is a garment exporter in Pakistan supporting brands, sourcing teams, and private-label
++              OSD Apparels is an apparel manufacturer in Pakistan supporting brands, buying teams, and private-label
+               businesses with practical manufacturing guidance, clear communication, and dependable garment execution
+               from Faisalabad.
+             </p>
+@@ -183,7 +183,7 @@ export default function AboutPage() {
+               confidence in the process.
+             </p>
+             <p className="section-text">
+-              Our focus is not only on producing garments, but on creating a smoother sourcing experience for brands
++              Our focus is not only on producing garments, but on creating a smoother manufacturing experience for brands
+               that need responsive communication, commercial quality, and long-term manufacturing support they can rely
+               on as collections grow.
+             </p>
+@@ -260,7 +260,7 @@ export default function AboutPage() {
+               </h3>
+               <p className="section-text">
+                 To connect global wholesale buyers with Pakistan&apos;s finest manufacturing - delivering premium quality,
+-                uncompromising craftsmanship, and end-to-end sourcing solutions.
++                uncompromising craftsmanship, and custom apparel manufacturing.
+               </p>
+             </Reveal>
+ 
+@@ -333,7 +333,7 @@ export default function AboutPage() {
+               manufacturing partner.
+             </p>
+             <p className="about-reasons__lead">
+-              The result is clearer execution, faster decision-making, stronger quality control, and a sourcing model
++              The result is clearer execution, faster decision-making, stronger quality control, and a manufacturing process
+               that helps buyers protect margins without losing professional support.
+             </p>
+ 
+@@ -358,7 +358,7 @@ export default function AboutPage() {
+             <div className="section-accent" />
+             <h2 className="about-pillars__title">Our five key pillars of success</h2>
+             <p className="section-text">
+-              The operating principles behind OSD Apparels that help brands, retailers, and sourcing teams buy with
++              The operating principles behind OSD Apparels that help brands, retailers, and buying teams buy with
+               more confidence.
+             </p>
+           </Reveal>
+@@ -385,7 +385,7 @@ export default function AboutPage() {
+           <div className="about-sustainability-banner__overlay">
+             <p className="about-sustainability-banner__eyebrow">Refined Ethical Supply</p>
+             <h2 className="about-sustainability-banner__title">
+-              Redefining sustainability with sourcing that&apos;s as refined as it is responsible.
++              Considering materials and production practices as part of each apparel project.
+             </h2>
+           </div>
+         </Reveal>
+diff --git a/src/components/services/ServicesPageContent.jsx b/src/components/services/ServicesPageContent.jsx
+index 1a38025..69c1d4e 100644
+--- a/src/components/services/ServicesPageContent.jsx
++++ b/src/components/services/ServicesPageContent.jsx
+@@ -37,12 +37,12 @@ const serviceSections = [
+     title: "Your first collection, done right from day one",
+     image: "/images/custom d.png",
+     paragraphs: [
+-      "First-time founders get clear production direction from the first conversation. OSD handles sourcing, development, and approvals in plain language so buyers know what is happening at every stage.",
++      "First-time founders get clear production direction from the first conversation. OSD explains garment specifications, development, and approvals in plain language so buyers know what is happening at every stage.",
+       "The goal is simple. Your first collection should move with fewer mistakes, predictable costing, and no hidden process surprises between sample approval and export dispatch.",
+     ],
+     pills: [
+       "Design to tech pack",
+-      "Fabric sourcing",
++      "Fabric selection",
+       "Sample development",
+       "Production management",
+       "Export and logistics",
+@@ -50,7 +50,7 @@ const serviceSections = [
+     cta: { href: "/quote", label: "Start your launch enquiry" },
+     side: {
+       type: "timeline",
+-      items: ["Design", "Sourcing", "Tech pack", "Sampling", "Production / delivery"],
++      items: ["Design", "Materials", "Tech pack", "Sampling", "Production / delivery"],
+       quote:
+         "OSD made the first order easier to understand. We always knew the next step, the next sample action, and the final shipment target.",
+       quoteMeta: "Founder, startup womenswear label",
+@@ -130,7 +130,7 @@ const serviceSections = [
+     title: "Certified sustainable from yarn to finished garment - not just a claim",
+     image: "/images/Sustainability.jpg",
+     paragraphs: [
+-      "Certified programs are handled with real documentation, real input control, and real production discipline. OSD supports buyers who need sustainable sourcing without vague marketing language.",
++      "Certified programs are handled with real documentation, real input control, and real production discipline. Buyers can discuss material and documentation requirements for their manufacturing project.",
+       "GRS, RCS, GOTS, Oeko-Tex Class 1, and audited operating standards help buyers verify the production story from material stage through the finished export shipment.",
+     ],
+     pills: [
+@@ -164,13 +164,13 @@ const serviceSections = [
+     },
+     highlights: [
+       {
+-        title: "Sustainable Sourcing Commitment",
++        title: "Material Selection",
+         text: "We prioritize eco-friendly materials like organic cotton, Tencel, hemp, and recycled fibers while partnering with suppliers who follow responsible production practices.",
+         image: "/images/Eco friendly Fabric.jpg",
+       },
+       {
+         title: "Transparent Supply Chain",
+-        text: "Our sourcing process emphasizes transparency and traceability, helping buyers verify fair labor standards, safer working conditions, and responsible manufacturing discipline.",
++        text: "Discuss your traceability and production-documentation requirements with OSD when defining the garment specifications.",
+         image: "/images/Transperant supplly chain.jpg",
+       },
+       {
+@@ -185,7 +185,7 @@ const serviceSections = [
+       },
+       {
+         title: "Circular Economy And Responsible Design",
+-        text: "We support longer product lifecycles through better material choice, smarter sourcing, recyclable inputs, and responsible design direction where possible.",
++        text: "We support longer product lifecycles through better material choice, production planning, recyclable inputs, and responsible design direction where possible.",
+         image: "/images/Circular Economy.jpg",
+       },
+       {
+diff --git a/src/app/services/page.js b/src/app/services/page.js
+index 85c41ca..d9ebf66 100644
+--- a/src/app/services/page.js
++++ b/src/app/services/page.js
+@@ -2,9 +2,9 @@ import { ServicesPageContent } from "@/components/services/ServicesPageContent";
+ import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
+ 
+ export const metadata = createMetadata({
+-  title: "Apparel Manufacturing & Sourcing Services | OSD Apparels",
++  title: "Apparel Manufacturing Services | OSD Apparels",
+   description:
+-    "Explore OSD Apparels manufacturing and sourcing services, from fabric sourcing and sample development to garment production, quality checks and export coordination.",
++    "Explore OSD Apparels custom apparel manufacturing services, from garment specifications and sample development to production, quality checks and export coordination.",
+   path: "/services",
+   keywords: [
+     "custom clothing manufacturer low MOQ",
+diff --git a/src/app/certifications/page.js b/src/app/certifications/page.js
+index 6720aa7..41934a4 100644
+--- a/src/app/certifications/page.js
++++ b/src/app/certifications/page.js
+@@ -7,7 +7,7 @@ export const metadata = createMetadata({
+   title: "Garment Manufacturing Standards & Certifications | OSD",
+   path: "/certifications",
+   description:
+-    "Explore the apparel quality, organic textile, and ethical sourcing standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
++    "Explore the apparel quality, organic textile, and ethical production standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
+   keywords: [
+     "garment manufacturer certifications",
+     "apparel compliance Pakistan",
+@@ -27,8 +27,8 @@ export default function CertificationsPage() {
+       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+       <PageHero
+         eyebrow="Certifications"
+-        title="Certifications and compliance signals that support confident apparel sourcing."
+-        text="This page helps brands, retailers, and sourcing managers review the audit standards and manufacturing signals they expect before placing export apparel orders."
++        title="Certifications and compliance signals that support informed apparel manufacturing discussions."
++        text="This page helps brands, retailers, and buying teams review the audit standards and manufacturing signals they expect before placing export apparel orders."
+         highlights={["GOTS", "SEDEX", "ISO Driven Trust"]}
+       />
+       <section className="section">
+diff --git a/src/app/products/page.js b/src/app/products/page.js
+index ae2ab8b..0a5fed3 100644
+--- a/src/app/products/page.js
++++ b/src/app/products/page.js
+@@ -213,7 +213,7 @@ export default function ProductsPage() {
+       <PageHero
+         eyebrow="Product Catalog"
+         title="Explore export-ready apparel categories built for modern buyers."
+-        text="Discover the knitted, woven, kidswear, fleece, uniform, and private-label product ranges OSD Apparels develops for retailers, wholesalers, and global sourcing teams."
++        text="Discover the knitted, woven, kidswear, fleece, uniform, and private-label product ranges OSD Apparels develops for retailers, wholesalers, and international buying teams."
+         highlights={["Menswear Range", "Kidswear Programs", "Private Label Expansion"]}
+       />
+ 
+diff --git a/src/app/products/mens/page.js b/src/app/products/mens/page.js
+index 3468b33..56c9a9a 100644
+--- a/src/app/products/mens/page.js
++++ b/src/app/products/mens/page.js
+@@ -12,7 +12,7 @@ const familySlug = "mens";
+ export const metadata = createMetadata({
+   title: "Menswear Manufacturer in Pakistan | OSD Apparels OEM",
+   description:
+-    "Source menswear from OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
++    "Explore menswear manufacturing with OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
+   path: "/products/mens",
+   keywords: [
+     "men's clothing manufacturer Pakistan",
+diff --git a/src/app/sustainability/page.js b/src/app/sustainability/page.js
+index c2f5fca..2087221 100644
+--- a/src/app/sustainability/page.js
++++ b/src/app/sustainability/page.js
+@@ -8,11 +8,10 @@ export const metadata = createMetadata({
+   title: "Sustainable Apparel Manufacturing Pakistan | OSD Apparels",
+   path: "/sustainability",
+   description:
+-    "Explore OSD Apparels approach to sustainable apparel manufacturing in Pakistan, with responsible sourcing, ethical production, and supply chain transparency.",
++    "Explore OSD Apparels approach to sustainable apparel manufacturing in Pakistan, with material considerations, production practices, and documentation for buyer review.",
+   keywords: [
+     "sustainable clothing manufacturer Pakistan",
+     "ethical garment manufacturer Pakistan",
+-    "sustainable apparel sourcing Pakistan",
+   ],
+   category: "Sustainability",
+ });
+@@ -29,7 +28,7 @@ export default function SustainabilityPage() {
+       <PageHero
+         eyebrow="Sustainability"
+         title="Sustainable clothing manufacturing in Pakistan, supported by process and proof."
+-        text="OSD Apparels supports buyers looking for ethical sourcing conversations, responsible garment production, and stronger sustainability positioning across private-label and export programs."
++        text="OSD Apparels supports buyers looking for material and documentation discussions, responsible garment production, and stronger sustainability positioning across private-label and export programs."
+         highlights={["Ethical Standards", "Audit Friendly", "Responsible Positioning"]}
+       />
+       <section className="section">
+@@ -38,14 +37,14 @@ export default function SustainabilityPage() {
+             <SectionIntro
+               eyebrow="Ethics"
+               title="Responsible manufacturing is part of the value proposition."
+-              text="We have structured this page to support buyer due diligence with clear language around responsible sourcing, safer production practices, and documentation expectations that global teams can evaluate with confidence."
++              text="We have structured this page to support buyer due diligence with clear language around material selection, safer production practices, and documentation expectations that global teams can evaluate with confidence."
+               align="left"
+             />
+           </Reveal>
+           <Reveal className="detail-card">
+             <h3>Focus Areas</h3>
+             <div className="check-list">
+-              <span>Responsible sourcing conversations</span>
++              <span>Material requirements discussions</span>
+               <span>Safe workplace expectations</span>
+               <span>Quality systems that reduce waste</span>
+               <span>Audit-friendly documentation culture</span>
+diff --git a/src/app/blog/page.js b/src/app/blog/page.js
+index 18b1061..3c94a07 100644
+--- a/src/app/blog/page.js
++++ b/src/app/blog/page.js
+@@ -6,14 +6,13 @@ import { getPublishedBlogPosts } from "@/lib/blog-posts";
+ import { createMetadata, buildBreadcrumbSchema, brand } from "@/lib/metadata";
+ 
+ export const metadata = createMetadata({
+-  title: "Apparel Sourcing Pakistan & Private Label Blog | OSD",
++  title: "Apparel Manufacturing & Private Label Blog | OSD",
+   description:
+-    "Read OSD Apparels guides to apparel sourcing in Pakistan, private label clothing for startups, menswear trends, and kidswear manufacturing for global brands.",
++    "Read OSD Apparels guides to apparel manufacturing in Pakistan, private label clothing for startups, menswear trends, and kidswear manufacturing for global brands.",
+   path: "/blog",
+   keywords: [
+     "garment manufacturing blog",
+     "private label clothing insights",
+-    "Pakistan apparel sourcing blog",
+     "fashion production guide",
+   ],
+ });
+@@ -56,7 +55,7 @@ export default async function BlogPage() {
+     name: `${brand.name} Blog`,
+     url: `${brand.siteUrl}/blog`,
+     description:
+-      "Educational apparel sourcing content for buyers, founders, retailers, and private-label brands.",
++      "Educational apparel manufacturing content for buyers, founders, retailers, and private-label brands.",
+     publisher: {
+       "@type": "Organization",
+       name: brand.name,
+diff --git a/src/app/blog/[slug]/page.js b/src/app/blog/[slug]/page.js
+index a2596ed..8bc3b9c 100644
+--- a/src/app/blog/[slug]/page.js
++++ b/src/app/blog/[slug]/page.js
+@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
+     category: post.category,
+     publishedTime,
+     modifiedTime,
+-    keywords: [post.category, "apparel sourcing", "garment manufacturing", "private label clothing"],
++    keywords: [post.category, "garment manufacturing", "private label clothing"],
+   });
+ }
+ 
+diff --git a/src/lib/metadata.js b/src/lib/metadata.js
+index ea7430f..0f17795 100644
+--- a/src/lib/metadata.js
++++ b/src/lib/metadata.js
+@@ -26,7 +26,6 @@ export const brand = {
+     "garment exporter Pakistan",
+     "knitted garments manufacturer",
+     "woven garments manufacturer",
+-    "apparel sourcing Pakistan",
+     "OEM garment manufacturer",
+     "low MOQ clothing manufacturer",
+     "kidswear manufacturer",
+diff --git a/src/lib/blog-seo.js b/src/lib/blog-seo.js
+index d9eaa80..554c75d 100644
+--- a/src/lib/blog-seo.js
++++ b/src/lib/blog-seo.js
+@@ -3,17 +3,17 @@ const articleMetadata = {
+   "private-label-clothing-manufacturing-pakistan": {
+     title: "Private Label Clothing for Startups in Pakistan | OSD",
+     description:
+-      "Explore private label clothing manufacturing in Pakistan for startups, including low MOQ flexibility, fabric sourcing, sampling, and export readiness.",
++      "Explore private label clothing manufacturing in Pakistan for startups, including low MOQ flexibility, fabric selection, sampling, and export readiness.",
+   },
+   "coord-sets-trend-guide-2026": {
+-    title: "Co-Ord Set Manufacturing: 2026 Sourcing Guide | OSD",
++    title: "Co-Ord Set Manufacturing: 2026 Guide | OSD",
+     description:
+-      "Explore co-ord set sourcing for 2026 with OSD Apparels, covering fabric choices, fit planning, and manufacturing details for contemporary menswear brands.",
++      "Explore co-ord set manufacturing for 2026 with OSD Apparels, covering fabric choices, fit planning, and manufacturing details for contemporary menswear brands.",
+   },
+   "kidswear-manufacturing-guide-pakistan": {
+     title: "Kidswear Manufacturing in Pakistan: Buyer Guide | OSD",
+     description:
+-      "Learn what to consider when sourcing kidswear in Pakistan, including sizing, comfort, school uniforms, fabric durability, and scalable garment production.",
++      "Learn what to consider when planning kidswear production in Pakistan, including sizing, comfort, school uniforms, fabric durability, and scalable garment production.",
+   },
+   "ddd": {
+     "title": "Co-Ord Sets for Fashion Brands in 2026 | OSD Apparels",
+@@ -151,7 +151,7 @@ export function getBlogSeo(post) {
+   if (articleMetadata[post.slug]) return articleMetadata[post.slug];
+ 
+   // New CMS articles retain their own subject; editorial overrides can be added above.
+-  const sourceTitle = String(post.title || "Apparel Sourcing Guide").replace(/\s+/g, " ").trim();
++  const sourceTitle = String(post.title || "Apparel Manufacturing Guide").replace(/\s+/g, " ").trim();
+   const title = sourceTitle.length >= 50
+     ? shorten(sourceTitle, 60)
+     : shorten(`${sourceTitle} | OSD Apparels Manufacturing Blog`, 60);
+@@ -159,7 +159,7 @@ export function getBlogSeo(post) {
+   const description = shorten(
+     excerpt.length >= 140
+       ? excerpt
+-      : `${excerpt} Read OSD Apparels insights for brands exploring garment sourcing, private label development, and clothing production in Pakistan.`,
++      : `${excerpt} Read OSD Apparels insights for brands planning garment specifications, private label development, and clothing production in Pakistan.`,
+     160,
+   );
+ 
+diff --git a/src/data/site.js b/src/data/site.js
+index 8a730de..3470b82 100644
+--- a/src/data/site.js
++++ b/src/data/site.js
+@@ -25,7 +25,7 @@ export const heroSlides = [
+   {
+     eyebrow: "Modern Fashion Manufacturer",
+     title: "Custom fashion apparel manufacturing for brands that want global-ready quality.",
+-    text: "We develop and produce knitted and woven garments for private labels, retailers, and sourcing teams that need sharper execution, better communication, and export-ready consistency.",
++    text: "We develop and produce knitted and woven garments for private labels, retailers, and buying teams that need sharper execution, better communication, and export-ready consistency.",
+     primaryCta: { href: "/quote", label: "Request Free Quote" },
+     secondaryCta: { href: "/products", label: "Explore Products" },
+     image: "/images/Who we are.png",
+@@ -79,8 +79,8 @@ export const services = [
+     icon: "BadgeCheck",
+   },
+   {
+-    title: "Fabric Sourcing",
+-    text: "Cotton, fleece, pique, linen blends, denim, jersey, and performance fabrics sourced to suit collection goals.",
++    title: "Fabric Selection",
++    text: "Discuss fabric requirements, including cotton, fleece, pique, linen blends, denim, jersey, and performance fabrics, for your garment specifications.",
+     icon: "Layers3",
+   },
+   {
+@@ -99,7 +99,7 @@ export const certifications = [
+   {
+     name: "SEDEX",
+     description:
+-      "Ethical supply-chain alignment with transparency expectations common in European and North American sourcing.",
++      "Ethical supply-chain alignment with transparency expectations common among European and North American apparel buyers.",
+   },
+   {
+     name: "SMETA 4-Pillar",
+@@ -186,10 +186,10 @@ export const blogPosts = [
+     category: "Private Label",
+     title: "Why Pakistan Is Still One of the Smartest Places for Private Label Clothing Manufacturing",
+     excerpt:
+-      "A practical look at MOQ flexibility, fabric access, speed, and export readiness for fashion brands sourcing from Pakistan.",
++      "A practical look at MOQ flexibility, fabric access, speed, and export readiness for fashion brands planning production in Pakistan.",
+     date: "June 10, 2026",
+     content: [
+-      "Pakistan continues to be one of the strongest sourcing destinations for private label clothing because it balances cost, production experience, and textile depth better than many competing regions.",
++      "When planning private label clothing production in Pakistan, compare your garment specifications, materials, order quantities and production requirements.",
+       "For growing brands, the most important advantage is flexibility. Manufacturers that accept lower MOQs allow founders to test styles, refine their audience, and preserve cash flow while still launching professionally.",
+       "The second advantage is vertical textile familiarity. Cotton, fleece, jersey, denim, pique, and performance materials are already part of the wider production ecosystem, which reduces friction when collections start expanding.",
+       "The best manufacturing partnerships still come down to communication discipline, transparent sampling, and quality control. Brands should look for suppliers that can explain process clearly, not just offer low prices.",
+@@ -198,7 +198,7 @@ export const blogPosts = [
+   {
+     slug: "coord-sets-trend-guide-2026",
+     category: "Menswear",
+-    title: "Co-Ord Sets in 2026: What Fashion Brands Should Be Sourcing Right Now",
++    title: "Co-Ord Sets in 2026: Planning a Collection for Your Brand",
+     excerpt:
+       "Fabric direction, fit choices, and production details behind one of the strongest commercial categories in contemporary menswear.",
+     date: "June 14, 2026",
+@@ -217,7 +217,7 @@ export const blogPosts = [
+       "What buyers should consider across sizing, safety, uniforms, swimwear, and scalable production for children’s apparel.",
+     date: "June 18, 2026",
+     content: [
+-      "Kidswear sourcing requires more than aesthetic range. Safety, durability, comfort, and wash performance matter far more because the garments face harder real-world use.",
++      "Kidswear manufacturing requires more than aesthetic range. Safety, durability, comfort, and wash performance matter far more because the garments face harder real-world use.",
+       "Pakistan is especially competitive for school uniforms, casual basics, fleece, and coordinated sets thanks to factory familiarity with volume-based kids production.",
+       "Brands should pay attention to age-range grading, component safety, trim attachment, and the softness of printed or decorated areas.",
+       "A reliable manufacturing partner helps translate those needs into commercial decisions without pushing the buyer into unnecessary complexity.",
+diff --git a/src/emails/CustomerConfirmation.jsx b/src/emails/CustomerConfirmation.jsx
+index a86069f..4f05864 100644
+--- a/src/emails/CustomerConfirmation.jsx
++++ b/src/emails/CustomerConfirmation.jsx
+@@ -72,7 +72,7 @@ export function CustomerConfirmation({ enquiry, referenceId, logoSrc }) {
+             <Heading as="h2" style={sectionTitle}>
+               What Happens Next
+             </Heading>
+-            <Text style={paragraph}>Our team will review your requirements, attached references, and sourcing needs.</Text>
++            <Text style={paragraph}>Our team will review your requirements, attached references, and garment specifications.</Text>
+             <Text style={paragraph}>You can expect a follow-up response within 24 hours.</Text>
+           </Section>
+ 
+diff --git a/public/llms.txt b/public/llms.txt
+index a785923..435fb8b 100644
+--- a/public/llms.txt
++++ b/public/llms.txt
+@@ -16,15 +16,15 @@ OSD Apparels supports knitted and woven garments, sampling, custom branding, pro
+ - [Products](https://www.osdapparels.com/products): Knitted and woven apparel categories.
+ - [Menswear](https://www.osdapparels.com/products/mens): Shirts, hoodies, jackets, denim, co-ord sets, activewear, and loungewear.
+ - [Kidswear](https://www.osdapparels.com/products/kids): Children's clothing, school uniforms, activewear, and matching sets.
+-- [Services](https://www.osdapparels.com/services): Sourcing, sampling, garment production, and export support.
++- [Services](https://www.osdapparels.com/services): Custom apparel manufacturing, sampling, and export support.
+ - [Custom orders](https://www.osdapparels.com/custom-order): Private label and OEM development, printing, embroidery, sizing, and packaging.
+ - [How it works](https://www.osdapparels.com/how-it-works): Enquiry, sampling, production, quality control, and delivery.
+ - [Request a quote](https://www.osdapparels.com/quote): Submit manufacturing requirements.
+ 
+ ## Further information
+ 
+-- [Blog](https://www.osdapparels.com/blog): Apparel sourcing and manufacturing articles.
+-- [Sustainability](https://www.osdapparels.com/sustainability): Responsible sourcing and production approach.
++- [Blog](https://www.osdapparels.com/blog): Apparel manufacturing and buyer education articles.
++- [Sustainability](https://www.osdapparels.com/sustainability): Material considerations and production approach.
+ - [Certifications](https://www.osdapparels.com/certifications): Standards discussed on the website; contact the company for current documentation and scope.
+ - [Privacy policy](https://www.osdapparels.com/privacy-policy): Enquiry data handling notes.
+ - [Terms](https://www.osdapparels.com/terms): Commercial terms notes.

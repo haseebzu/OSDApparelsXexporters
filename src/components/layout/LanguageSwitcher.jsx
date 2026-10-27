@@ -9,6 +9,8 @@ import {
   clearScheduledTranslateRefresh,
   getLanguageMeta,
   getStoredLanguage,
+  hasStoredLanguage,
+  resetStoredTranslation,
 } from "@/lib/googleTranslate";
 import { languageList } from "@/utils/languageList";
 
@@ -50,6 +52,13 @@ export function LanguageSwitcher() {
     clearScheduledTranslateRefresh();
 
     const frameId = window.requestAnimationFrame(() => {
+      if (!hasStoredLanguage()) {
+        // Start each new browser session in English and clear preferences saved by older builds.
+        resetStoredTranslation();
+        setActiveLanguage("en");
+        return;
+      }
+
       setActiveLanguage(getStoredLanguage());
     });
 

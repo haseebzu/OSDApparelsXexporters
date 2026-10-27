@@ -6,14 +6,13 @@ import { getPublishedBlogPosts } from "@/lib/blog-posts";
 import { createMetadata, buildBreadcrumbSchema, brand } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Apparel Sourcing Pakistan & Private Label Blog | OSD",
+  title: "Apparel Manufacturing & Private Label Blog | OSD",
   description:
-    "Read OSD Apparels guides to apparel sourcing in Pakistan, private label clothing for startups, menswear trends, and kidswear manufacturing for global brands.",
+    "Read OSD Apparels guides to apparel manufacturing in Pakistan, private label clothing for startups, menswear trends, and kidswear manufacturing for global brands.",
   path: "/blog",
   keywords: [
     "garment manufacturing blog",
     "private label clothing insights",
-    "Pakistan apparel sourcing blog",
     "fashion production guide",
   ],
 });
@@ -56,7 +55,7 @@ export default async function BlogPage() {
     name: `${brand.name} Blog`,
     url: `${brand.siteUrl}/blog`,
     description:
-      "Educational apparel sourcing content for buyers, founders, retailers, and private-label brands.",
+      "Educational apparel manufacturing content for buyers, founders, retailers, and private-label brands.",
     publisher: {
       "@type": "Organization",
       name: brand.name,

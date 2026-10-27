@@ -7,7 +7,7 @@ export const metadata = createMetadata({
   title: "Garment Manufacturing Standards & Certifications | OSD",
   path: "/certifications",
   description:
-    "Explore the apparel quality, organic textile, and ethical sourcing standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
+    "Explore the apparel quality, organic textile, and ethical production standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
   keywords: [
     "garment manufacturer certifications",
     "apparel compliance Pakistan",
@@ -27,8 +27,8 @@ export default function CertificationsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Certifications"
-        title="Certifications and compliance signals that support confident apparel sourcing."
-        text="This page helps brands, retailers, and sourcing managers review the audit standards and manufacturing signals they expect before placing export apparel orders."
+        title="Certifications and compliance signals that support informed apparel manufacturing discussions."
+        text="This page helps brands, retailers, and buying teams review the audit standards and manufacturing signals they expect before placing export apparel orders."
         highlights={["GOTS", "SEDEX", "ISO Driven Trust"]}
       />
       <section className="section">
