@@ -37,12 +37,12 @@ const serviceSections = [
     title: "Your first collection, done right from day one",
     image: "/images/custom d.png",
     paragraphs: [
-      "First-time founders get clear production direction from the first conversation. OSD handles sourcing, development, and approvals in plain language so buyers know what is happening at every stage.",
+      "First-time founders get clear production direction from the first conversation. OSD explains garment specifications, development, and approvals in plain language so buyers know what is happening at every stage.",
       "The goal is simple. Your first collection should move with fewer mistakes, predictable costing, and no hidden process surprises between sample approval and export dispatch.",
     ],
     pills: [
       "Design to tech pack",
-      "Fabric sourcing",
+      "Fabric selection",
       "Sample development",
       "Production management",
       "Export and logistics",
@@ -50,7 +50,7 @@ const serviceSections = [
     cta: { href: "/quote", label: "Start your launch enquiry" },
     side: {
       type: "timeline",
-      items: ["Design", "Sourcing", "Tech pack", "Sampling", "Production / delivery"],
+      items: ["Design", "Materials", "Tech pack", "Sampling", "Production / delivery"],
       quote:
         "OSD made the first order easier to understand. We always knew the next step, the next sample action, and the final shipment target.",
       quoteMeta: "Founder, startup womenswear label",
@@ -63,14 +63,14 @@ const serviceSections = [
     title: "End-to-end apparel manufacturing, managed for you",
     image: "/images/full scope.jpg",
     paragraphs: [
-      "Cutting, stitching, washing, finishing, quality control, and packing are controlled inside one production system. Buyers do not need to split execution across multiple outside vendors.",
-      "That means cleaner communication, better milestone discipline, and stronger control over output consistency before goods move into final dispatch and export documentation.",
+      "OSD manufactures custom knitted and woven apparel to the garment and customization requirements buyers provide, from development through bulk production.",
+      "Quality checks form part of the manufacturing process. Confirm the requirements for your garment, fabric, decoration, and order quantity when requesting a quote.",
     ],
     pills: [
       "Cutting and stitching",
       "Washing and finishing",
-      "In-line QC",
-      "Final inspection",
+      "Quality checks",
+      "Bulk production",
       "Export packing",
     ],
     cta: { href: "/quote", label: "Ask about lead times" },
@@ -91,15 +91,15 @@ const serviceSections = [
     title: "Your brand on every label - private label and OEM without compromise",
     image: "/images/Label and tags.jpg",
     paragraphs: [
-      "OSD manufactures to your exact program while protecting brand identity throughout development, approvals, labelling, and bulk execution. NDA-first handling is standard for private label and OEM orders.",
-      "Labels, trims, packaging, fit comments, and specification details are all kept inside one controlled system so the final garment reflects your brand rather than a factory default.",
+      "OSD manufactures private-label and OEM garments to buyer-provided requirements, with custom labels, tags, and packaging available for the project.",
+      "Buyers can provide a tech pack, reference garment, drawing, or photograph. NDAs are available, and the quotation can confirm the relevant project details.",
     ],
     pills: [
       "Custom woven labels",
       "Hangtag and packaging",
       "Tech pack support",
       "Design collaboration",
-      "Brand NDA standard",
+      "NDAs available",
     ],
     cta: { href: "/quote", label: "Start a private label enquiry" },
     side: {
@@ -117,8 +117,8 @@ const serviceSections = [
         },
         {
           icon: "BadgeCheck",
-          title: "Full confidentiality",
-          text: "NDA handling is built into buyer communication and production flow.",
+          title: "NDA available",
+          text: "Ask about an NDA when discussing your product requirements.",
         },
       ],
     },
@@ -130,7 +130,7 @@ const serviceSections = [
     title: "Certified sustainable from yarn to finished garment - not just a claim",
     image: "/images/Sustainability.jpg",
     paragraphs: [
-      "Certified programs are handled with real documentation, real input control, and real production discipline. OSD supports buyers who need sustainable sourcing without vague marketing language.",
+      "Certified programs are handled with real documentation, real input control, and real production discipline. Buyers can discuss material and documentation requirements for their manufacturing project.",
       "GRS, RCS, GOTS, Oeko-Tex Class 1, and audited operating standards help buyers verify the production story from material stage through the finished export shipment.",
     ],
     pills: [
@@ -164,13 +164,13 @@ const serviceSections = [
     },
     highlights: [
       {
-        title: "Sustainable Sourcing Commitment",
+        title: "Material Selection",
         text: "We prioritize eco-friendly materials like organic cotton, Tencel, hemp, and recycled fibers while partnering with suppliers who follow responsible production practices.",
         image: "/images/Eco friendly Fabric.jpg",
       },
       {
         title: "Transparent Supply Chain",
-        text: "Our sourcing process emphasizes transparency and traceability, helping buyers verify fair labor standards, safer working conditions, and responsible manufacturing discipline.",
+        text: "Discuss your traceability and production-documentation requirements with OSD when defining the garment specifications.",
         image: "/images/Transperant supplly chain.jpg",
       },
       {
@@ -185,7 +185,7 @@ const serviceSections = [
       },
       {
         title: "Circular Economy And Responsible Design",
-        text: "We support longer product lifecycles through better material choice, smarter sourcing, recyclable inputs, and responsible design direction where possible.",
+        text: "We support longer product lifecycles through better material choice, production planning, recyclable inputs, and responsible design direction where possible.",
         image: "/images/Circular Economy.jpg",
       },
       {
@@ -202,24 +202,24 @@ const serviceSections = [
     title: "Start with a small order, scale when you're ready",
     image: "/images/Low moq.jpg",
     paragraphs: [
-      "Low MOQ support gives newer brands and test programs a practical way to start without forcing heavy inventory risk. Sampling and revision rounds are built into the front end of the production process.",
-      "That keeps approvals cleaner, controls sample-stage mistakes earlier, and gives buyers a clear path from small launch order to future scale without hidden resampling charges.",
+      "Minimum order starts at 30 pieces. Confirm the quantity breakdown for your design, colours and sizes when requesting a quote.",
+      "Custom samples are charged according to the product, and buyers approve a sample before bulk production.",
     ],
     pills: [
       "Low MOQ available",
       "Pre-production samples",
-      "Fit and wash testing",
-      "Revision rounds included",
-      "Scalable to bulk",
+      "Custom samples",
+      "Sample approval",
+      "Bulk orders",
     ],
     cta: { href: "/quote", label: "Ask about MOQ" },
     side: {
       type: "stats",
       items: [
-        { value: "50 pcs", label: "low MOQ" },
-        { value: "7 days", label: "sample turnaround" },
-        { value: "Bulk ready", label: "full scalability" },
-        { value: "0", label: "hidden resampling fees" },
+        { value: "30 pcs", label: "minimum order starts" },
+        { value: "Product-based", label: "sample charge" },
+        { value: "Required", label: "sample approval" },
+        { value: "Quote", label: "quantity breakdown" },
       ],
     },
   },
@@ -227,17 +227,17 @@ const serviceSections = [
     id: "global-export",
     navLabel: "Global export",
     eyebrow: "Worldwide delivery",
-    title: "Factory to your door, anywhere in the world",
+    title: "Shipping arrangements for international orders",
     image: "/images/Shipments.jpg",
     paragraphs: [
-      "OSD supports export handling from final packing through freight coordination, customs documentation, and shipment traceability. Buyers receive a cleaner handover rather than disconnected factory dispatch.",
-      "The result is better shipment visibility, fewer paperwork problems, and stronger confidence when goods are moving across international buying routes and retail deadlines.",
+      "Shipping can be arranged to more than 50 countries. Choose shipping arranged by OSD or your own shipping arrangements.",
+      "DDP delivery can be quoted where available. Your quotation will confirm the agreed shipping terms, included costs, and delivery estimate.",
     ],
     pills: [
-      "50+ countries served",
-      "Freight coordination",
-      "Customs documentation",
-      "Full traceability pack",
+      "50+ countries available",
+      "OSD-arranged shipping",
+      "Buyer-arranged shipping",
+      "DDP quoted where available",
     ],
     cta: { href: "/contact", label: "Ask about shipping" },
     side: {
@@ -245,18 +245,18 @@ const serviceSections = [
       items: [
         {
           icon: "Plane",
-          title: "Global freight management",
-          text: "Shipment coordination matched to buyer timelines and destination needs.",
+          title: "Shipping arrangements",
+          text: "Choose shipping arranged by OSD or your own shipping arrangements.",
         },
         {
           icon: "BadgeCheck",
-          title: "Export documentation",
-          text: "Commercial paperwork handled with the detail global buyers expect.",
+          title: "Quote-specific terms",
+          text: "Your quotation confirms the agreed shipping terms, included costs, and delivery estimate.",
         },
         {
           icon: "Boxes",
-          title: "Full chain traceability",
-          text: "Every shipment carries the export pack and dispatch-level visibility.",
+          title: "DDP where available",
+          text: "DDP delivery can be quoted subject to the destination and agreed quotation.",
         },
       ],
     },
@@ -330,9 +330,9 @@ export function ServicesPageContent() {
           <div className="section-accent" />
           <h1 className="services-page__title">Custom clothing manufacturing services built for low-MOQ and export buyers</h1>
           <p className="services-page__subtitle">
-            OSD Apparels supports custom clothing manufacturing with low MOQ flexibility, private-label development,
-            production management, and worldwide shipment. This page shows the exact service blocks buyers use when
-            they need dependable manufacturing support without production guesswork.
+            OSD Apparels manufactures custom knitted and woven apparel for bulk orders from brands, retailers, and
+            other businesses. Minimum order starts at 30 pieces; confirm the quantity breakdown for your design,
+            colours and sizes when requesting a quote.
           </p>
         </Reveal>
 

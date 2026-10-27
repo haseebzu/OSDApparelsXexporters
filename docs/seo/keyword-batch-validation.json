@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-22T13:59:42.479Z",
+  "pages": [
+    {
+      "path": "/products/mens",
+      "status": 200,
+      "title": "Menswear Manufacturer in Pakistan | OSD Apparels OEM",
+      "description": "Explore menswear manufacturing with OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
+      "canonical": "https://www.osdapparels.com/products/mens",
+      "hasExpectedText": true,
+      "quoteLinks": 11
+    },
+    {
+      "path": "/products/kids",
+      "status": 200,
+      "title": "Kidswear Manufacturer Pakistan | OSD Apparels",
+      "description": "Explore custom kidswear manufacturing at OSD Apparels in Pakistan, from t-shirts and hoodies to school uniforms, activewear, and matching co-ord sets.",
+      "canonical": "https://www.osdapparels.com/products/kids",
+      "hasExpectedText": true,
+      "quoteLinks": 11
+    }
+  ],
+  "failures": []
+}

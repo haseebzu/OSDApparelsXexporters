@@ -71,6 +71,9 @@ export function Footer() {
             <span>{contact.address}</span>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
             <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+            <a href={socials.tradewheel} target="_blank" rel="noopener noreferrer">
+              TradeWheel company profile
+            </a>
             <span>{contact.hours}</span>
           </div>
         </div>

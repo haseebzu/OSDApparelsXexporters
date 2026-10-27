@@ -1,0 +1,158 @@
+{
+  "checkedAt": "2026-10-22T07:59:08.438Z",
+  "source": [
+    {
+      "file": "src/app/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/components/home/HeroSlider.jsx",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/about/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/components/services/ServicesPageContent.jsx",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/services/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/certifications/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/products/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/products/mens/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/sustainability/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/blog/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/app/blog/[slug]/page.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/lib/metadata.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/lib/blog-seo.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/data/site.js",
+      "preservedJsxTagsAndPresentationAttributes": true
+    },
+    {
+      "file": "src/emails/CustomerConfirmation.jsx",
+      "preservedJsxTagsAndPresentationAttributes": true
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/products/mens",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/products/kids",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/sustainability",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/certifications",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/custom-order",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/quote",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    },
+    {
+      "path": "/how-it-works",
+      "status": 200,
+      "remainingSourcingInNonScriptHtml": false
+    }
+  ],
+  "homepageFacts": [
+    "Low-liquor-ratio, high-temperature jet machines capable of dyeing 20–25 tons per day.",
+    "Over 278 stitching machines operated by skilled, experienced operators.",
+    "A combined daily production capacity of 2,000 pieces.",
+    "5 hanger systems to support production efficiency.",
+    "Your Brand, Your Way."
+  ],
+  "live": {
+    "apexStatus": 308,
+    "apexLocation": "https://www.osdapparels.com/",
+    "servicesStillApexCanonical": true,
+    "uaProbes": [
+      {
+        "userAgent": "OAI-SearchBot",
+        "status": 200,
+        "xRobotsTag": null
+      },
+      {
+        "userAgent": "Googlebot",
+        "status": 200,
+        "xRobotsTag": null
+      },
+      {
+        "userAgent": "bingbot",
+        "status": 200,
+        "xRobotsTag": null
+      }
+    ],
+    "note": "User-agent strings do not verify actual provider IP access."
+  },
+  "failures": []
+}

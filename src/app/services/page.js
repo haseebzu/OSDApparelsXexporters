@@ -2,9 +2,9 @@ import { ServicesPageContent } from "@/components/services/ServicesPageContent";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Low MOQ Clothing Manufacturer Services | OSD Apparels",
+  title: "Apparel Manufacturing Services | OSD Apparels",
   description:
-    "Explore OSD Apparels clothing manufacturing services: low MOQ from 50 pieces per style, fabric sourcing, sampling, quality checks, and export coordination.",
+    "Explore OSD Apparels custom knitted and woven apparel manufacturing, from buyer-provided specifications and samples to production, quality checks, decoration, and shipping arrangements.",
   path: "/services",
   keywords: [
     "custom clothing manufacturer low MOQ",

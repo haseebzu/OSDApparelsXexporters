@@ -12,7 +12,7 @@ const familySlug = "mens";
 export const metadata = createMetadata({
   title: "Menswear Manufacturer in Pakistan | OSD Apparels OEM",
   description:
-    "Source menswear from OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
+    "Explore menswear manufacturing with OSD Apparels in Pakistan, including custom hoodies, t-shirts, jackets, denim, activewear, and co-ord sets for private label brands.",
   path: "/products/mens",
   keywords: [
     "men's clothing manufacturer Pakistan",
@@ -47,13 +47,15 @@ export default function MensProductsPage() {
           <SectionIntro
             eyebrow="Catalog"
             title="Browse menswear categories for private-label and wholesale programs"
-            text="Select a category to request a quote. Each card connects you to OSD Apparels for faster menswear manufacturing enquiries."
+            text="Select a category to start a custom menswear manufacturing enquiry. Share the garment, material, and design requirements for your project when you request a quote."
             align="left"
           />
 
           <div className="cards-grid">
             {family.categories.map((cat, i) => {
               const image = getCategoryImage(familySlug, cat.slug);
+              const categoryHref = cat.slug === "hoodies" ? "/products/hoodies" : cat.slug === "tshirts" ? "/products/t-shirts" : "/quote";
+              const categoryCta = cat.slug === "hoodies" ? "View Hoodies" : cat.slug === "tshirts" ? "View T-Shirts" : "Request Quote";
 
               return (
                 <Reveal key={cat.slug} className="product-card">
@@ -71,8 +73,8 @@ export default function MensProductsPage() {
                     <h3>{cat.title}</h3>
                     <p>{cat.description}</p>
                   </div>
-                  <Link className="product-card__cta" href="/quote">
-                    Request Quote
+                  <Link className="product-card__cta" href={categoryHref}>
+                    {categoryCta}
                   </Link>
                 </Reveal>
               );

@@ -72,7 +72,7 @@ export function CustomerConfirmation({ enquiry, referenceId, logoSrc }) {
             <Heading as="h2" style={sectionTitle}>
               What Happens Next
             </Heading>
-            <Text style={paragraph}>Our team will review your requirements, attached references, and sourcing needs.</Text>
+            <Text style={paragraph}>Our team will review your requirements, attached references, and garment specifications.</Text>
             <Text style={paragraph}>You can expect a follow-up response within 24 hours.</Text>
           </Section>
 

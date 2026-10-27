@@ -14,7 +14,7 @@ export function TopBar() {
         <span>Modern Fashion Manufacturer & Exporter Worldwide</span>
         <span>Custom Knitted and Woven Garments</span>
         <span>Private Label and OEM Development</span>
-        <span>MOQ from 30 Pieces per Style</span>
+        <span>Minimum Order Starts at 30 Pieces</span>
         <span>Worldwide Export Support</span>
       </div>
     </div>

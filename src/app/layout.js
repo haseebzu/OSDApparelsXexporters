@@ -21,7 +21,6 @@ export const metadata = {
   description: brand.defaultDescription,
   applicationName: brand.name,
   referrer: "origin-when-cross-origin",
-  keywords: brand.keywords,
   authors: [{ name: brand.name }],
   creator: brand.name,
   publisher: brand.name,
@@ -78,7 +77,7 @@ export default function RootLayout({ children }) {
   const organizationSchema = buildOrganizationSchema();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

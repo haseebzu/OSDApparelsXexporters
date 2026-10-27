@@ -1,14 +1,15 @@
 export const contact = {
-  email: "osdapparels@gmail.com",
+  email: "exports@osdapparel.com",
   phone: "+92 3234578442",
   whatsapp: "+92 3234578442",
-  address: "Faisalabad, Punjab, Pakistan",
+  address: "97 C, Model City 1, Canal Road, Faisalabad, Punjab, Pakistan",
   hours: "24/7",
 };
 
 export const socials = {
   linkedin: "https://www.linkedin.com/company/osd-apparels/",
   instagram: "https://www.instagram.com/osdapparels/",
+  tradewheel: "https://www.tradewheel.com/co/osd-apparels-1795357/",
 };
 
 export const navigation = [
@@ -25,7 +26,7 @@ export const heroSlides = [
   {
     eyebrow: "Modern Fashion Manufacturer",
     title: "Custom fashion apparel manufacturing for brands that want global-ready quality.",
-    text: "We develop and produce knitted and woven garments for private labels, retailers, and sourcing teams that need sharper execution, better communication, and export-ready consistency.",
+    text: "We develop and produce knitted and woven garments for private labels, retailers, and buying teams that need sharper execution, better communication, and export-ready consistency.",
     primaryCta: { href: "/quote", label: "Request Free Quote" },
     secondaryCta: { href: "/products", label: "Explore Products" },
     image: "/images/Who we are.png",
@@ -50,7 +51,7 @@ export const heroSlides = [
 
 export const stats = [
   { label: "Countries Served", value: "50+" },
-  { label: "MOQ Per Style", value: "50 pcs" },
+  { label: "Minimum Order", value: "Starts at 30 pcs" },
   { label: "Annual Capacity", value: "50k+" },
   { label: "QC Checkpoints", value: "3" },
   { label: "Sampling Speed", value: "7 days" },
@@ -79,13 +80,13 @@ export const services = [
     icon: "BadgeCheck",
   },
   {
-    title: "Fabric Sourcing",
-    text: "Cotton, fleece, pique, linen blends, denim, jersey, and performance fabrics sourced to suit collection goals.",
+    title: "Fabric Selection",
+    text: "Discuss fabric requirements, including cotton, fleece, pique, linen blends, denim, jersey, and performance fabrics, for your garment specifications.",
     icon: "Layers3",
   },
   {
     title: "Global Dispatch Support",
-    text: "Packaging, labeling, export coordination, and commercial readiness built for smooth international delivery.",
+    text: "Packaging, labeling, and shipping arrangements confirmed in the quotation for international orders.",
     icon: "Globe2",
   },
 ];
@@ -99,7 +100,7 @@ export const certifications = [
   {
     name: "SEDEX",
     description:
-      "Ethical supply-chain alignment with transparency expectations common in European and North American sourcing.",
+      "Ethical supply-chain alignment with transparency expectations common among European and North American apparel buyers.",
   },
   {
     name: "SMETA 4-Pillar",
@@ -186,19 +187,19 @@ export const blogPosts = [
     category: "Private Label",
     title: "Why Pakistan Is Still One of the Smartest Places for Private Label Clothing Manufacturing",
     excerpt:
-      "A practical look at MOQ flexibility, fabric access, speed, and export readiness for fashion brands sourcing from Pakistan.",
+      "A practical look at MOQ flexibility, fabric access, speed, and export readiness for fashion brands planning production in Pakistan.",
     date: "June 10, 2026",
     content: [
-      "Pakistan continues to be one of the strongest sourcing destinations for private label clothing because it balances cost, production experience, and textile depth better than many competing regions.",
+      "When planning private label clothing production in Pakistan, compare your garment specifications, materials, order quantities and production requirements.",
       "For growing brands, the most important advantage is flexibility. Manufacturers that accept lower MOQs allow founders to test styles, refine their audience, and preserve cash flow while still launching professionally.",
       "The second advantage is vertical textile familiarity. Cotton, fleece, jersey, denim, pique, and performance materials are already part of the wider production ecosystem, which reduces friction when collections start expanding.",
-      "The best manufacturing partnerships still come down to communication discipline, transparent sampling, and quality control. Brands should look for suppliers that can explain process clearly, not just offer low prices.",
+      "The best manufacturing partnerships still come down to communication discipline, transparent sampling, and quality control. Brands should look for manufacturers that can explain the process clearly, not just offer low prices.",
     ],
   },
   {
     slug: "coord-sets-trend-guide-2026",
     category: "Menswear",
-    title: "Co-Ord Sets in 2026: What Fashion Brands Should Be Sourcing Right Now",
+    title: "Co-Ord Sets in 2026: Planning a Collection for Your Brand",
     excerpt:
       "Fabric direction, fit choices, and production details behind one of the strongest commercial categories in contemporary menswear.",
     date: "June 14, 2026",
@@ -212,12 +213,12 @@ export const blogPosts = [
   {
     slug: "kidswear-manufacturing-guide-pakistan",
     category: "Kidswear",
-    title: "A Modern Brand’s Guide to Kidswear Manufacturing in Pakistan",
+    title: "A Modern Brandâ€™s Guide to Kidswear Manufacturing in Pakistan",
     excerpt:
-      "What buyers should consider across sizing, safety, uniforms, swimwear, and scalable production for children’s apparel.",
+      "What buyers should consider across sizing, safety, uniforms, swimwear, and scalable production for childrenâ€™s apparel.",
     date: "June 18, 2026",
     content: [
-      "Kidswear sourcing requires more than aesthetic range. Safety, durability, comfort, and wash performance matter far more because the garments face harder real-world use.",
+      "Kidswear manufacturing requires more than aesthetic range. Safety, durability, comfort, and wash performance matter far more because the garments face harder real-world use.",
       "Pakistan is especially competitive for school uniforms, casual basics, fleece, and coordinated sets thanks to factory familiarity with volume-based kids production.",
       "Brands should pay attention to age-range grading, component safety, trim attachment, and the softness of printed or decorated areas.",
       "A reliable manufacturing partner helps translate those needs into commercial decisions without pushing the buyer into unnecessary complexity.",
@@ -358,7 +359,7 @@ function createShowcaseProducts(group, family) {
       family,
       category: category.slug,
       title: `${category.title} ${item}`,
-      subtitle: `${category.fabrics[0]} • MOQ 30 pcs/style`,
+      subtitle: `${category.fabrics[0]} â€¢ MOQ 30 pcs/style`,
       tone: index % 3,
       description: category.description,
       fabrics: category.fabrics,
@@ -427,10 +428,10 @@ export const printingTechniques = [
 
 export const trustPoints = [
   "Dedicated account communication",
-  "Low MOQ from 50 pieces per style",
+  "Minimum order starts at 30 pieces; confirm the breakdown for your design, colours and sizes",
   "Sampling before bulk confirmation",
   "Export support for global buyers",
-  "Multiple decoration capabilities in-house",
+  "Screen printing, puff printing, DTG, sublimation, heat transfer, embroidery, and garment washing/finishing available",
   "Quality checks before final dispatch",
 ];
 

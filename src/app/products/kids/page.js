@@ -10,9 +10,9 @@ import { buildProductCategorySchema } from "@/lib/product-schema";
 const familySlug = "kids";
 
 export const metadata = createMetadata({
-  title: "Wholesale Kidswear Manufacturer Pakistan | OSD Apparels",
+  title: "Kidswear Manufacturer Pakistan | OSD Apparels",
   description:
-    "Explore wholesale kidswear manufacturing at OSD Apparels in Pakistan, from t-shirts and hoodies to school uniforms, activewear, and matching co-ord sets.",
+    "Explore custom kidswear manufacturing at OSD Apparels in Pakistan, from t-shirts and hoodies to school uniforms, activewear, and matching co-ord sets.",
   path: "/products/kids",
   keywords: [
     "kids clothing manufacturer Pakistan",
@@ -47,7 +47,7 @@ export default function KidsProductsPage() {
           <SectionIntro
             eyebrow="Catalog"
             title="Browse kidswear categories for schoolwear, basics, and retail programs"
-            text="Select a category to request a quote. Each card links directly into a cleaner kidswear manufacturing enquiry flow."
+            text="Select a category to start a custom kidswear manufacturing enquiry. Share the garment, material, and design requirements for your project when you request a quote."
             align="left"
           />
 
@@ -60,7 +60,9 @@ export default function KidsProductsPage() {
                   <div className={`product-card__visual product-card__visual--${i % 3}`}>
                     <Image
                       src={image}
-                      alt={`Kids ${cat.title.replace(/^Kids /, "")} from the OSD Apparels clothing collection`}
+                      alt={image === "/images/Kids.png"
+                        ? "Four children wearing short-sleeved shirts with trousers or shorts"
+                        : `Kids ${cat.title.replace(/^Kids /, "")} from the OSD Apparels clothing collection`}
                       fill
                       sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="product-card__visual-image"

@@ -5244,6 +5244,14 @@ body {
   font-size: clamp(4.2rem, 5.7vw, 5.6rem);
 }
 
+/* Keep the homepage headline legible beside its cutout artwork. */
+.hero-cutout__display--state-1 {
+  max-width: 100%;
+  font-size: clamp(3.85rem, 4.1vw, 4.45rem);
+  letter-spacing: -0.075em;
+  white-space: pre-line;
+}
+
 .hero-cutout__display-accent {
   color: var(--brass);
 }
@@ -5938,6 +5946,11 @@ body {
   .hero-cutout__display--long {
     max-width: 9.5ch;
     font-size: clamp(2.7rem, 6.5vw, 3.7rem);
+  }
+
+  .hero-cutout__display--state-1 {
+    max-width: 100%;
+    font-size: clamp(3rem, 7.2vw, 4rem);
   }
 
   .product-category-map {
@@ -6841,5 +6854,179 @@ body {
   .services-page__title,
   .services-page__panel-copy h2 {
     max-width: none;
+  }
+}
+
+/* Product-detail presentation for hoodies and T-shirts. */
+.product-detail-page {
+  overflow: hidden;
+}
+
+.product-detail-page__overview {
+  padding-top: clamp(64px, 8vw, 112px);
+}
+
+.product-detail-page__overview-grid {
+  align-items: stretch;
+}
+
+.product-detail-page .custom-order-card--wide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  min-height: 430px;
+}
+
+.product-detail-page .custom-order-card--wide .custom-order-card__media {
+  min-height: 100%;
+}
+
+.product-detail-page .custom-order-card--wide .custom-order-card__image {
+  transition: transform 0.6s ease;
+}
+
+.product-detail-page .custom-order-card--wide:hover .custom-order-card__image {
+  transform: scale(1.025);
+}
+
+.product-detail-page .custom-order-card--wide .custom-order-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: clamp(28px, 4vw, 48px);
+  background: linear-gradient(145deg, #ffffff, #f1f3ed);
+}
+
+.product-detail-page .custom-order-card__body h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--navy-dark);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.product-detail-page .custom-order-card__body h2 + p {
+  max-width: 38ch;
+  margin: 22px 0 0;
+  color: var(--gray);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.product-detail-page .detail-card {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border-color: rgba(183, 134, 82, 0.22);
+  box-shadow: 0 18px 42px rgba(31, 36, 30, 0.07);
+}
+
+.product-detail-page .detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--brass);
+}
+
+.product-detail-page__overview .detail-card {
+  display: flex;
+  align-items: end;
+  background: #000;
+}
+
+.product-detail-page__overview .detail-card h3,
+.product-detail-page__overview .detail-card p {
+  color: var(--white);
+}
+
+.product-detail-page__overview .detail-card p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.product-detail-page__specifications .cards-grid,
+.product-detail-page__faq .cards-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product-detail-page__specifications .detail-card {
+  min-height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-detail-page__specifications .detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 46px rgba(31, 36, 30, 0.12);
+}
+
+.product-detail-page__specifications .custom-order-card__body {
+  padding: clamp(26px, 3vw, 34px);
+}
+
+.product-detail-page__quote {
+  position: relative;
+}
+
+.product-detail-page__quote .container {
+  padding: clamp(36px, 5vw, 64px);
+  border-radius: 30px;
+  background: var(--navy-dark);
+}
+
+.product-detail-page__quote .section-intro,
+.product-detail-page__quote .section-title {
+  color: var(--white);
+}
+
+.product-detail-page__quote .section-text {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.product-detail-page__quote .section-eyebrow {
+  color: var(--gold);
+}
+
+.product-detail-page__quote .button-row {
+  margin-top: 28px;
+}
+
+.product-detail-page__faq .detail-card {
+  min-height: 180px;
+}
+
+.product-detail-page__links {
+  margin-top: 28px;
+}
+
+@media (max-width: 960px) {
+  .product-detail-page .custom-order-card--wide {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .product-detail-page .custom-order-card--wide .custom-order-card__media {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 720px) {
+  .product-detail-page__overview {
+    padding-top: 56px;
+  }
+
+  .product-detail-page .custom-order-card--wide .custom-order-card__media {
+    min-height: 280px;
+  }
+
+  .product-detail-page__specifications .cards-grid,
+  .product-detail-page__faq .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-page__quote .container {
+    padding: 32px 24px;
+    border-radius: 24px;
   }
 }

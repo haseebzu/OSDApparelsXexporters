@@ -23,6 +23,16 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: remoteImagePatterns,
   },
+  async redirects() {
+    return [
+      { source: "/blog/choose-apparel-sourcing-agent-pakistan", destination: "/services", statusCode: 301 },
+      { source: "/blog/apparel-sourcing-timeline-new-brands", destination: "/how-it-works", statusCode: 301 },
+      { source: "/blog/mistakes-sourcing-clothing-overseas", destination: "/custom-order", statusCode: 301 },
+      { source: "/blog/source-mens-apparel-pakistan-2026-guide", destination: "/products/mens", statusCode: 301 },
+      { source: "/blog/fashion-trends-2026-what-to-source", destination: "/products", statusCode: 301 },
+      { source: "/blog/pakistan-vs-bangladesh-vs-china-apparel-sourcing", destination: "/services", statusCode: 301 },
+    ];
+  },
   async headers() {
     return [
       {

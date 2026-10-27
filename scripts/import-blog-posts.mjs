@@ -51,7 +51,7 @@ function inferCategory(slug, title) {
   if (source.includes("shipping") || source.includes("export") || source.includes("timeline")) return "Export & Logistics";
   if (source.includes("startup") || source.includes("launch") || source.includes("new-brand")) return "Startups";
   if (source.includes("moq")) return "MOQ & Sampling";
-  return "Apparel Sourcing";
+  return "Apparel Manufacturing";
 }
 
 function transformTableBlock(lines) {

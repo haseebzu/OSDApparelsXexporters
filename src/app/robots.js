@@ -1,3 +1,5 @@
+import { brand, toAbsoluteUrl } from "@/lib/metadata";
+
 export default function robots() {
   return {
     rules: [
@@ -6,7 +8,7 @@ export default function robots() {
         allow: "/",
       },
     ],
-    host: "https://osdapparels.com",
-    sitemap: "https://osdapparels.com/sitemap.xml",
+    host: brand.siteUrl,
+    sitemap: toAbsoluteUrl("/sitemap.xml"),
   };
 }

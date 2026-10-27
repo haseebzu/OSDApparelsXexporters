@@ -1,6 +1,6 @@
 import { contact, socials } from "@/data/site";
 
-const siteUrl = "https://osdapparels.com";
+const siteUrl = "https://www.osdapparels.com";
 
 export const brand = {
   name: "OSD Apparels",
@@ -14,6 +14,7 @@ export const brand = {
   contact: {
     email: contact.email,
     phone: contact.phone,
+    streetAddress: "97 C, Model City 1, Canal Road",
     addressLocality: "Faisalabad",
     addressRegion: "Punjab",
     addressCountry: "PK",
@@ -26,7 +27,6 @@ export const brand = {
     "garment exporter Pakistan",
     "knitted garments manufacturer",
     "woven garments manufacturer",
-    "apparel sourcing Pakistan",
     "OEM garment manufacturer",
     "low MOQ clothing manufacturer",
     "kidswear manufacturer",
@@ -64,7 +64,6 @@ export function createMetadata({
   title,
   description = brand.defaultDescription,
   path = "/",
-  keywords = [],
   images,
   type = "website",
   noIndex = false,
@@ -82,7 +81,6 @@ export function createMetadata({
     alternates: {
       canonical: path,
     },
-    keywords: [...new Set([brand.name, ...keywords])],
     category,
     robots: {
       index: !noIndex,
@@ -137,6 +135,7 @@ export function buildOrganizationSchema() {
     ],
     address: {
       "@type": "PostalAddress",
+      streetAddress: brand.contact.streetAddress,
       addressLocality: brand.contact.addressLocality,
       addressRegion: brand.contact.addressRegion,
       addressCountry: brand.contact.addressCountry,

@@ -34,9 +34,32 @@ export function createClient(request) {
 }
 
 export async function updateSession(request) {
+  if (!supabaseUrl || !supabaseKey) {
+    return NextResponse.next({ request });
+  }
+
+  const authCookieNames = request.cookies
+    .getAll()
+    .map(({ name }) => name)
+    .filter((name) => name.startsWith("sb-") && name.includes("-auth-token"));
+
+  // Public storefront routes do not need an auth request when no session exists.
+  // This also prevents Supabase from attempting to refresh a non-existent token.
+  if (!authCookieNames.length) {
+    return NextResponse.next({ request });
+  }
+
   const { supabase, response } = createClient(request);
 
-  await supabase.auth.getUser();
+  const { error } = await supabase.auth.getUser();
+
+  // A stale or incomplete auth cookie cannot be refreshed. Clear only the
+  // Supabase session cookies so the next public request is anonymous.
+  if (error) {
+    authCookieNames.forEach((name) => {
+      response.cookies.set(name, "", { maxAge: 0, path: "/" });
+    });
+  }
 
   return response;
 }
