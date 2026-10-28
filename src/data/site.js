@@ -1,5 +1,5 @@
 export const contact = {
-  email: "exports@osdapparel.com",
+  email: "osdapparels@gmail.com",
   phone: "+92 3234578442",
   whatsapp: "+92 3234578442",
   address: "97 C, Model City 1, Canal Road, Faisalabad, Punjab, Pakistan",
