@@ -1,0 +1,82 @@
+diff --git a/src/components/layout/Footer.jsx b/src/components/layout/Footer.jsx
+--- a/src/components/layout/Footer.jsx
++++ b/src/components/layout/Footer.jsx
+@@
+             <Link href="/custom-order">OEM / Private Label</Link>
+-            <Link href="/how-it-works">How It Works</Link>
+@@
+-        <div className="footer-bottom__legal">
+-          <Link href="/privacy-policy">Privacy Policy</Link>
+-          <Link href="/terms">Terms</Link>
+-        </div>
+diff --git a/src/app/certifications/page.js b/src/app/certifications/page.js
+--- a/src/app/certifications/page.js
++++ b/src/app/certifications/page.js
+@@
+-        <div className="container">
+-          <h2 className="visually-hidden">Standards discussed with buyers</h2>
+-          <div className="cards-grid">
++        <div className="container cards-grid">
+@@
+-          </div>
+diff --git a/src/app/blog/page.js b/src/app/blog/page.js
+--- a/src/app/blog/page.js
++++ b/src/app/blog/page.js
+@@
+-          <h2 className="visually-hidden">Latest apparel manufacturing articles</h2>
+diff --git a/src/app/privacy-policy/page.js b/src/app/privacy-policy/page.js
+--- a/src/app/privacy-policy/page.js
++++ b/src/app/privacy-policy/page.js
+@@
+-        text="This page outlines how business enquiry details are handled during quotation and project communication."
++        text="This frontend includes polished policy pages so the site feels complete and launch-ready."
+diff --git a/src/app/terms/page.js b/src/app/terms/page.js
+--- a/src/app/terms/page.js
++++ b/src/app/terms/page.js
+@@
+-        title="Commercial terms for manufacturing orders."
+-        text="Pricing, samples, production, approvals and dispatch are confirmed for each manufacturing project."
++        title="Commercial terms placeholder for a launch-ready frontend structure."
++        text="This page rounds out the core route set and gives legal content a professional place in the experience."
+@@
+-          <p>Final legal terms should be reviewed before an order is placed. Project-specific agreements take precedence over this overview.</p>
++          <p>This page is a frontend placeholder and should be replaced with final legal language before a public launch.</p>
+diff --git a/src/app/globals.css b/src/app/globals.css
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@
+-.visually-hidden {
+-  position: absolute;
+-  width: 1px;
+-  height: 1px;
+-  padding: 0;
+-  margin: -1px;
+-  overflow: hidden;
+-  clip: rect(0, 0, 0, 0);
+-  white-space: nowrap;
+-  border: 0;
+-}
+@@
+-.footer-bottom {
+-  display: flex;
+-  align-items: center;
+-  justify-content: space-between;
+-  gap: 16px;
++.footer-bottom {
+@@
+-.footer-bottom__legal {
+-  display: flex;
+-  flex-wrap: wrap;
+-  gap: 16px;
+-}
+-
+-.footer-bottom__legal a {
+-  color: rgba(255, 255, 255, 0.72);
+-  font-size: .9rem;
+-  text-decoration: none;
+-}
+-
+-.footer-bottom__legal a:hover,
+-.footer-bottom__legal a:focus-visible {
+-  color: #fff;
+-}

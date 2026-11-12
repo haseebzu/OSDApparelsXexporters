@@ -4,14 +4,14 @@ import { certifications } from "@/data/site";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
-  title: "Garment Manufacturing Standards & Certifications | OSD",
+  title: "Garment Requirement Review | OSD Apparels",
   path: "/certifications",
   description:
-    "Explore the apparel quality, organic textile, and ethical production standards featured by OSD Apparels to guide manufacturing discussions with global buyers.",
+    "Discuss apparel material, documentation and destination requirements with OSD Apparels before sampling and quotation.",
   keywords: [
-    "garment manufacturer certifications",
+    "garment manufacturing requirements",
     "apparel compliance Pakistan",
-    "certified garment exporter Pakistan",
+    "apparel documentation Pakistan",
   ],
   category: "Certifications",
 });
@@ -26,13 +26,15 @@ export default function CertificationsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
       <PageHero
-        eyebrow="Certifications"
-        title="Certifications and compliance signals that support informed apparel manufacturing discussions."
-        text="This page helps brands, retailers, and buying teams review the audit standards and manufacturing signals they expect before placing export apparel orders."
-        highlights={["GOTS", "SEDEX", "ISO Driven Trust"]}
+        eyebrow="Requirements review"
+        title="Product documentation and requirements to confirm before manufacturing."
+        text="OSD does not claim GOTS or any other certification on this site without current proof. Share the requirements your order must meet for review before sampling."
+        highlights={["Buyer Requirements", "Documentation Review", "Product Discussion"]}
       />
       <section className="section">
-        <div className="container cards-grid">
+        <div className="container">
+          <h2 className="visually-hidden">Standards discussed with buyers</h2>
+          <div className="cards-grid">
           {certifications.map((item) => (
             <Reveal className="detail-card" key={item.name}>
               <p className="section-eyebrow">{item.name}</p>
@@ -40,6 +42,7 @@ export default function CertificationsPage() {
               <p>{item.description}</p>
             </Reveal>
           ))}
+          </div>
         </div>
       </section>
     </>

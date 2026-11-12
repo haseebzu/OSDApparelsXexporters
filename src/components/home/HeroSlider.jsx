@@ -228,8 +228,8 @@ export function HeroSlider() {
       ScrollTrigger.create({
         trigger: pinRef.current,
         start: "top top",
-        // Give all three hero states an equal, deliberate scroll interval.
-        end: "+=260%",
+        // Keep the intro brief: one viewport is enough for the three-state handoff.
+        end: "+=100%",
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
@@ -253,14 +253,14 @@ export function HeroSlider() {
 
             <div className="hero-cutout__stage">
               <div className="hero-cutout__states">
-                <AnimatePresence initial={false} mode="wait">
+                <AnimatePresence initial={false} mode="sync">
                   <motion.div
                     key={heroStates[activeIndex].id}
                     className="hero-cutout__state-shell"
-                    initial={{ opacity: 0, y: 18 }}
+                    initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -14 }}
-                    transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <HeroHeadline state={heroStates[activeIndex]} priority={activeIndex === 0} />
                   </motion.div>

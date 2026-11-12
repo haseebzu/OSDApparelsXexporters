@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { countries } from "@/utils/countries";
 
@@ -26,7 +27,20 @@ const phonePattern = {
   message: "Enter a valid contact number.",
 };
 
-export function QuoteForm({ compact = false, sourcePage = "quote" }) {
+function QuoteFormQueryPrefill({ setValue, initialCategory, initialCountry }) {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const category = searchParams.get("category");
+    const market = searchParams.get("market");
+    setValue("productCategory", category || initialCategory);
+    setValue("country", market || initialCountry);
+  }, [searchParams, setValue, initialCategory, initialCountry]);
+
+  return null;
+}
+
+export function QuoteForm({ compact = false, sourcePage = "quote", title, intro, initialCategory = "", initialCountry = "" }) {
   const [submitted, setSubmitted] = useState(false);
   const [busy, setBusy] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -40,7 +54,8 @@ export function QuoteForm({ compact = false, sourcePage = "quote" }) {
     reset,
   } = useForm({
     defaultValues: {
-      country: "",
+      country: initialCountry,
+      productCategory: initialCategory,
       decoration: "",
       description: "",
     },
@@ -114,6 +129,14 @@ export function QuoteForm({ compact = false, sourcePage = "quote" }) {
 
   return (
     <form className={compact ? "quote-form quote-form--compact" : "quote-form"} onSubmit={onSubmit}>
+      <Suspense fallback={null}>
+        <QuoteFormQueryPrefill
+          setValue={setValue}
+          initialCategory={initialCategory}
+          initialCountry={initialCountry}
+        />
+      </Suspense>
+      {title ? <div className="quote-form__intro"><p className="section-eyebrow">Request for quotation</p><h2>{title}</h2>{intro ? <p>{intro}</p> : null}</div> : null}
       <div className="form-grid">
         {fields.map((field) => (
           <label key={field.name} className="field">

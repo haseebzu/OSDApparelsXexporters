@@ -46,15 +46,15 @@ const landingProductImages = [
     src: "/images/men.jpg",
     alt: "Menswear collection",
     kicker: "Menswear",
-    moq: "30+",
-    href: "/products/mens",
-    title: "Menswear Collections",
+    moq: "50",
+    href: "/products",
+    title: "Apparel Collections",
   },
   {
     src: "/images/hero-kidswear.png",
     alt: "Kidswear collection",
     kicker: "Kidswear",
-    moq: "50+",
+    moq: "50",
     href: "/products/kids",
     title: "Kidswear Programs",
   },
@@ -62,15 +62,15 @@ const landingProductImages = [
     src: "/images/Hoodiee.png",
     alt: "Gray hoodie product",
     kicker: "Fleece",
-    moq: "50+",
-    href: "/products",
+    moq: "50",
+    href: "/products/hoodies",
     title: "Fleece & Hoodies",
   },
   {
     src: "/images/Women.png",
     alt: "Womenswear collection",
     kicker: "Womenswear",
-    moq: "50+",
+    moq: "50",
     href: "/products",
     title: "Womenswear Lines",
   },
@@ -78,7 +78,7 @@ const landingProductImages = [
     src: "/images/men active.jpg",
     alt: "Activewear and performance collection",
     kicker: "Activewear",
-    moq: "50+",
+    moq: "50",
     href: "/products",
     title: "Activewear Programs",
   },
@@ -86,7 +86,7 @@ const landingProductImages = [
     src: "/images/denim.jpg",
     alt: "Denim collection",
     kicker: "Denim",
-    moq: "80+",
+    moq: "50",
     href: "/products",
     title: "Denim Development",
   },
@@ -94,7 +94,7 @@ const landingProductImages = [
     src: "/images/outwear.png",
     alt: "Outerwear collection",
     kicker: "Outerwear",
-    moq: "60+",
+    moq: "50",
     href: "/products",
     title: "Outerwear Programs",
   },
@@ -102,7 +102,7 @@ const landingProductImages = [
     src: "/images/sleepwear.png",
     alt: "Loungewear collection",
     kicker: "Loungewear",
-    moq: "50+",
+    moq: "50",
     href: "/products",
     title: "Loungewear & Sleepwear",
   },
@@ -110,7 +110,7 @@ const landingProductImages = [
     src: "/images/polooo.jpg",
     alt: "Accessories collection",
     kicker: "Accessories",
-    moq: "100+",
+    moq: "50",
     href: "/custom-order",
     title: "Accessories",
   },
@@ -118,7 +118,7 @@ const landingProductImages = [
     src: "/images/teess.jpg",
     alt: "Sustainable apparel collection",
     kicker: "Sustainable",
-    moq: "50+",
+    moq: "50",
     href: "/sustainability",
     title: "Sustainable Collections",
   },
@@ -126,8 +126,8 @@ const landingProductImages = [
     src: "/images/work wear.jpg",
     alt: "Uniforms and workwear collection",
     kicker: "Uniforms",
-    moq: "100+",
-    href: "/products",
+    moq: "50",
+    href: "/products/workwear-uniforms",
     title: "Uniforms & Workwear",
   },
 ];
@@ -163,8 +163,8 @@ const homeCoreServices = [
   },
   {
     label: "Support",
-    title: "24/7 Customer Support",
-    text: "Get help anytime from our friendly team. We stay available to support clients whenever they need updates, answers, or production guidance.",
+    title: "Project Communication",
+    text: "Contact our team to discuss your product brief, sample feedback, production requirements and quotation questions.",
     image: "/images/Customoer Support.png",
     href: "/contact",
   },
@@ -356,9 +356,9 @@ export default function HomePage() {
       <section className="section section--dark">
         <div className="container">
           <SectionIntro
-            eyebrow="Globally Certified"
+            eyebrow="Certifications & compliance"
             title="Compliance and production discipline that support international buyers."
-            text="Certifications, quality systems, and transparent operating standards help position OSD as a reliable fashion manufacturing and export partner."
+            text="Share the certification, quality-system and documentation requirements your order must meet. OSD reviews them with the product brief before sampling and quotation."
             light
           />
 

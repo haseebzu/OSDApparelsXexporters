@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { CalBookingButton } from "@/components/shared/CalBookingButton";
 import { navigation } from "@/data/site";
 
 export function SiteHeader() {
@@ -48,18 +49,23 @@ export function SiteHeader() {
         </Link>
 
         <nav className="site-nav">
-          {navigation.map((item) => (
-            <Link key={item.href} href={item.href}>
+          {navigation.map((item) => {
+            const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+            return (
+            <Link className={active ? "site-nav__link site-nav__link--active" : "site-nav__link"} key={item.href} href={item.href}>
               {item.label}
             </Link>
-          ))}
+            );
+          })}
         </nav>
 
         <div className="site-header__actions">
+          <span className="site-header__divider" aria-hidden="true" />
           <LanguageSwitcher />
           <Link className="button button--gold button--compact" href="/quote">
             Get Quote
           </Link>
+          <CalBookingButton className="button button--outline button--compact">Book a Meeting</CalBookingButton>
           <button
             className="menu-toggle"
             onClick={() => setOpen((current) => !current)}
@@ -81,6 +87,7 @@ export function SiteHeader() {
           <Link className="button button--gold" href="/quote" onClick={() => setOpen(false)}>
             Request Free Quote
           </Link>
+          <CalBookingButton className="button button--outline" onOpen={() => setOpen(false)}>Book a Meeting</CalBookingButton>
         </div>
       ) : null}
     </header>

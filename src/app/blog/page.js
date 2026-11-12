@@ -78,6 +78,7 @@ export default async function BlogPage() {
       />
       <section className="section">
         <div className="container blog-grid">
+          <h2 className="visually-hidden">Latest apparel manufacturing articles</h2>
           {posts.map((post, index) => (
             <Reveal className="blog-card" delay={index * 0.05} key={post.slug}>
               <div className="blog-card__media">

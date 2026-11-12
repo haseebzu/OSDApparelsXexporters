@@ -77,10 +77,10 @@ const serviceSections = [
     side: {
       type: "stats",
       items: [
-        { value: "5,000+", label: "kg knitted daily" },
-        { value: "200k+", label: "units annually" },
-        { value: "5+", label: "years experience" },
-        { value: "50+", label: "countries served" },
+        { value: "Knitted", label: "apparel programmes" },
+        { value: "Woven", label: "apparel programmes" },
+        { value: "Paid", label: "sample approval" },
+        { value: "Quote", label: "confirmed shipping terms" },
       ],
     },
   },
@@ -127,19 +127,16 @@ const serviceSections = [
     id: "sustainable-production",
     navLabel: "Sustainable production",
     eyebrow: "Sustainability",
-    title: "Certified sustainable from yarn to finished garment - not just a claim",
+    title: "Material and documentation discussions for buyer-led programmes",
     image: "/images/Sustainability.jpg",
     paragraphs: [
       "Certified programs are handled with real documentation, real input control, and real production discipline. Buyers can discuss material and documentation requirements for their manufacturing project.",
-      "GRS, RCS, GOTS, Oeko-Tex Class 1, and audited operating standards help buyers verify the production story from material stage through the finished export shipment.",
+      "Buyers can share material, certification and documentation requirements for review with the product specification.",
     ],
     pills: [
-      "GRS certified",
-      "RCS certified",
-      "GOTS certified",
-      "Oeko-Tex Class 1",
-      "WRAP certified",
-      "BSCI audited",
+      "Buyer requirements",
+      "Material review",
+      "Documentation discussion",
     ],
     cta: { href: "/certifications", label: "Explore certifications" },
     side: {
@@ -147,25 +144,25 @@ const serviceSections = [
       items: [
         {
           icon: "Leaf",
-          title: "Recycled yarns end-to-end",
-          text: "Sustainable material programs tracked through the garment workflow.",
+          title: "Material requirements",
+          text: "Share material requirements for review with the product specification.",
         },
         {
           icon: "Factory",
-          title: "Water-saving dye technology",
-          text: "Jet dyeing support built around better process efficiency and control.",
+          title: "Documentation discussion",
+          text: "Review buyer documentation requirements before sampling and quotation.",
         },
         {
           icon: "ScanSearch",
-          title: "Third-party audited",
-          text: "Audit visibility is available for buyers who need verification confidence.",
+          title: "Order-specific review",
+          text: "Confirm the product and destination requirements relevant to your order.",
         },
       ],
     },
     highlights: [
       {
         title: "Material Selection",
-        text: "We prioritize eco-friendly materials like organic cotton, Tencel, hemp, and recycled fibers while partnering with suppliers who follow responsible production practices.",
+        text: "Share any material requirement in the product brief so it can be reviewed for the proposed garment.",
         image: "/images/Eco friendly Fabric.jpg",
       },
       {
@@ -175,12 +172,12 @@ const serviceSections = [
       },
       {
         title: "Reducing Environmental Impact",
-        text: "We actively support lower water and energy use by working with mills and production partners that implement efficient technologies and cleaner process controls.",
+        text: "Discuss the production information and documentation your team needs before confirming the order.",
         image: "/images/reducing envoirment impact.jpg",
       },
       {
         title: "Innovation In Sustainable Textiles",
-        text: "Through ongoing research, development, and supplier collaboration, we help buyers access newer eco-conscious materials and more responsible textile options.",
+        text: "Material direction and garment construction are reviewed against the buyer’s approved brief.",
         image: "/images/sus.png",
       },
       {
@@ -190,7 +187,7 @@ const serviceSections = [
       },
       {
         title: "Commitment, Certification, And Impact",
-        text: "OSD works with certification-led programs such as GOTS, OEKO-TEX, and recycled content standards while maintaining transparency around progress and accountability.",
+        text: "OSD reviews buyer material and documentation requirements alongside the product specification and quotation.",
         image: "/images/Commitment, Certification.jpg",
       },
     ],
@@ -202,7 +199,7 @@ const serviceSections = [
     title: "Start with a small order, scale when you're ready",
     image: "/images/Low moq.jpg",
     paragraphs: [
-      "Minimum order starts at 30 pieces. Confirm the quantity breakdown for your design, colours and sizes when requesting a quote.",
+      "Minimum order: 50 pieces per style/design.",
       "Custom samples are charged according to the product, and buyers approve a sample before bulk production.",
     ],
     pills: [
@@ -216,7 +213,7 @@ const serviceSections = [
     side: {
       type: "stats",
       items: [
-        { value: "30 pcs", label: "minimum order starts" },
+        { value: "50 pcs", label: "per style/design" },
         { value: "Product-based", label: "sample charge" },
         { value: "Required", label: "sample approval" },
         { value: "Quote", label: "quantity breakdown" },
@@ -328,11 +325,10 @@ export function ServicesPageContent() {
         <Reveal className="services-page__intro">
           <p className="section-eyebrow">What we offer</p>
           <div className="section-accent" />
-          <h1 className="services-page__title">Custom clothing manufacturing services built for low-MOQ and export buyers</h1>
+          <h1 className="services-page__title">Custom clothing manufacturing services for bulk and export buyers</h1>
           <p className="services-page__subtitle">
             OSD Apparels manufactures custom knitted and woven apparel for bulk orders from brands, retailers, and
-            other businesses. Minimum order starts at 30 pieces; confirm the quantity breakdown for your design,
-            colours and sizes when requesting a quote.
+            other businesses. Minimum order: 50 pieces per style/design.
           </p>
         </Reveal>
 

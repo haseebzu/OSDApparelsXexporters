@@ -1,5 +1,12 @@
 # SEO change log
 
+## 2026-11-09 — product and market restructure verification
+
+- Confirmed local sitemap coverage for 13 product/category routes and seven market routes. All routes are generated from the shared catalogue/market data and have canonical metadata through the shared metadata helper.
+- Corrected `public/llms.txt` to the approved policy: 50 pieces per style/design, or 50 sets for products ordered as sets; colour and size allocation are confirmed in the quotation.
+- Live search retrieval still surfaced the pre-restructure site with 30-piece wording and the former product hub. This is recorded as stale live/indexed evidence pending deployment verification, not as a confirmed defect in the current local source.
+- Search Console URL Inspection, Search Console query data and OpenSEO were unavailable in this environment. No ranking, crawl-date or indexing claim was inferred from sitemap membership or a tool failure.
+
 ## 2026-10-24 — Release 1 reconciliation and local regression review
 
 - Corrected the current sitemap count: local production output contains **40** URLs, not 46 — 16 static routes and 24 active blog routes. The 46-URL figure was a dated pre-retirement snapshot of 16 static plus 30 CMS posts; six retired posts are now direct 301s and are filtered from the blog index/sitemap.

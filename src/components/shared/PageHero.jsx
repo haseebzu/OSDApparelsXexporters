@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { CalBookingButton } from "@/components/shared/CalBookingButton";
 import { Reveal } from "@/components/shared/Reveal";
 
-export function PageHero({ eyebrow, title, text, primaryCta, secondaryCta, highlights = [] }) {
+export function PageHero({ eyebrow, title, text, primaryCta, secondaryCta, bookingCta, highlights = [] }) {
   return (
     <section className="page-hero">
       <div className="page-hero__backdrop" />
@@ -33,6 +34,7 @@ export function PageHero({ eyebrow, title, text, primaryCta, secondaryCta, highl
                   {secondaryCta.label}
                 </Link>
               ) : null}
+              {bookingCta ? <CalBookingButton className="button button--ghost">{bookingCta.label}</CalBookingButton> : null}
             </div>
           </div>
         </Reveal>

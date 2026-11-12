@@ -18,12 +18,12 @@ export default function PrivacyPolicyPage() {
       <PageHero
         eyebrow="Privacy Policy"
         title="Clear handling expectations for enquiries and business communication."
-        text="This frontend includes polished policy pages so the site feels complete and launch-ready."
+        text="This page outlines how business enquiry details are handled during quotation and project communication."
       />
       <section className="section">
         <div className="container detail-card">
           <p>OSD Apparels collects only the information required to respond to enquiries, prepare quotes, and support business communication.</p>
-          <p>Contact data is handled for commercial follow-up, internal review, and project coordination. It is not presented here as a legal final draft and should be reviewed before launch.</p>
+          <p>Contact data is handled for commercial follow-up, internal review, and project coordination. Booking links open Cal.com, a third-party scheduling service; review its privacy information before submitting booking details. This page is not a legal final draft and should be reviewed before launch.</p>
         </div>
       </section>
     </>

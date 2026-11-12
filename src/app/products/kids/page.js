@@ -69,7 +69,7 @@ export default function KidsProductsPage() {
                     />
                   </div>
                   <div className="product-card__body">
-                    <p className="product-card__eyebrow">50 pcs per style</p>
+                    <p className="product-card__eyebrow">Minimum order: 50 pieces per style/design.</p>
                     <h3>{cat.title}</h3>
                     <p>{cat.description}</p>
                   </div>

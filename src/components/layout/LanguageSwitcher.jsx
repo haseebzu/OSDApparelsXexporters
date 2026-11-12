@@ -160,7 +160,7 @@ export function LanguageSwitcher() {
         }}
       >
         <Globe2 size={16} />
-        <span>Language</span>
+        <span>{activeLanguage.toUpperCase()}</span>
         <ChevronDown size={16} className={`language-nav__chevron${open ? " language-nav__chevron--open" : ""}`} />
       </button>
 
