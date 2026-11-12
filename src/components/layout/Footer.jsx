@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
-import { contact, navigation, productFamilies, socials } from "@/data/site";
+import { contact, navigation, socials } from "@/data/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -58,10 +58,12 @@ export function Footer() {
         <div>
           <h3>Categories</h3>
           <div className="footer-links">
-            <Link href="/products/mens">{productFamilies.mens.label}</Link>
-            <Link href="/products/kids">{productFamilies.kids.label}</Link>
+            <Link href="/products">All Products</Link>
+            <Link href="/products/kids">Kids Apparel</Link>
+            <Link href="/markets">Markets We Serve</Link>
             <Link href="/services">Services</Link>
             <Link href="/custom-order">OEM / Private Label</Link>
+            <Link href="/how-it-works">How It Works</Link>
           </div>
         </div>
 
@@ -81,6 +83,10 @@ export function Footer() {
 
       <div className="container footer-bottom">
         <p className="footer-bottom__copyright">Copyright {year} OSD Apparels. All rights reserved.</p>
+        <div className="footer-bottom__legal">
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms">Terms</Link>
+        </div>
       </div>
     </footer>
   );

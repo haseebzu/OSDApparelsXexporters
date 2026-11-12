@@ -3,7 +3,13 @@ export const contact = {
   phone: "+92 3234578442",
   whatsapp: "+92 3234578442",
   address: "97 C, Model City 1, Canal Road, Faisalabad, Punjab, Pakistan",
-  hours: "24/7",
+  hours: "Contact us to arrange a call",
+};
+
+export const MOQ = {
+  standard: "Minimum order: 50 pieces per style/design.",
+  set: "Minimum order: 50 sets per style/design.",
+  basics: "Minimum order: 50 pieces per style/design. Colour and size allocation is confirmed in the quotation.",
 };
 
 export const socials = {
@@ -41,7 +47,7 @@ export const heroSlides = [
   },
   {
     eyebrow: "Private Label and OEM",
-    title: "A custom apparel manufacturing partner for fashion brands, exporters, and growing labels.",
+    title: "Custom apparel manufacturing for fashion brands, retailers and growing labels.",
     text: "Launch shirts, hoodies, uniforms, co-ord sets, kidswear, and decorated garments with low-risk MOQs and export-focused production planning.",
     primaryCta: { href: "/contact", label: "Start Your Project" },
     secondaryCta: { href: "/services", label: "View Services" },
@@ -50,12 +56,12 @@ export const heroSlides = [
 ];
 
 export const stats = [
-  { label: "Countries Served", value: "50+" },
-  { label: "Minimum Order", value: "Starts at 30 pcs" },
-  { label: "Annual Capacity", value: "50k+" },
-  { label: "QC Checkpoints", value: "3" },
-  { label: "Sampling Speed", value: "7 days" },
-  { label: "Quote Turnaround", value: "24 hrs" },
+  { label: "Manufacturing base", value: "Faisalabad" },
+  { label: "Minimum Order", value: "50 pcs per style/design" },
+  { label: "Garment types", value: "Knitted & woven" },
+  { label: "Sampling", value: "Paid approval" },
+  { label: "Allocation", value: "Quote-confirmed" },
+  { label: "Shipping", value: "Quote-confirmed" },
 ];
 
 export const services = [
@@ -93,34 +99,28 @@ export const services = [
 
 export const certifications = [
   {
-    name: "GOTS",
-    description:
-      "Certified organic fibre standards for brands that want traceable and environmentally responsible manufacturing.",
+    name: "GOTS requirements",
+    description: "Share certification, material and documentation requirements for review with your product brief.",
   },
   {
-    name: "SEDEX",
-    description:
-      "Ethical supply-chain alignment with transparency expectations common among European and North American apparel buyers.",
+    name: "SEDEX requirements",
+    description: "Agree the information, label artwork and documents required for the specific order.",
   },
   {
-    name: "SMETA 4-Pillar",
-    description:
-      "Audit coverage across labour, environment, health and safety, and business ethics.",
+    name: "SMETA requirements",
+    description: "Review the paid sample before approving bulk production.",
   },
   {
-    name: "ISO 9001:2015",
-    description:
-      "Structured quality management processes that support reliable output and repeatable standards.",
+    name: "ISO 9001 requirements",
+    description: "Confirm measurements, construction, branding and packaging in the approved specification.",
   },
   {
-    name: "OEKO-TEX",
-    description:
-      "Confidence that garments have been tested against harmful substances for safe skin contact.",
+    name: "OEKO-TEX requirements",
+    description: "Confirm market-specific labelling and import requirements with the responsible buyer or adviser.",
   },
   {
-    name: "BSCI",
-    description:
-      "Buyer-facing reassurance around worker rights, wages, and responsible operating practices.",
+    name: "BSCI requirements",
+    description: "Shipping terms and costs are confirmed in the quotation, including EXW, FOB, CIF or DDP where supported.",
   },
 ];
 
@@ -146,7 +146,7 @@ export const processSteps = [
   {
     number: "4.",
     title: "Final QC",
-    description: "Third-party or in-house rigorous final audit before dispatch.",
+    description: "Final checks before packing and dispatch against the approved product brief.",
     icon: "ShieldCheck",
   },
   {
@@ -359,7 +359,7 @@ function createShowcaseProducts(group, family) {
       family,
       category: category.slug,
       title: `${category.title} ${item}`,
-      subtitle: `${category.fabrics[0]} â€¢ MOQ 30 pcs/style`,
+      subtitle: `${category.fabrics[0]} â€¢ MOQ 50 pcs/style`,
       tone: index % 3,
       description: category.description,
       fabrics: category.fabrics,
@@ -428,7 +428,7 @@ export const printingTechniques = [
 
 export const trustPoints = [
   "Dedicated account communication",
-  "Minimum order starts at 30 pieces; confirm the breakdown for your design, colours and sizes",
+  "Minimum order: 50 pieces per style/design.",
   "Sampling before bulk confirmation",
   "Export support for global buyers",
   "Screen printing, puff printing, DTG, sublimation, heat transfer, embroidery, and garment washing/finishing available",

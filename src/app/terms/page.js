@@ -17,13 +17,13 @@ export default function TermsPage() {
       ])).replace(/</g, "\\u003c") }} />
       <PageHero
         eyebrow="Terms"
-        title="Commercial terms placeholder for a launch-ready frontend structure."
-        text="This page rounds out the core route set and gives legal content a professional place in the experience."
+        title="Commercial terms for manufacturing orders."
+        text="Pricing, samples, production, approvals and dispatch are confirmed for each manufacturing project."
       />
       <section className="section">
         <div className="container detail-card">
           <p>All pricing, sampling, production scheduling, approval checkpoints, and dispatch commitments should be confirmed in project-specific communication.</p>
-          <p>This page is a frontend placeholder and should be replaced with final legal language before a public launch.</p>
+          <p>Final legal terms should be reviewed before an order is placed. Project-specific agreements take precedence over this overview.</p>
         </div>
       </section>
     </>

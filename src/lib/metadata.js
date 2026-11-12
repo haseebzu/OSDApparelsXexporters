@@ -6,7 +6,7 @@ export const brand = {
   name: "OSD Apparels",
   legalName: "OSD Apparels",
   siteUrl,
-  locale: "en_PK",
+  locale: "en_GB",
   defaultTitle: "Custom Clothing Manufacturer Pakistan | OSD Apparels",
   defaultDescription:
     "OSD Apparels is a custom clothing manufacturer in Faisalabad, Pakistan, offering private label apparel, knitted and woven garments, and worldwide export.",
@@ -70,6 +70,7 @@ export function createMetadata({
   publishedTime,
   modifiedTime,
   category,
+  keywords,
 }) {
   const url = toAbsoluteUrl(path);
   const socialImages = normalizeImages(images);
@@ -82,6 +83,7 @@ export function createMetadata({
       canonical: path,
     },
     category,
+    ...(keywords?.length ? { keywords } : {}),
     robots: {
       index: !noIndex,
       follow: !noIndex,

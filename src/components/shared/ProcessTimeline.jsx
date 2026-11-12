@@ -131,7 +131,7 @@ export function ProcessTimeline({ steps, variant = "default" }) {
   }
 
   return (
-    <div className="process-timeline" ref={rootRef}>
+    <div className={`process-timeline${variant === "product" ? " process-timeline--product" : ""}`} ref={rootRef}>
       <div className="process-timeline__line">
         <span ref={progressRef} className="process-timeline__progress" />
       </div>

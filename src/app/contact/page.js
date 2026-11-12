@@ -1,6 +1,7 @@
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { PageHero } from "@/components/shared/PageHero";
+import { CalBookingButton } from "@/components/shared/CalBookingButton";
 import { Reveal } from "@/components/shared/Reveal";
 import { contact } from "@/data/site";
 import { buildBreadcrumbSchema, createMetadata } from "@/lib/metadata";
@@ -44,6 +45,7 @@ export default function ContactPage() {
                 Contact us today for private label development, production planning, and export-ready apparel support.
                 Our team is here to make the next step simple.
               </p>
+              <CalBookingButton>Book a Meeting</CalBookingButton>
 
               <div className="contact-page__details">
                 <div className="contact-page__detail">
@@ -89,7 +91,7 @@ export default function ContactPage() {
             <div className="contact-page__trust-grid">
               <span>Worldwide Export Support</span>
               <span>Private Label Manufacturing</span>
-              <span>Minimum Order Starts at 30 Pieces</span>
+              <span>Minimum order: 50 pieces per style/design.</span>
               <span>Fast Sampling Response</span>
               <span>Knitted & Woven Garments</span>
             </div>
